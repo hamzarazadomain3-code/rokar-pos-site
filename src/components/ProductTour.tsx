@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from './Icon';
 import Reveal from './Reveal';
+import ThermalReceiptModal from './ThermalReceiptModal';
+import LiveBillingDemo from './LiveBillingDemo';
 
-type View = 'billing' | 'stock' | 'reports';
+type View = 'billing' | 'stock' | 'khata' | 'reports';
 
 const VIEWS: {
   id: View;
@@ -15,61 +17,78 @@ const VIEWS: {
 }[] = [
   {
     id: 'billing',
-    label: 'Billing',
+    label: 'Fast Billing',
     icon: 'zap',
-    title: 'Scan karo, bill banao — seconds me',
-    desc: 'Barcode scan ya 3-key search, auto-discount, cash ya udhaar — receipt print ya WhatsApp par bhejein.',
-    tag: 'Speed billing',
+    title: 'Scan karo, bill banao — 3 seconds mein',
+    desc: 'Barcode scanner ya 2-letter search. Auto-discount, cash ya credit — receipt foran print ya WhatsApp par bhejein.',
+    tag: '3-Sec Billing',
+  },
+  {
+    id: 'khata',
+    label: 'Udhaar / Khata',
+    icon: 'book',
+    title: 'Grahak ka hisaab, hamesha roshan',
+    desc: 'Customer ledgers, "Kitna baqi hai" balance warning, aur 1-click WhatsApp payment reminder se udhaar recovery aasan.',
+    tag: 'Credit Ledger',
   },
   {
     id: 'stock',
-    label: 'Stock',
+    label: 'Stock Audit',
     icon: 'box',
-    title: 'Hamesha pata ho kitna stock hai',
-    desc: 'Live stock levels, low-stock alerts, aur full Stock Audit — bin aur ledger ka milaan ek click me.',
-    tag: 'Inventory',
+    title: 'Pata ho shelf par kitna maal bacha hai',
+    desc: 'Real-time stock deduction, low-stock alerts, aur full Stock Audit — physical dukan aur system ledger ka foran milaan.',
+    tag: 'Live Inventory',
   },
   {
     id: 'reports',
-    label: 'Reports',
+    label: 'Profit Reports',
     icon: 'chart',
-    title: 'Asli profit, har din ke hisaab se',
-    desc: 'Daily sales, best-sellers, hourly trends aur monthly P&L. Sab Excel me export ho jata hai.',
-    tag: 'Dashboard',
+    title: 'Asli net profit, har din ke hisaab se',
+    desc: 'Daily sales, best-sellers, hourly trends aur monthly P&L. Sab 1 click mein Excel aur PDF mein export ho jata hai.',
+    tag: 'Owner Insights',
   },
 ];
 
 const BILL_ROWS = [
-  ['Basmati Rice 5kg', 'x1', 'Rs 1,150'],
-  ['Sugar 1kg', 'x2', 'Rs 330'],
-  ['Oil Canola 2L', 'x1', 'Rs 890'],
-  ['Doodh 500ml', 'x1', 'Rs 190'],
+  ['Basmati Rice Super 5kg', 'x1', 'Rs 1,150'],
+  ['Habib Cooking Oil 2L', 'x1', 'Rs 890'],
+  ['Sugar / Cheeni 2kg', 'x2', 'Rs 320'],
+  ['Olpers Milk 1L', 'x2', 'Rs 560'],
+];
+
+const KHATA_ROWS = [
+  ['Tariq Sb (Gali 3)', 'Rs 4,200', 'Overdue 5 days'],
+  ['Malik Asif', 'Rs 1,850', 'Due today'],
+  ['Chaudhry Riaz', 'Rs 6,100', 'Reminder sent'],
 ];
 
 const STOCK_ROWS = [
-  ['Flour 5kg', 'Low · 4 left', 'need 20'],
-  ['Oil Canola 2L', '26 in stock', 'ok'],
-  ['Tea 450g', '12 in stock', 'ok'],
-  ['Rice Basmati 5kg', 'Low · 3 left', 'need 30'],
+  ['Atta Chakki 10kg', 'Low · 4 left', 'Need 25'],
+  ['Habib Oil 2L Can', '28 in stock', 'OK'],
+  ['Tapal Tea 450g', '14 in stock', 'OK'],
+  ['Dal Chana 1kg', 'Low · 5kg left', 'Need 30kg'],
 ];
 
 const REPORT_ROWS = [
-  ['Thu', 'Rs 38,200'],
-  ['Fri', 'Rs 45,600'],
-  ['Sat', 'Rs 52,900'],
-  ['Total', 'Rs 1,36,700'],
+  ['Daily Gross Sales', 'Rs 54,800'],
+  ['Total Cost of Goods', 'Rs 41,200'],
+  ['Net Day Profit (Bachaat)', 'Rs 13,600 (24.8%)'],
+  ['Active Cash in Drawer', 'Rs 52,100'],
 ];
 
-function ScreenInner({ view }: { view: View }) {
+function ScreenInner({ view, onOpenReceipt }: { view: View; onOpenReceipt: () => void }) {
   if (view === 'billing') {
     return (
       <div className="tour-screen">
         <div className="ts-head" key="b-head">
-          <b>ROKAR POS</b>
-          <span>Bill #0042 · 10:42 AM</span>
+          <div className="ts-head-brand">
+            <span className="ts-brand-badge" />
+            <b>ROKAR POS · v2.8</b>
+          </div>
+          <span className="ts-head-meta">Bill #1042 · 10:42 AM</span>
         </div>
         <div className="ts-tabs">
-          {['Billing', 'Stock', 'Reports'].map((t) => (
+          {['Billing', 'Khata', 'Stock', 'Reports'].map((t) => (
             <span key={t} className={t === 'Billing' ? 'on' : ''}>
               {t}
             </span>
@@ -85,22 +104,71 @@ function ScreenInner({ view }: { view: View }) {
           ))}
         </ul>
         <div className="ts-total">
-          <span>Total</span>
-          <b>Rs 2,560</b>
+          <span>Gross Total (6 items)</span>
+          <b>Rs 2,920</b>
         </div>
-        <div className="ts-cta">PAY & PRINT RECEIPT</div>
+        <div className="ts-cta-row">
+          <button className="ts-cta" onClick={onOpenReceipt}>
+            <Icon name="printer" size={15} /> PAY & PRINT RECEIPT
+          </button>
+        </div>
       </div>
     );
   }
+
+  if (view === 'khata') {
+    return (
+      <div className="tour-screen">
+        <div className="ts-head" key="k-head">
+          <div className="ts-head-brand">
+            <span className="ts-brand-badge" />
+            <b>ROKAR POS · Khata</b>
+          </div>
+          <span className="ts-head-meta">Total Udhaar: Rs 48,250</span>
+        </div>
+        <div className="ts-tabs">
+          {['Billing', 'Khata', 'Stock', 'Reports'].map((t) => (
+            <span key={t} className={t === 'Khata' ? 'on' : ''}>
+              {t}
+            </span>
+          ))}
+        </div>
+        <ul className="ts-list ts-khata">
+          {KHATA_ROWS.map(([n, bal, status]) => (
+            <li key={n}>
+              <div>
+                <b>{n}</b>
+                <span className="status-note">{status}</span>
+              </div>
+              <span className="price text-danger">{bal}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="ts-card">
+          <span>1-Click Recovery:</span>
+          <b>Send WhatsApp Balance Reminder</b>
+        </div>
+        <div className="ts-cta-row">
+          <button className="ts-cta" style={{ background: '#10b981', color: '#fff' }}>
+            <Icon name="whatsapp" size={15} /> SEND WHATSAPP KHATA
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (view === 'stock') {
     return (
       <div className="tour-screen">
         <div className="ts-head" key="s-head">
-          <b>ROKAR POS</b>
-          <span>Stock Audit</span>
+          <div className="ts-head-brand">
+            <span className="ts-brand-badge" />
+            <b>ROKAR POS · Stock Audit</b>
+          </div>
+          <span className="ts-head-meta">Audit Status: Active</span>
         </div>
         <div className="ts-tabs">
-          {['Billing', 'Stock', 'Reports'].map((t) => (
+          {['Billing', 'Khata', 'Stock', 'Reports'].map((t) => (
             <span key={t} className={t === 'Stock' ? 'on' : ''}>
               {t}
             </span>
@@ -110,69 +178,81 @@ function ScreenInner({ view }: { view: View }) {
           {STOCK_ROWS.map(([n, s, w]) => (
             <li key={n}>
               <b>{n}</b>
-              <span className={`badge ${w === 'need 20' || w === 'need 30' ? 'warn' : ''}`}>{w}</span>
+              <span className={`badge ${w.startsWith('Need') ? 'warn' : ''}`}>{w}</span>
               <span className="price">{s}</span>
             </li>
           ))}
         </ul>
         <div className="ts-card">
-          <span>Audit result</span>
-          <b>1,284 items · 3 mismatches</b>
+          <span>Physical vs System Audit:</span>
+          <b>1,420 Items Scanned · 2 Mismatches</b>
         </div>
-        <div className="ts-cta">PROCEED AUDIT</div>
+        <div className="ts-cta-row">
+          <button className="ts-cta">PROCEED AUDIT DISCREPANCY</button>
+        </div>
       </div>
     );
   }
+
   return (
     <div className="tour-screen">
       <div className="ts-head" key="r-head">
-        <b>ROKAR POS</b>
-        <span>Jump today · wal</span>
+        <div className="ts-head-brand">
+          <span className="ts-brand-badge" />
+          <b>ROKAR POS · Daily P&L</b>
+        </div>
+        <span className="ts-head-meta">Shift 1 & 2 Summary</span>
       </div>
       <div className="ts-tabs">
-        {['Billing', 'Stock', 'Reports'].map((t) => (
+        {['Billing', 'Khata', 'Stock', 'Reports'].map((t) => (
           <span key={t} className={t === 'Reports' ? 'on' : ''}>
             {t}
           </span>
         ))}
       </div>
       <div className="ts-metric">
-        <span>Today's sales</span>
-        <b>Rs 42,150</b>
-        <em>▲ +18% vs yesterday</em>
+        <span>Today's Total Net Profit</span>
+        <b>Rs 13,600</b>
+        <em>▲ +19.4% vs last week</em>
       </div>
       <ul className="ts-list ts-report">
         {REPORT_ROWS.map(([d, v]) => (
           <li key={d}>
             <span>{d}</span>
-            <span className="price">{v}</span>
+            <span className="price font-bold">{v}</span>
           </li>
         ))}
       </ul>
-      <div className="ts-cta">EXPORT TO EXCEL</div>
+      <div className="ts-cta-row">
+        <button className="ts-cta">EXPORT TO EXCEL REPORT</button>
+      </div>
     </div>
   );
 }
 
 export default function ProductTour() {
   const [view, setView] = useState<View>('billing');
-  const active = VIEWS.find((v) => v.id === view)!;
+  const [receiptOpen, setReceiptOpen] = useState(false);
+  const active = VIEWS.find((v) => v.id === view) || VIEWS[0];
 
   return (
     <section id="tour" className="section tour">
       <div className="container">
         <Reveal>
-          <div className="section-head" style={{ maxWidth: 760 }}>
-            <span className="eyebrow">Product tour</span>
+          <div className="section-head" style={{ maxWidth: 800 }}>
+            <span className="eyebrow">
+              <span className="eyebrow-dot" /> Live Software Tour
+            </span>
             <h2>
-              Ek nazar me <em style={{ color: 'var(--gold-hi)', fontStyle: 'normal' }}>poora POS</em>
+              Ek nazar mein <span style={{ color: 'var(--teal-accent)' }}>poori dukaan ka control</span>
             </h2>
             <p className="lead">
-              Tabs daba kar dekhein — Rokar ki sab se kam aane wali screens.
+              Rokar POS ke mukhtalif modules dekhein — Fast Billing, Udhaar Khata, Stock Audit aur Daily Profit Dashboard.
             </p>
           </div>
         </Reveal>
 
+        {/* Device Stage & Tabs Grid */}
         <div className="tour-grid">
           <Reveal>
             <div className="tour-stage">
@@ -185,16 +265,16 @@ export default function ProductTour() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -12 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.25 }}
                     >
-                      <ScreenInner view={view} />
+                      <ScreenInner view={view} onOpenReceipt={() => setReceiptOpen(true)} />
                     </motion.div>
                   </AnimatePresence>
                 </div>
                 <div className="tour-stand" aria-hidden="true" />
               </div>
-              <span className="tour-chip tour-chip--a">Udhaar OK</span>
-              <span className="tour-chip tour-chip--b">OneDrive · done</span>
+              <span className="tour-chip tour-chip--a">⚡ 100% Offline Active</span>
+              <span className="tour-chip tour-chip--b">☁️ Cloud Backup Done</span>
             </div>
           </Reveal>
 
@@ -219,18 +299,41 @@ export default function ProductTour() {
                   initial={{ opacity: 0, x: 16 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -16 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.25 }}
                   className="tour-copy"
                 >
                   <span className="tour-tag">{active.tag}</span>
                   <h3>{active.title}</h3>
                   <p>{active.desc}</p>
+
+                  <div className="tour-action-row">
+                    <button className="btn btn-primary btn-sm" onClick={() => setReceiptOpen(true)}>
+                      <Icon name="printer" size={16} /> Thermal Receipt Sample Dekhein
+                    </button>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
           </Reveal>
         </div>
+
+        {/* Interactive Live Billing Demo Container */}
+        <Reveal delay={0.16}>
+          <div className="tour-simulator-wrap">
+            <div className="simulator-intro">
+              <span className="eyebrow" style={{ color: 'var(--teal-accent)' }}>
+                ⚡ Self-Test Simulator
+              </span>
+              <h3>Live Bill Bana Kar Test Karein</h3>
+              <p>Neeche diye gaye terminal par khud products par click karein aur real-time calculations check karein:</p>
+            </div>
+            <LiveBillingDemo />
+          </div>
+        </Reveal>
       </div>
+
+      {/* Receipt Modal */}
+      <ThermalReceiptModal isOpen={receiptOpen} onClose={() => setReceiptOpen(false)} />
     </section>
   );
 }

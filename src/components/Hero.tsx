@@ -8,26 +8,37 @@ export default function Hero({ scene }: { scene: ReactNode }) {
   return (
     <section id="top" className="section hero">
       <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-glow hero-glow--2" aria-hidden="true" />
       <div className="hero-grain" aria-hidden="true" />
       <div className="hero-orbit hero-orbit--1" aria-hidden="true" />
       <div className="hero-orbit hero-orbit--2" aria-hidden="true" />
+
       <div className="container hero-grid">
         <div className="hero-copy">
           <Reveal>
+            <div className="hero-rating-badge">
+              <span className="star-icons">⭐⭐⭐⭐⭐</span>
+              <span className="rating-text">
+                <strong>4.9 / 5</strong> · 500+ Dukanon Ka Bharosa
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.06}>
             <span className="eyebrow" style={{ color: 'var(--gold-hi)' }}>
               <span className="eyebrow-dot" />
               {HERO.eyebrow}
             </span>
           </Reveal>
 
-          <Reveal delay={0.08}>
+          <Reveal delay={0.12}>
             <h1>
               {HERO.titleA}{' '}
-              <span style={{ color: 'var(--gold-hi)' }}>{HERO.titleB}</span>
+              <span className="gradient-gold-text">{HERO.titleB}</span>
             </h1>
           </Reveal>
 
-          <Reveal delay={0.16}>
+          <Reveal delay={0.18}>
             <p className="lead">{HERO.lead}</p>
           </Reveal>
 
@@ -42,28 +53,30 @@ export default function Hero({ scene }: { scene: ReactNode }) {
                 <Icon name="download" size={20} />
                 {HERO.ctaDownload}
               </motion.a>
-              <a className="btn btn-ghost btn-lg hero-more" href="#how">
+              <a className="btn btn-ghost btn-lg hero-more" href="#tour">
                 <Icon name="play" size={18} />
                 {HERO.ctaHow}
               </a>
             </div>
           </Reveal>
 
-          <Reveal delay={0.32}>
+          <Reveal delay={0.3}>
             <div className="hero-chips">
               {HERO.trust.map((t) => (
                 <span key={t} className="chip">
-                  <Icon name="check" size={13} strokeWidth={2.6} />
+                  <Icon name="check" size={13} strokeWidth={2.8} />
                   {t}
                 </span>
               ))}
             </div>
           </Reveal>
 
-          <Reveal delay={0.4}>
-            <p className="hero-vmeta">
-              Version {LATEST_VERSION} · {HERO.versionNote}
-            </p>
+          <Reveal delay={0.36}>
+            <div className="hero-vmeta-row">
+              <p className="hero-vmeta">
+                <span className="vmeta-tag">Official Windows App</span> Version {LATEST_VERSION} · {HERO.versionNote}
+              </p>
+            </div>
           </Reveal>
         </div>
 
@@ -71,13 +84,16 @@ export default function Hero({ scene }: { scene: ReactNode }) {
           className="hero-scene"
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
         >
           {scene}
-          <a className="hero-wa" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">
-            <Icon name="whatsapp" size={16} />
-            WhatsApp par poochiye
-          </a>
+          <div className="hero-scene-actions">
+            <a className="hero-wa" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">
+              <span className="wa-mini-dot" />
+              <Icon name="whatsapp" size={16} />
+              WhatsApp par 15 Min Free Setup Mangein
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

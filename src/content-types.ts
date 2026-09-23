@@ -38,6 +38,25 @@ export type FAQItem = {
   a: string;
 };
 
+export type Industry = {
+  id: string;
+  name: string;
+  urdu: string;
+  icon: string;
+  desc: string;
+  points: string[];
+};
+
+export type PricingPackage = {
+  id: string;
+  name: string;
+  urdu: string;
+  badge: string;
+  sub: string;
+  features: string[];
+  popular?: boolean;
+};
+
 export type SiteContent = {
   meta: {
     name: string;
@@ -76,6 +95,7 @@ export type SiteContent = {
     lead: string;
     items: Feature[];
   };
+  industries?: Industry[];
   steps: {
     eyebrow: string;
     title: string;
@@ -93,6 +113,7 @@ export type SiteContent = {
     cardCta: string;
     includesTitle: string;
     includes: string[];
+    packages?: PricingPackage[];
     noteHeading: string;
     note: string;
   };

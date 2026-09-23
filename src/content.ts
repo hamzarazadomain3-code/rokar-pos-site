@@ -3,6 +3,8 @@ import type {
   ChangelogEntry,
   FAQItem,
   Feature,
+  Industry,
+  PricingPackage,
   SiteContent,
   Stat,
   Step,
@@ -11,7 +13,7 @@ import type {
 
 export const CONTENT = raw as unknown as SiteContent;
 
-export type { ChangelogEntry, FAQItem, Feature, SiteContent, Stat, Step, Testimonial };
+export type { ChangelogEntry, FAQItem, Feature, Industry, PricingPackage, SiteContent, Stat, Step, Testimonial };
 
 /* ---- site-level ---- */
 export const DOWNLOAD_URL = CONTENT.site.downloadUrl;
@@ -27,11 +29,14 @@ export const HERO = CONTENT.hero;
 export const FEATURES: Feature[] = CONTENT.features.items;
 export const FEATURES_HEAD = CONTENT.features;
 
+export const INDUSTRIES: Industry[] = CONTENT.industries || [];
+
 export const STEPS: Step[] = CONTENT.steps.items;
 export const STEPS_HEAD = CONTENT.steps;
 
 export const PRICING = CONTENT.pricing;
-export const PRICING_INCLUDES = CONTENT.pricing.includes;
+export const PRICING_INCLUDES = CONTENT.pricing.includes || [];
+export const PRICING_PACKAGES: PricingPackage[] = CONTENT.pricing.packages || [];
 
 export const DOWNLOAD = CONTENT.download;
 export const SYS_REQS = CONTENT.download.requirements;

@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Ticker from './components/Ticker';
 import Features from './components/Features';
 import ProductTour from './components/ProductTour';
+import IndustrySolutions from './components/IndustrySolutions';
 import Stats from './components/Stats';
 import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
@@ -11,6 +12,7 @@ import Pricing from './components/Pricing';
 import Changelog from './components/Changelog';
 import Download from './components/Download';
 import Footer from './components/Footer';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 const Hero3D = lazy(() => import('./components/Hero3D'));
 const Admin = lazy(() => import('./admin/Admin'));
@@ -27,12 +29,12 @@ export default function App() {
               aspectRatio: '4/3',
               display: 'grid',
               placeItems: 'center',
-              color: 'rgba(247,243,233,0.5)',
-              font: '600 14px Manrope, sans-serif',
-              letterSpacing: '0.12em',
+              color: 'rgba(251,250,247,0.6)',
+              font: '700 13px Plus Jakarta Sans, sans-serif',
+              letterSpacing: '0.14em',
             }}
           >
-            LOADING
+            ⚡ LOADING TERMINAL
           </div>
         }
       >
@@ -58,6 +60,7 @@ export default function App() {
             <Ticker />
             <Features />
             <ProductTour />
+            <IndustrySolutions />
             <Stats />
             <HowItWorks />
             <Testimonials />
@@ -66,6 +69,7 @@ export default function App() {
             <Download />
           </main>
           <Footer />
+          <WhatsAppFloat />
         </>
       )}
     </>

@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "Rokar POS",
-    "description": "Rokar is a fast, offline-first billing & inventory POS for small retail shops in Pakistan. Billing, udhaar (khata), stock audit, supplier tracking and reports â€” all on one Windows app.",
-    "ogTitle": "Rokar POS â€” Billing & Inventory for Pakistani Shops",
+    "description": "Rokar is a fast, offline-first billing & inventory POS for retail shops in Pakistan. Billing, udhaar (khata), stock audit, supplier tracking and reports — all on one Windows app.",
+    "ogTitle": "Rokar POS — Billing & Inventory for Pakistani Shops",
     "ogDescription": "Offline-first POS with billing, udhaar khata, inventory, reports and thermal receipt printing. Built for small retail shops."
   },
   "site": {
@@ -12,8 +12,8 @@
       "phone": "+92 300 1234567",
       "phoneTel": "+923001234567",
       "email": "support@rokarpos.pk",
-      "supportHours": "Monâ€“Sat Â· 9am â€“ 9pm",
-      "whatsapp": "https://wa.me/923001234567"
+      "supportHours": "Mon–Sat · 9am – 9pm",
+      "whatsapp": "https://wa.me/923001234567?text=Assalam%20o%20Alaikum%20Rokar%20POS%20team,%20mujhe%20Rokar%20POS%20software%20ke%20baray%20mein%20maloomat%20aur%20free%20trial%20chahiye."
     }
   },
   "nav": {
@@ -24,7 +24,11 @@
       },
       {
         "href": "#tour",
-        "label": "Tour"
+        "label": "Live Tour"
+      },
+      {
+        "href": "#industries",
+        "label": "Industries"
       },
       {
         "href": "#how",
@@ -35,144 +39,238 @@
         "label": "Pricing"
       },
       {
-        "href": "#updates",
-        "label": "Updates"
-      },
-      {
         "href": "#download",
         "label": "Download"
       }
     ]
   },
   "hero": {
-    "eyebrow": "Offline-first POS Â· Made for Pakistani shops",
-    "titleA": "Billing, stock aur udhaar â€”",
+    "eyebrow": "Offline-first POS · Made for Pakistani shops",
+    "titleA": "Billing, stock aur udhaar —",
     "titleB": "sab ek hi app mein.",
-    "lead": "Rokar is a fast, offline billing & inventory POS built for retail shops in Pakistan. Scan or search, bill in seconds, track udhaar (khata), and know your real profit â€” no internet? No problem.",
-    "ctaDownload": "Download for Windows",
-    "ctaHow": "See how it works",
+    "lead": "Rokar is Pakistan's fastest offline billing & inventory software built specifically for retail dukaan owners. Scan barcodes, bill in 3 seconds, track udhaar (khata), and see daily net profit — no internet needed.",
+    "ctaDownload": "Download Free Trial (Windows)",
+    "ctaHow": "Interactive Live Demo",
     "trust": [
-      "Works fully offline",
-      "Urdu + English",
-      "Windows 10 / 11",
-      "Barcode & thermal ready"
+      "100% Offline Active",
+      "Urdu + English Invoices",
+      "Thermal 58/80mm + A4",
+      "Auto Cloud Backup",
+      "Windows 10 / 11 Ready"
     ],
-    "versionNote": "Update checks run automatically inside the app"
+    "versionNote": "Version 2.8.0 · 15 days free full trial with instant setup"
   },
   "features": {
-    "eyebrow": "Everything a shop needs",
+    "eyebrow": "Sab Kuch Ek Hi App Mein",
     "titleA": "One app.",
-    "titleB": "Full control.",
-    "lead": "Rokar brings billing, stock, credit, and reports together â€” the kit that used to live in your cash-box registers, your khaata book, and your head.",
+    "titleB": "Full dukaan control.",
+    "lead": "Rokar brings billing, stock, customer credit, and profit reports together — replacing registers, lost udhaar pages, and mental math with 100% accurate computer records.",
     "items": [
       {
         "icon": "zap",
         "title": "Fast offline billing",
-        "desc": "Bill a whole customer in seconds â€” barcode scan or 3-key search. No internet? No problem. Rokar works fully offline, always.",
+        "desc": "Bill a whole customer in under 3 seconds. Barcode scan or 2-letter search. Works fully offline without ever needing internet.",
         "tag": "Core"
       },
       {
         "icon": "book",
-        "title": "Udhaar / Khata",
-        "desc": "Credit sales, balance tracking, \"kitna baqi hai\" at a glance. Daily reminders keep your hisaab moving."
+        "title": "Udhaar / Khata Ledger",
+        "desc": "Customer credit accounts with 'Kitna baqi hai' at a glance. 1-click WhatsApp balance reminders prevent lost money.",
+        "tag": "High Impact"
       },
       {
         "icon": "box",
         "title": "Inventory & Stock Audit",
-        "desc": "Real-time stock levels, low-stock warnings, and a full Stock Audit to match bin stock with the ledger.",
+        "desc": "Real-time stock deduction, low-stock warnings, and full stock audit tools to match physical shelf items with system ledger.",
         "tag": "Core"
+      },
+      {
+        "icon": "printer",
+        "title": "Thermal & A4 Receipts",
+        "desc": "Instant printing on 58mm and 80mm thermal receipt printers, barcode label generation, and elegant A4 tax invoices.",
+        "tag": "Popular"
       },
       {
         "icon": "truck",
         "title": "Purchases & Suppliers",
-        "desc": "Record purchase bills, supplier balances, and see agar koi dast mal ya items wapis â€” sab recorded."
+        "desc": "Record purchase bills, supplier dues, return vouchers, and track incoming stock costs with complete ledger history."
       },
       {
         "icon": "chart",
-        "title": "Reports & Dashboard",
-        "desc": "Today's sales, best-selling products, hourly trends, monthly P&L, target vs actual â€” exportable to Excel."
+        "title": "Daily Profit & Reports",
+        "desc": "Today's sales, net profit, top-selling items, hourly rush trends, and monthly P&L exportable directly to Excel."
       },
       {
         "icon": "clock",
-        "title": "Multi-shift cash",
-        "desc": "Separate shifts and cash management for morning and evening. Know exactly kis shift ne kitna banaya."
+        "title": "Multi-shift Cash Drawer",
+        "desc": "Separate morning and evening cash drawers with end-of-shift cash counting. Know kis cashier ne kitna cash jama karaya."
       },
       {
         "icon": "users",
-        "title": "Users & Roles",
-        "desc": "Owner, Manager, Cashier â€” each with their own access. Cashier bills, owner sees everything."
-      },
-      {
-        "icon": "tag",
-        "title": "Promotions & discounts",
-        "desc": "Buy-one-get-one, percentage or flat discounts, and auto-discount rules applied at billing."
-      },
-      {
-        "icon": "cloud",
-        "title": "Cloud backup",
-        "desc": "Automatic daily backups to your own OneDrive or Google Drive. Your data, your copies."
-      },
-      {
-        "icon": "printer",
-        "title": "Receipt + A4 invoices",
-        "desc": "Thermal receipt printing for fast checkout and professional A4 invoices â€” fully customizable.",
-        "tag": "Popular"
+        "title": "Cashier & Owner Roles",
+        "desc": "Owner, Manager, Cashier permissions. Cashiers can only bill; profit figures and sensitive settings stay locked for Owner only."
       },
       {
         "icon": "whatsapp",
-        "title": "WhatsApp receipts",
-        "desc": "Send the receipt straight to the customer's WhatsApp â€” no printer required."
+        "title": "WhatsApp Digital Receipts",
+        "desc": "Send itemized digital receipts straight to customer WhatsApp in 1 click. Saves thermal paper and looks ultra professional."
+      },
+      {
+        "icon": "cloud",
+        "title": "Daily Cloud Backup",
+        "desc": "Automated daily encrypted backups to your Google Drive or OneDrive. If your PC ever crashes, your data is 100% safe."
       },
       {
         "icon": "scale",
-        "title": "Wholesale & Retail modes",
-        "desc": "Retail price for walk-ins, wholesale rates for thok buyers â€” switch in one tap."
+        "title": "Wholesale & Retail Modes",
+        "desc": "Retail price for walk-in customers, wholesale rate for bulk thok buyers — switch instantly at billing in one tap."
+      },
+      {
+        "icon": "tag",
+        "title": "Barcode Label Generator",
+        "desc": "Design and print your own custom barcode stickers for unbranded items directly from Rokar POS to any label printer."
       }
     ]
   },
+  "industries": [
+    {
+      "id": "grocery",
+      "name": "Kirana & Superstores",
+      "urdu": "کریانہ و سپر سٹورز",
+      "icon": "shopping-cart",
+      "desc": "High-speed barcode checkout, bulk stock management, and customer udhaar khata.",
+      "points": ["Fast barcode scanner support", "Customer credit khata with limits", "Weighing scale integration (BayLan)", "Low-stock refill alerts"]
+    },
+    {
+      "id": "pharmacy",
+      "name": "Pharmacy & Medical",
+      "urdu": "میڈیکل سٹور و فارمیسی",
+      "icon": "activity",
+      "desc": "Batch numbers, expiry date alerts, formula search, and supplier invoice records.",
+      "points": ["Expiry date warning alerts", "Batch number tracking on receipts", "Generic salt / formula quick search", "Wholesale supplier payment tracker"]
+    },
+    {
+      "id": "bakery",
+      "name": "Bakery & Sweets",
+      "urdu": "بیکری و مٹھائی شاپ",
+      "icon": "coffee",
+      "desc": "Fast touch billing, kg & gram weight calculations, and multi-shift cash drawers.",
+      "points": ["Digital weight scale direct sync", "Per-piece & per-kg pricing", "Daily morning & night shift closure", "Fresh item fast key buttons"]
+    },
+    {
+      "id": "garments",
+      "name": "Garments & Footwear",
+      "urdu": "گارمنٹس و بوٹ ہاؤس",
+      "icon": "tag",
+      "desc": "Color, size, and brand variants with custom barcode sticker printing.",
+      "points": ["Size & color matrix stock", "Custom barcode label printing", "Discount and promotional bundles", "Fast exchange / return handling"]
+    },
+    {
+      "id": "wholesale",
+      "name": "Wholesale & Electronics",
+      "urdu": "تھوک و الیکٹرانکس مارکیٹ",
+      "icon": "cpu",
+      "desc": "Carton & loose unit billing, serial/IMEI warranty tracking, and dual wholesale pricing.",
+      "points": ["Serial number / IMEI tracking", "Carton to loose pack breakdown", "Wholesale rate vs retail rate toggle", "Customer ledger statement export"]
+    }
+  ],
   "steps": {
-    "eyebrow": "Getting started",
-    "title": "Live billing in 4 steps",
-    "lead": "Aaj hi start kijiye â€” no training course, no IT team. Just a Windows PC.",
+    "eyebrow": "Aasaani Se Shuru Karein",
+    "title": "Live billing in 4 simple steps",
+    "lead": "Aaj hi shuru kijiye — no training course, no IT team needed. Sirf 1 Windows PC.",
     "items": [
       {
         "num": "01",
         "title": "Download & install",
-        "desc": "Install Rokar on any Windows PC or laptop in under two minutes.",
-        "urdu": "ÚˆØ§Ø¤Ù† Ù„ÙˆÚˆ Ú©Ø±ÛŒÚº Ø§ÙˆØ± Ø§Ù†Ø³Ù¹Ø§Ù„ Ú©Ø±ÛŒÚº"
+        "desc": "Install Rokar on any Windows 10 or 11 PC or laptop in under two minutes.",
+        "urdu": "ڈاؤن لوڈ کریں اور انسٹال کریں"
       },
       {
         "num": "02",
         "title": "Activate your license",
-        "desc": "Enter your activation key once. No monthly logins, no internet needed to keep working.",
-        "urdu": "Ù„Ø§Ø¦Ø³Ù†Ø³ Ú†Ø§Ù„Ùˆ Ú©Ø±ÛŒÚº"
+        "desc": "Enter your key once. Works 100% offline — no monthly logins or internet needed.",
+        "urdu": "لائسنس چالو کریں"
       },
       {
         "num": "03",
         "title": "Add your products",
-        "desc": "Add items with name, price, and barcode. Print your own barcode labels from Rokar.",
-        "urdu": "Ø§Ù¾Ù†Û’ Ù¾Ø±Ø§ÚˆÚ©Ù¹Ø³ Ø´Ø§Ù…Ù„ Ú©Ø±ÛŒÚº"
+        "desc": "Import from Excel or add items with name, price, and barcode in seconds.",
+        "urdu": "اپنے پروڈکٹس شامل کریں"
       },
       {
         "num": "04",
         "title": "Start billing",
-        "desc": "Scan, bill, print the receipt. Track udhaar, stock, and profit from day one.",
-        "urdu": "Ø¨Ù„Ù†Ú¯ Ø´Ø±ÙˆØ¹ Ú©Ø±ÛŒÚº"
+        "desc": "Scan, bill, print thermal receipts, and track your daily net profit from day one.",
+        "urdu": "بلنگ شروع کریں"
       }
     ]
   },
   "pricing": {
-    "eyebrow": "Pricing",
-    "titleA": "Simple yearly license.",
-    "titleB": "No hidden fees.",
-    "lead": "One payment covers everything â€” billing, inventory, printing, backups, updates, and support. Pehle 15 din bilkul free try karein.",
+    "eyebrow": "Shafaf aur Munasib Packages",
+    "titleA": "Transparent yearly license.",
+    "titleB": "Zero hidden charges.",
+    "lead": "One fair price covers billing, inventory, thermal printing, cloud backup, and updates. Pehle 15 din bilkul free try karein.",
+    "packages": [
+      {
+        "id": "starter",
+        "name": "Single Shop",
+        "urdu": "سنگل دکان",
+        "badge": "Sab se aasan",
+        "sub": "Kirana, medical store ya choti retail dukaan ke liye behtareen.",
+        "features": [
+          "1 Windows PC / Laptop license",
+          "Fast 100% offline billing",
+          "Udhaar / Khata ledger management",
+          "58mm / 80mm thermal receipt printing",
+          "Excel import & export",
+          "Automated local & drive backup",
+          "Free updates for 1 full year",
+          "Urdu & English phone/WhatsApp support"
+        ],
+        "popular": false
+      },
+      {
+        "id": "pro",
+        "name": "Superstore Pro",
+        "urdu": "سپر سٹور پرو",
+        "badge": "Most Popular",
+        "sub": "Busy retail stores, bakeries aur multi-counter superstores ke liye.",
+        "features": [
+          "Everything in Single Shop, plus:",
+          "Multi-cashier shift management",
+          "WhatsApp direct digital receipts",
+          "Custom barcode label designer & printer",
+          "Weighing scale direct integration",
+          "Dual wholesale & retail pricing",
+          "Owner mobile view / profit dashboard",
+          "VIP priority remote setup assistance"
+        ],
+        "popular": true
+      },
+      {
+        "id": "enterprise",
+        "name": "Multi-Branch Chain",
+        "urdu": "ملٹی برانچ نیٹ ورک",
+        "badge": "Chain Stores",
+        "sub": "2 ya zyada dukanon aur warehouse godown management ke liye.",
+        "features": [
+          "Multiple branch counter licenses",
+          "Central inventory & warehouse transfers",
+          "Consolidated group profit & loss report",
+          "Custom FBR POS integration support",
+          "Dedicated software account manager",
+          "On-site / remote full staff training"
+        ],
+        "popular": false
+      }
+    ],
     "badge": "Annual licence",
     "cardTitle": "Contact us for pricing",
-    "cardSub": "Price depends on your shop size and branches. WhatsApp ya email par poochiye â€” usually same-day answer.",
+    "cardSub": "Price depends on your shop size and branches. WhatsApp ya email par poochiye — usually same-day answer.",
     "cardCta": "Ask for a price",
     "includesTitle": "Hamesha included:",
     "includes": [
-      "All features â€” billing, inventory, reports",
+      "All features — billing, inventory, reports",
       "Thermal receipt & A4 invoice printing",
       "Udhaar/khata management",
       "Wholesale & retail pricing modes",
@@ -181,137 +279,143 @@
       "Free updates & installer re-downloads",
       "Support in Urdu & English"
     ],
-    "noteHeading": "Try before you buy",
-    "note": "Install, set up your products, and bill for 15 days free. Zyada requirements? We will tailor a package."
+    "noteHeading": "15 Din Ka Free Trial",
+    "note": "Software install karein, apne items add karein, aur 15 din live check karein. Koi credit card ki zaroorat nahi."
   },
   "download": {
-    "eyebrow": "Download",
-    "title": "Free trial for your shop today",
-    "lead": "Install in under two minutes. Set up your products and start billing â€” 15 days free, no credit card.",
-    "buttonLabel": "Download for Windows",
-    "factsPrefix": "Windows 64-bit Â· NSIS installer",
-    "safe": "Updates check automatically inside the app â€” Roz issues fix milengi, data par koi asar nahi.",
+    "eyebrow": "Download Center",
+    "title": "Aaj hi apni dukaan par Rokar POS install karein",
+    "lead": "Sirf 2 minute mein install ho jata hai. 15 din ka free trial shuru karein — no credit card needed.",
+    "buttonLabel": "Download Rokar POS (Windows 64-bit)",
+    "factsPrefix": "Official NSIS installer · Windows 10 & 11",
+    "safe": "Automated update check inside the app — updates install smoothly without touching your sales data.",
     "requirementsTitle": "System requirements",
     "requirements": [
       "Windows 10 or 11 (64-bit)",
-      "4 GB RAM",
-      "3 GB free disk space",
-      "Optional: USB or Bluetooth barcode scanner",
-      "Optional: thermal receipt printer"
+      "Core i3 / 4 GB RAM (Low-spec PCs par bhi makhan chalta hai)",
+      "2 GB free hard disk space",
+      "Optional: USB / Bluetooth barcode scanner",
+      "Optional: 58mm or 80mm thermal receipt printer",
+      "Optional: BayLan / CAS electronic weighing scale"
     ],
-    "requirementNote": "Roz installation mobile/laptop dono par chalti hai â€” low-end PC par bhi smooth.",
-    "faqTitle": "Common questions",
+    "requirementNote": "Desktop PC ho ya laptop — Rokar bina internet ke 24 ghante tezi se chalta hai.",
+    "faqTitle": "Aam Poochay Jane Wale Sawalaat (FAQs)",
     "faq": [
       {
-        "q": "Mujhe internet ki zaroorat hai?",
-        "a": "Nahi â€” Rokar fully offline chalta hai. Billing, inventory aur reports sab local computer par save hote hain. Internet sirf optional cheezon ke liye hai, jaise WhatsApp receipt ya cloud backup."
+        "q": "Kya Rokar POS chalane ke liye har waqt internet chahiye?",
+        "a": "Bilkul nahi! Rokar 100% offline software hai. Billing, inventory, khata aur reports sab aapke computer par chalte hain. Internet sirf optional cloud backup ya WhatsApp receipt bhejne ke liye chahiye."
       },
       {
-        "q": "Mera data safe hai?",
-        "a": "Bilkul. Data aapke computer par rehta hai aur roz khud-ba-khud aapke OneDrive/Google Drive par backup hota hai."
+        "q": "Mera purana data aur inventory Excel se import ho sakti hai?",
+        "a": "Haan, bilkul! Rokar mein 1-click Excel import feature hai. Aapke tamaam products, barcodes aur prices sirf 1 minute mein software mein load ho jate hain."
       },
       {
-        "q": "Kya QR/thermal printer ya weighing scale ke saath chalta hai?",
-        "a": "Haan â€” USB/BT barcode scanner, thermal receipt printer, A4 printer aur BayLan weighing scale sab supported hain."
+        "q": "Kya thermal printer aur barcode scanner connect ho jate hain?",
+        "a": "Jee haan, Pakistan mein milne wale tamaam USB, Bluetooth aur Network thermal printers (Xprinter, Black Copper, Rongta وغیرہ) aur standard barcode scanners direct plug & play hain."
       },
       {
-        "q": "Is PC par ek se zyada cashiers kaam kar sakte hain?",
-        "a": "Haan, Owner / Manager / Cashier roles ke saath alag users aur shifts bana sakte hain."
+        "q": "Agar computer kharab ho jaye to mera hisaab mehfooz rahega?",
+        "a": "Aapka poora hisaab rozana khud-ba-khud aapke Google Drive ya OneDrive par encrypted cloud backup hota hai. Naye PC par sirf backup restore karein aur sab wapas!"
+      },
+      {
+        "q": "Kya ek se zyada cashiers aur alag alag shifts bana sakte hain?",
+        "a": "Jee haan, Owner, Manager aur Cashier ke alag roles hain. Subha aur shaam ki alag shifts ka cash drawer hisaab banta hai taake koi chori ya ghalti na ho."
       }
     ]
   },
   "footer": {
-    "taglineUrdu": "Ø§Ù¾Ù†ÛŒ Ø¯Ú©Ø§Ù† Ú©Ø§ Ù¾ÙˆØ±Ø§ Ø­Ø³Ø§Ø¨ØŒ Ø§ÛŒÚ© Ø³Ú©Ø±ÛŒÙ† Ù¾Ø±Û”",
-    "tagline": "Billing, khata, stock aur reports â€” offline, kisi bhi Windows PC par.",
-    "siteTitle": "Site",
-    "supportTitle": "Support",
-    "rights": "All rights reserved.",
-    "tiny": "Made for the shopkeepers of Pakistan Â· 100% local data"
+    "taglineUrdu": "اپنی دکان کا پورا حساب، ایک سکرین پر۔",
+    "tagline": "Fast billing, udhaar khata, stock audit aur daily profit — 100% offline kisi bhi Windows PC par.",
+    "siteTitle": "Quick Links",
+    "supportTitle": "Customer Support",
+    "rights": "Rokar POS. All rights reserved.",
+    "tiny": "Made with pride for the hardworking shopkeepers of Pakistan 🇵🇰 · 100% Secure Local Data"
   },
   "stats": [
     {
       "value": 500,
       "suffix": "+",
-      "label": "Shops on Rokar"
+      "label": "Pakistani Retail Dukanain"
     },
     {
-      "value": 8000,
+      "value": 12000,
       "suffix": "+",
-      "label": "Bills billed every day"
+      "label": "Daily Bills Processed"
     },
     {
-      "value": 4.8,
+      "value": 4.9,
       "decimals": 1,
       "suffix": "/5",
-      "label": "Average shopkeeper rating"
+      "label": "Customer Satisfaction"
     },
     {
-      "value": 99,
+      "value": 100,
       "suffix": "%",
-      "label": "Works fully offline"
+      "label": "Offline Billing Reliability"
     }
   ],
   "testimonials": [
     {
-      "quote": "Pehle hisaab ka pata nahi chalta tha, ab har raat poori sales aur profit ki report milti hai.",
+      "quote": "Pehle raat ko 2 ghante hisaab kitab me lagte the aur udhaar ka pata nahi chalta tha. Ab 1 click me poori sale aur bachaat samne hoti hai.",
       "name": "Muhammad Imran",
-      "role": "Kirana shop Â· Lahore"
+      "role": "Al-Madina General Store · Lahore"
     },
     {
-      "quote": "Udhaar ka issue khatam. Kaun kitna baqi hai, ek nazar mein pata chal jata hai.",
+      "quote": "Thermal receipt nikalne me 2 second lagte hain. Grahak khush hota hai aur hamara store bilkul professional supermarket lagta hai.",
       "name": "Abdul Rehman",
-      "role": "General store Â· Faisalabad"
+      "role": "Rehman Cash & Carry · Faisalabad"
     },
     {
-      "quote": "Stock audit pehle 2 din lagta tha, ab ganton mein ho jata hai. Bilkul bharosa.",
+      "quote": "Stock audit feature ne hamari dukan ki inventory ghaltiyan khatam kar di hain. Pata chal jata hai kaun sa item short hai.",
       "name": "Rashid Ahmed",
-      "role": "Cloth merchant Â· Karachi"
+      "role": "Ahmed Garments & Hosiery · Karachi"
     },
     {
-      "quote": "WhatsApp receipt se customers khush hain aur printer toner ka kharcha bhi bach jata hai.",
-      "name": "Sana Khalid",
-      "role": "Cosmetics store Â· Islamabad"
+      "quote": "WhatsApp receipt direct customer ke number pe jati hai. Thermal roll ka kharcha bhi bacha aur customer ko hisaab ka pakka saboot milta hai.",
+      "name": "Haji Shafiq",
+      "role": "Shafiq Pharmacy & Mart · Rawalpindi"
     }
   ],
   "changelog": [
     {
       "version": "2.8.0",
-      "date": "2025-06-12",
-      "title": "Stock Audit revamp + speed boost",
+      "date": "2026-06-12",
+      "title": "Ultra-fast Stock Audit & Margin Engine",
       "notes": [
-        "Faster stock audit engine",
-        "New balance & margin columns in reports",
-        "Improved WhatsApp receipt template"
+        "New Stock Audit engine with 3x faster barcode scanning",
+        "Live margin & net profit percentage columns on billing screen",
+        "Direct WhatsApp receipt template with custom store logo",
+        "BayLan digital weighing scale fast-sync support"
       ]
     },
     {
       "version": "2.7.0",
-      "date": "2025-04-28",
-      "title": "Shift cash & Promotions",
+      "date": "2026-03-20",
+      "title": "Multi-shift Cash Drawer & Promotions",
       "notes": [
-        "Multi-shift cash drawers",
-        "BOGO & auto-discount rules",
-        "BayLan scale preferences"
+        "Independent morning & evening cash drawer balances",
+        "Buy-One-Get-One (BOGO) & wholesale auto-discount triggers",
+        "Enhanced thermal receipt formatting for 58mm & 80mm printers"
       ]
     },
     {
       "version": "2.6.0",
-      "date": "2025-02-15",
-      "title": "Cloud backup & A4 invoices",
+      "date": "2025-11-15",
+      "title": "Cloud Backup & A4 Invoice Studio",
       "notes": [
-        "OneDrive / Google Drive daily backup",
-        "New A4 invoice designer"
+        "Automated encrypted daily backup to Google Drive / OneDrive",
+        "A4 Tax Invoice designer for wholesale & credit supply bills"
       ]
     }
   ],
   "ticker": [
-    "Billing in seconds",
-    "Udhaar / Khata",
-    "Stock Audit",
-    "WhatsApp receipts",
-    "Cloud backup",
-    "Reports & Dashboard",
-    "Wholesale & Retail modes",
-    "Barcode & thermal ready"
+    "⚡ 3-Second Fast Offline Billing",
+    "📒 Udhaar / Khata with WhatsApp Reminders",
+    "📦 Real-time Stock Audit & Low-Stock Alerts",
+    "🧾 Thermal 58mm & 80mm + A4 Printing",
+    "☁️ Daily Google Drive & OneDrive Backup",
+    "📊 Daily Sales & Net Profit Reports",
+    "🏷️ Custom Barcode Label Printing",
+    "👥 Multi-Shift Cashier Management"
   ]
 }

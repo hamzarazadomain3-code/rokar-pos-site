@@ -4,6 +4,19 @@ import Logo from './Logo';
 
 const YEAR = new Date().getFullYear();
 
+const CITIES = [
+  'Lahore',
+  'Karachi',
+  'Rawalpindi',
+  'Islamabad',
+  'Faisalabad',
+  'Multan',
+  'Gujranwala',
+  'Peshawar',
+  'Quetta',
+  'Sialkot',
+];
+
 export default function Footer() {
   return (
     <footer id="contact" className="footer">
@@ -11,10 +24,21 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo src="/logo.png" />
           <p>
-            <span className="urdu">{FOOTER.taglineUrdu}</span>
+            <span className="urdu font-urdu-tagline">{FOOTER.taglineUrdu}</span>
             <br />
             {FOOTER.tagline}
           </p>
+
+          <div className="footer-cities">
+            <span className="cities-label">Trusted across Pakistan:</span>
+            <div className="cities-pills">
+              {CITIES.map((c) => (
+                <span key={c} className="city-pill">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="footer-col">
@@ -24,7 +48,7 @@ export default function Footer() {
               {l.label}
             </a>
           ))}
-          <a href={DOWNLOAD_URL}>Download</a>
+          <a href={DOWNLOAD_URL}>Download Installer</a>
         </div>
 
         <div className="footer-col">
@@ -39,11 +63,12 @@ export default function Footer() {
             href={CONTACT.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="footer-contact"
+            className="footer-contact footer-wa-highlight"
           >
-            <Icon name="whatsapp" size={16} /> WhatsApp
+            <Icon name="whatsapp" size={16} /> WhatsApp Live Chat
           </a>
           <span className="footer-contact footer-muted">{CONTACT.supportHours}</span>
+          <span className="footer-contact footer-muted">Remote Setup via AnyDesk / TeamViewer</span>
         </div>
       </div>
 
