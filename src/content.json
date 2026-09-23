@@ -18,12 +18,30 @@
   },
   "nav": {
     "links": [
-      { "href": "#features", "label": "Features" },
-      { "href": "#tour", "label": "Live Tour" },
-      { "href": "#industries", "label": "Industries" },
-      { "href": "#how", "label": "How it works" },
-      { "href": "#pricing", "label": "Pricing" },
-      { "href": "#download", "label": "Download" }
+      {
+        "href": "#features",
+        "label": "Features"
+      },
+      {
+        "href": "#tour",
+        "label": "Live Tour"
+      },
+      {
+        "href": "#industries",
+        "label": "Industries"
+      },
+      {
+        "href": "#how",
+        "label": "How it works"
+      },
+      {
+        "href": "#pricing",
+        "label": "Pricing"
+      },
+      {
+        "href": "#download",
+        "label": "Download"
+      }
     ]
   },
   "hero": {
@@ -121,7 +139,12 @@
       "urdu": "کریانہ و سپر سٹورز",
       "icon": "shopping-cart",
       "desc": "High-speed barcode checkout, bulk stock management, and customer udhaar khata.",
-      "points": ["Fast barcode scanner support", "Customer credit khata with limits", "Weighing scale integration (BayLan)", "Low-stock refill alerts"]
+      "points": [
+        "Fast barcode scanner support",
+        "Customer credit khata with limits",
+        "Weighing scale integration (BayLan)",
+        "Low-stock refill alerts"
+      ]
     },
     {
       "id": "pharmacy",
@@ -129,7 +152,12 @@
       "urdu": "میڈیکل سٹور و فارمیسی",
       "icon": "activity",
       "desc": "Batch numbers, expiry date alerts, formula search, and supplier invoice records.",
-      "points": ["Expiry date warning alerts", "Batch number tracking on receipts", "Generic salt / formula quick search", "Wholesale supplier payment tracker"]
+      "points": [
+        "Expiry date warning alerts",
+        "Batch number tracking on receipts",
+        "Generic salt / formula quick search",
+        "Wholesale supplier payment tracker"
+      ]
     },
     {
       "id": "bakery",
@@ -137,7 +165,12 @@
       "urdu": "بیکری و مٹھائی شاپ",
       "icon": "coffee",
       "desc": "Fast touch billing, kg & gram weight calculations, and multi-shift cash drawers.",
-      "points": ["Digital weight scale direct sync", "Per-piece & per-kg pricing", "Daily morning & night shift closure", "Fresh item fast key buttons"]
+      "points": [
+        "Digital weight scale direct sync",
+        "Per-piece & per-kg pricing",
+        "Daily morning & night shift closure",
+        "Fresh item fast key buttons"
+      ]
     },
     {
       "id": "garments",
@@ -145,7 +178,12 @@
       "urdu": "گارمنٹس و بوٹ ہاؤس",
       "icon": "tag",
       "desc": "Color, size, and brand variants with custom barcode sticker printing.",
-      "points": ["Size & color matrix stock", "Custom barcode label printing", "Discount and promotional bundles", "Fast exchange / return handling"]
+      "points": [
+        "Size & color matrix stock",
+        "Custom barcode label printing",
+        "Discount and promotional bundles",
+        "Fast exchange / return handling"
+      ]
     },
     {
       "id": "wholesale",
@@ -153,7 +191,12 @@
       "urdu": "تھوک و الیکٹرانکس مارکیٹ",
       "icon": "cpu",
       "desc": "Carton & loose unit billing, serial/IMEI warranty tracking, and dual wholesale pricing.",
-      "points": ["Serial number / IMEI tracking", "Carton to loose pack breakdown", "Wholesale rate vs retail rate toggle", "Customer ledger statement export"]
+      "points": [
+        "Serial number / IMEI tracking",
+        "Carton to loose pack breakdown",
+        "Wholesale rate vs retail rate toggle",
+        "Customer ledger statement export"
+      ]
     }
   ],
   "steps": {
@@ -262,11 +305,26 @@
     "facts": "15 Days Free Full Trial - Windows 10 & 11",
     "requirementsTitle": "Minimum Requirements",
     "requirements": [
-      { "label": "OS", "value": "Windows 10 or 11 (64-bit)" },
-      { "label": "RAM", "value": "Minimum 4 GB" },
-      { "label": "Storage", "value": "500 MB free space" },
-      { "label": "Printer", "value": "58mm / 80mm Thermal (optional)" },
-      { "label": "Internet", "value": "Only needed for cloud backup" }
+      {
+        "label": "OS",
+        "value": "Windows 10 or 11 (64-bit)"
+      },
+      {
+        "label": "RAM",
+        "value": "Minimum 4 GB"
+      },
+      {
+        "label": "Storage",
+        "value": "500 MB free space"
+      },
+      {
+        "label": "Printer",
+        "value": "58mm / 80mm Thermal (optional)"
+      },
+      {
+        "label": "Internet",
+        "value": "Only needed for cloud backup"
+      }
     ],
     "faqTitle": "Common Questions",
     "faq": [
@@ -297,10 +355,26 @@
     "tiny": "Made for the shopkeepers of Pakistan. 100% local data, always private."
   },
   "stats": [
-    { "value": "500+", "label": "Active Shops", "sub": "Across Pakistan" },
-    { "value": "3s", "label": "Bill Speed", "sub": "Average checkout time" },
-    { "value": "Rs 25k", "label": "Udhaar Saved", "sub": "Avg per shop monthly" },
-    { "value": "99.9%", "label": "Uptime", "sub": "Offline, always works" }
+    {
+      "value": "500+",
+      "label": "Active Shops",
+      "sub": "Across Pakistan"
+    },
+    {
+      "value": "3s",
+      "label": "Bill Speed",
+      "sub": "Average checkout time"
+    },
+    {
+      "value": "Rs 25k",
+      "label": "Udhaar Saved",
+      "sub": "Avg per shop monthly"
+    },
+    {
+      "value": "99.9%",
+      "label": "Uptime",
+      "sub": "Offline, always works"
+    }
   ],
   "testimonials": [
     {
@@ -373,5 +447,10 @@
     "Daily Sales & Net Profit Reports",
     "Custom Barcode Label Printing",
     "Multi-Shift Cashier Management"
-  ]
+  ],
+  "_e2eTest": {
+    "ranAt": "2026-09-23T17:36:23.980Z",
+    "note": "pipeline-e2e",
+    "source": "opencode"
+  }
 }
