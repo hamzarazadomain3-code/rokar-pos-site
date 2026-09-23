@@ -1,4 +1,4 @@
-import { NAV_LINKS, DOWNLOAD_URL } from '../content';
+import { NAV_LINKS, DOWNLOAD_URL, FOOTER, CONTACT } from '../content';
 import Icon from './Icon';
 import Logo from './Logo';
 
@@ -11,14 +11,14 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo src="/logo.png" />
           <p>
-            <span className="urdu">اپنی دکان کا پورا حساب، ایک سکرین پر۔</span>
+            <span className="urdu">{FOOTER.taglineUrdu}</span>
             <br />
-            Billing, khata, stock aur reports — offline, kisi bhi Windows PC par.
+            {FOOTER.tagline}
           </p>
         </div>
 
         <div className="footer-col">
-          <h4>Site</h4>
+          <h4>{FOOTER.siteTitle}</h4>
           {NAV_LINKS.map((l) => (
             <a key={l.href} href={l.href}>
               {l.label}
@@ -28,22 +28,30 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <h4>Support</h4>
-          <a href="tel:+923001234567" className="footer-contact">
-            <Icon name="phone" size={16} /> +92 300 1234567
+          <h4>{FOOTER.supportTitle}</h4>
+          <a href={`tel:${CONTACT.phoneTel}`} className="footer-contact">
+            <Icon name="phone" size={16} /> {CONTACT.phone}
           </a>
-          <a href="mailto:support@rokarpos.pk" className="footer-contact">
-            <Icon name="mail" size={16} /> support@rokarpos.pk
+          <a href={`mailto:${CONTACT.email}`} className="footer-contact">
+            <Icon name="mail" size={16} /> {CONTACT.email}
           </a>
-          <span className="footer-contact footer-muted">Mon–Sat · 9am – 9pm</span>
+          <a
+            href={CONTACT.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="footer-contact"
+          >
+            <Icon name="whatsapp" size={16} /> WhatsApp
+          </a>
+          <span className="footer-contact footer-muted">{CONTACT.supportHours}</span>
         </div>
       </div>
 
       <div className="container footer-end">
-        <span>© {YEAR} Rokar POS. All rights reserved.</span>
-        <span className="footer-tiny">
-          Made for the shopkeepers of Pakistan · 100% local data
+        <span>
+          © {YEAR} {FOOTER.rights}
         </span>
+        <span className="footer-tiny">{FOOTER.tiny}</span>
       </div>
     </footer>
   );

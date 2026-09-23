@@ -1,56 +1,57 @@
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
-import { DOWNLOAD_URL, LATEST_VERSION } from '../content';
+import { DOWNLOAD_URL, HERO, LATEST_VERSION, CONTACT } from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
-
-const TRUST = ['Works fully offline', 'Urdu + English', 'Windows 10 / 11', 'Barcode & thermal ready'];
 
 export default function Hero({ scene }: { scene: ReactNode }) {
   return (
     <section id="top" className="section hero">
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-grain" aria-hidden="true" />
+      <div className="hero-orbit hero-orbit--1" aria-hidden="true" />
+      <div className="hero-orbit hero-orbit--2" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-copy">
           <Reveal>
             <span className="eyebrow" style={{ color: 'var(--gold-hi)' }}>
               <span className="eyebrow-dot" />
-              Offline-first POS · Made for Pakistani shops
+              {HERO.eyebrow}
             </span>
           </Reveal>
 
           <Reveal delay={0.08}>
             <h1>
-              Billing, stock aur udhaar —{' '}
-              <span style={{ color: 'var(--gold-hi)' }}>sab ek hi app mein.</span>
+              {HERO.titleA}{' '}
+              <span style={{ color: 'var(--gold-hi)' }}>{HERO.titleB}</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="lead">
-              Rokar is a fast, offline billing &amp; inventory POS built for retail shops in Pakistan.
-              Scan or search, bill in seconds, track udhaar (khata), and know your real profit — no
-              internet? No problem.
-            </p>
+            <p className="lead">{HERO.lead}</p>
           </Reveal>
 
           <Reveal delay={0.24}>
             <div className="hero-cta-row">
-              <a className="btn btn-primary btn-lg" href={DOWNLOAD_URL}>
+              <motion.a
+                className="btn btn-primary btn-lg"
+                href={DOWNLOAD_URL}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.97 }}
+              >
                 <Icon name="download" size={20} />
-                Download for Windows
-              </a>
+                {HERO.ctaDownload}
+              </motion.a>
               <a className="btn btn-ghost btn-lg hero-more" href="#how">
                 <Icon name="play" size={18} />
-                See how it works
+                {HERO.ctaHow}
               </a>
             </div>
           </Reveal>
 
           <Reveal delay={0.32}>
             <div className="hero-chips">
-              {TRUST.map((t) => (
+              {HERO.trust.map((t) => (
                 <span key={t} className="chip">
                   <Icon name="check" size={13} strokeWidth={2.6} />
                   {t}
@@ -61,7 +62,7 @@ export default function Hero({ scene }: { scene: ReactNode }) {
 
           <Reveal delay={0.4}>
             <p className="hero-vmeta">
-              Version {LATEST_VERSION} · Update checks run automatically inside the app
+              Version {LATEST_VERSION} · {HERO.versionNote}
             </p>
           </Reveal>
         </div>
@@ -73,6 +74,10 @@ export default function Hero({ scene }: { scene: ReactNode }) {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
           {scene}
+          <a className="hero-wa" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">
+            <Icon name="whatsapp" size={16} />
+            WhatsApp par poochiye
+          </a>
         </motion.div>
       </div>
     </section>

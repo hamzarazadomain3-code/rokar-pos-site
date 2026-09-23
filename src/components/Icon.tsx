@@ -2,6 +2,7 @@ type IconProps = {
   name: string;
   size?: number;
   strokeWidth?: number;
+  style?: React.CSSProperties;
 };
 
 const PATHS: Record<string, React.ReactNode> = {
@@ -112,9 +113,17 @@ const PATHS: Record<string, React.ReactNode> = {
       <path d="M8.5 11.5l2.5 2.5 4.5-4.5" />
     </>
   ),
+  quote: (
+    <>
+      <path d="M10 8H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h3v-3" stroke="none" fill="currentColor" />
+      <path d="M21 8h-5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h3v-3" stroke="none" fill="currentColor" />
+      <path d="M10 3.5 7.5 8M21 3.5 18.5 8" />
+    </>
+  ),
+  chevron: <path d="M9 5l7 7-7 7" />,
 };
 
-export default function Icon({ name, size = 24, strokeWidth = 1.8 }: IconProps) {
+export default function Icon({ name, size = 24, strokeWidth = 1.8, style }: IconProps) {
   return (
     <svg
       width={size}
@@ -126,6 +135,7 @@ export default function Icon({ name, size = 24, strokeWidth = 1.8 }: IconProps) 
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
+      style={style}
     >
       {PATHS[name] ?? PATHS.check}
     </svg>

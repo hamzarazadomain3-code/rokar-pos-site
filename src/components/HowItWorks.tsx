@@ -1,4 +1,4 @@
-import { STEPS } from '../content';
+import { STEPS_HEAD, STEPS } from '../content';
 import Reveal from './Reveal';
 
 export default function HowItWorks() {
@@ -7,11 +7,9 @@ export default function HowItWorks() {
       <div className="container">
         <Reveal>
           <div className="section-head" style={{ maxWidth: 560 }}>
-            <span className="eyebrow">Getting started</span>
-            <h2>Live billing in 4 steps</h2>
-            <p className="lead">
-              Aaj hi start kijiye — no training course, no IT team. Just a Windows PC.
-            </p>
+            <span className="eyebrow">{STEPS_HEAD.eyebrow}</span>
+            <h2>{STEPS_HEAD.title}</h2>
+            <p className="lead">{STEPS_HEAD.lead}</p>
           </div>
         </Reveal>
 

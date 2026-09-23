@@ -9,9 +9,10 @@ type Props = {
   as?: 'div' | 'section' | 'li';
 };
 
-export default function Reveal({ children, className, delay = 0, y = 28 }: Props) {
+export default function Reveal({ children, className, delay = 0, y = 28, as = 'div' }: Props) {
+  const Tag = motion[as];
   return (
-    <motion.div
+    <Tag
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -19,6 +20,6 @@ export default function Reveal({ children, className, delay = 0, y = 28 }: Props
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
-    </motion.div>
+    </Tag>
   );
 }
