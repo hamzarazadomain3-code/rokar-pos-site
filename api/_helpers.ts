@@ -6,10 +6,6 @@ export const FILE_PATH = 'src/content.json';
 
 const SECRET = process.env.SESSION_SECRET || process.env.ADMIN_PASSWORD || 'rokar-change-me';
 
-function b64url(data: string | Buffer): string {
-  return Buffer.from(data).toString('base64url');
-}
-
 export function signSession(expiresInMs = 1000 * 60 * 60 * 12): string {
   const payload = Buffer.from(
     JSON.stringify({ exp: Date.now() + expiresInMs, sub: 'admin' }),
