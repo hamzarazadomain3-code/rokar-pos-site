@@ -27,14 +27,14 @@ export default function Hero({ scene }: { scene: ReactNode }) {
           <Reveal delay={0.06}>
             <span className="eyebrow" style={{ color: 'var(--gold-hi)' }}>
               <span className="eyebrow-dot" />
-              {HERO.eyebrow}
+              Offline-First POS &mdash; Made for Pakistani Shops
             </span>
           </Reveal>
 
           <Reveal delay={0.12}>
             <h1>
-              {HERO.titleA}{' '}
-              <span className="gradient-gold-text">{HERO.titleB}</span>
+              Billing, stock aur udhaar{' '}
+              <span className="gradient-gold-text">sab ek hi app mein.</span>
             </h1>
           </Reveal>
 
@@ -74,7 +74,7 @@ export default function Hero({ scene }: { scene: ReactNode }) {
           <Reveal delay={0.36}>
             <div className="hero-vmeta-row">
               <p className="hero-vmeta">
-                <span className="vmeta-tag">Official Windows App</span> Version {LATEST_VERSION} · {HERO.versionNote}
+                <span className="vmeta-tag">Official Windows App</span> Version {LATEST_VERSION} &mdash; 15 days free full trial, instant setup
               </p>
             </div>
           </Reveal>

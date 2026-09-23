@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
-import type { SiteContent, Feature, Step, FAQItem, Testimonial, Stat, ChangelogEntry } from '../content-types';
+import type { SiteContent, Feature, Step, FAQItem, Testimonial, Stat, ChangelogEntry, PricingPackage, SystemRequirement } from '../content-types';
 import fallback from '../content.json';
 import { Field, Area, NumField, StringListEditor, ArrayEditor } from './fields';
 import './admin.css';
@@ -273,16 +273,42 @@ function CommerceEditor({ c, setC }: { c: SiteContent; setC: SetContent }) {
         </div>
         <Area label="Lead" value={p.lead} onChange={(v) => setP({ lead: v })} rows={2} />
       </Section>
-      <Section title="Pricing card">
-        <div className="af-row">
-          <Field label="Badge" value={p.badge} onChange={(v) => setP({ badge: v })} />
-          <Field label="Card title" value={p.cardTitle} onChange={(v) => setP({ cardTitle: v })} />
-        </div>
-        <Area label="Card subtitle" value={p.cardSub} onChange={(v) => setP({ cardSub: v })} rows={2} />
-        <Field label="Button label" value={p.cardCta} onChange={(v) => setP({ cardCta: v })} />
+      <Section title="Pricing packages">
+        <ArrayEditor<PricingPackage>
+          label="Pricing packages"
+          items={p.packages}
+          onChange={(packages) => setP({ packages })}
+          addLabel="Add package"
+          makeNew={() => ({ id: 'new', name: 'Naya Plan', urdu: 'پلان', sub: 'Kis ke liye', badge: '', features: [], popular: false })}
+          renderItem={(item, patch) => (
+            <>
+              <div className="af-row">
+                <Field label="Name" value={item.name} onChange={(v) => patch({ name: v })} />
+                <Field label="Urdu name" value={item.urdu} onChange={(v) => patch({ urdu: v })} />
+              </div>
+              <Field label="Subtitle" value={item.sub} onChange={(v) => patch({ sub: v })} />
+              <div className="af-row">
+                <Field label="Badge" value={item.badge} onChange={(v) => patch({ badge: v })} />
+                <label className="af-check">
+                  <input
+                    type="checkbox"
+                    checked={!!item.popular}
+                    onChange={(e) => patch({ popular: e.target.checked })}
+                  />
+                  Popular (highlight)
+                </label>
+              </div>
+              <StringListEditor
+                label="Features"
+                items={item.features}
+                onChange={(features) => patch({ features })}
+                addLabel="Add feature"
+              />
+            </>
+          )}
+        />
       </Section>
       <Section title="Included list">
-        <Field label="Heading" value={p.includesTitle} onChange={(v) => setP({ includesTitle: v })} />
         <StringListEditor
           label="Included items"
           items={p.includes}
@@ -297,21 +323,29 @@ function CommerceEditor({ c, setC }: { c: SiteContent; setC: SetContent }) {
 
       <Section title="Download section">
         <Field label="Eyebrow" value={d.eyebrow} onChange={(v) => setD({ eyebrow: v })} />
-        <Field label="Title" value={d.title} onChange={(v) => setD({ title: v })} />
+        <div className="af-row">
+          <Field label="Title A" value={d.titleA} onChange={(v) => setD({ titleA: v })} />
+          <Field label="Title B (highlight)" value={d.titleB} onChange={(v) => setD({ titleB: v })} />
+        </div>
         <Area label="Lead" value={d.lead} onChange={(v) => setD({ lead: v })} rows={2} />
         <Field label="Button label" value={d.buttonLabel} onChange={(v) => setD({ buttonLabel: v })} />
-        <Field label="Facts line (after version)" value={d.factsPrefix} onChange={(v) => setD({ factsPrefix: v })} />
-        <Area label="Safe note" value={d.safe} onChange={(v) => setD({ safe: v })} rows={2} />
+        <Field label="Facts line (after version)" value={d.facts} onChange={(v) => setD({ facts: v })} />
       </Section>
       <Section title="System requirements">
         <Field label="Heading" value={d.requirementsTitle} onChange={(v) => setD({ requirementsTitle: v })} />
-        <StringListEditor
+        <ArrayEditor<SystemRequirement>
           label="Requirements"
           items={d.requirements}
           onChange={(requirements) => setD({ requirements })}
           addLabel="Add requirement"
+          makeNew={() => ({ label: 'OS', value: 'Windows 10 or 11' })}
+          renderItem={(item, patch) => (
+            <div className="af-row">
+              <Field label="Label" value={item.label} onChange={(v) => patch({ label: v })} />
+              <Field label="Value" value={item.value} onChange={(v) => patch({ value: v })} />
+            </div>
+          )}
         />
-        <Field label="Note" value={d.requirementNote} onChange={(v) => setD({ requirementNote: v })} />
       </Section>
       <Section title="FAQ">
         <Field label="Heading" value={d.faqTitle} onChange={(v) => setD({ faqTitle: v })} />

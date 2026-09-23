@@ -10,7 +10,10 @@ export default function DownloadSection() {
           <Reveal>
             <div className="dl-main">
               <span className="eyebrow">{DOWNLOAD.eyebrow}</span>
-              <h2>{DOWNLOAD.title}</h2>
+              <h2>
+                {DOWNLOAD.titleA}{' '}
+                <em style={{ color: 'var(--teal)', fontStyle: 'normal' }}>{DOWNLOAD.titleB}</em>
+              </h2>
               <p className="lead">{DOWNLOAD.lead}</p>
 
               <div className="dl-meta">
@@ -19,13 +22,8 @@ export default function DownloadSection() {
                   {DOWNLOAD.buttonLabel}
                 </a>
                 <span className="dl-facts">
-                  <b>v{LATEST_VERSION}</b> · {DOWNLOAD.factsPrefix}
+                  <b>v{LATEST_VERSION}</b> · {DOWNLOAD.facts}
                 </span>
-              </div>
-
-              <div className="dl-safe">
-                <Icon name="shield" size={18} />
-                <span>{DOWNLOAD.safe}</span>
               </div>
             </div>
           </Reveal>
@@ -35,13 +33,12 @@ export default function DownloadSection() {
               <h3>{DOWNLOAD.requirementsTitle}</h3>
               <ul>
                 {SYS_REQS.map((r) => (
-                  <li key={r}>
+                  <li key={r.label}>
                     <span className="req-dot" />
-                    {r}
+                    <b>{r.label}:</b> {r.value}
                   </li>
                 ))}
               </ul>
-              <p className="req-note">{DOWNLOAD.requirementNote}</p>
             </div>
           </Reveal>
         </div>

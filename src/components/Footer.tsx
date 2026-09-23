@@ -67,7 +67,7 @@ export default function Footer() {
           >
             <Icon name="whatsapp" size={16} /> WhatsApp Live Chat
           </a>
-          <span className="footer-contact footer-muted">{CONTACT.supportHours}</span>
+          <span className="footer-contact footer-muted">Mon&ndash;Sat &nbsp;|&nbsp; 9am &ndash; 9pm</span>
           <span className="footer-contact footer-muted">Remote Setup via AnyDesk / TeamViewer</span>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Footer() {
         <span>
           © {YEAR} {FOOTER.rights}
         </span>
-        <span className="footer-tiny">{FOOTER.tiny}</span>
+        <span className="footer-tiny">Made for the shopkeepers of Pakistan &mdash; 100% local data, always private.</span>
       </div>
     </footer>
   );

@@ -57,6 +57,11 @@ export type PricingPackage = {
   popular?: boolean;
 };
 
+export type SystemRequirement = {
+  label: string;
+  value: string;
+};
+
 export type SiteContent = {
   meta: {
     name: string;
@@ -107,26 +112,20 @@ export type SiteContent = {
     titleA: string;
     titleB: string;
     lead: string;
-    badge: string;
-    cardTitle: string;
-    cardSub: string;
-    cardCta: string;
-    includesTitle: string;
+    packages: PricingPackage[];
     includes: string[];
-    packages?: PricingPackage[];
     noteHeading: string;
     note: string;
   };
   download: {
     eyebrow: string;
-    title: string;
+    titleA: string;
+    titleB: string;
     lead: string;
     buttonLabel: string;
-    factsPrefix: string;
-    safe: string;
+    facts: string;
     requirementsTitle: string;
-    requirements: string[];
-    requirementNote: string;
+    requirements: SystemRequirement[];
     faqTitle: string;
     faq: FAQItem[];
   };

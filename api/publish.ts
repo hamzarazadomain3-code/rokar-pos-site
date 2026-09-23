@@ -38,6 +38,17 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
     return;
   }
 
+  const jsonCheck = JSON.stringify(body.content);
+  const mojibake =
+    /[\uFFFD]|(?:\u00C2|\u00C3|\u00C4|\u00C5|\u00C6|\u00C7)[\u0080-\u00BF]/.test(jsonCheck);
+  if (mojibake) {
+    await result(400, {
+      error:
+        'Content mein encoding corruption (mojibake) detected - publish cancel. Agar aapne text kisi Excel/Google Sheets ya purani file se copy kiya hai to plain text paste karke dobara try karein.',
+    });
+    return;
+  }
+
   if (!process.env.GH_TOKEN) {
     await result(500, { error: 'GH_TOKEN not configured on server' });
     return;
