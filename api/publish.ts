@@ -1,37 +1,44 @@
+import type { IncomingMessage, ServerResponse } from 'node:http';
 import { verifySession, writeFile, getFileSha } from './_helpers';
 
 export const config = { runtime: 'nodejs' };
 
-function jsonResponse(status: number, body: Record<string, unknown>) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { 'Content-Type': 'application/json' },
-  });
-}
+type Req = IncomingMessage & {
+  body?: { content?: unknown; message?: string };
+  headers: {
+    authorization?: string;
+    [key: string]: string | string[] | undefined;
+  };
+};
 
-export default async function handler(req: Request) {
+export default async function handler(req: IncomingMessage, res: ServerResponse) {
+  const result = async (status: number, obj: Record<string, unknown>) => {
+    res.statusCode = status;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(obj));
+  };
+
   if (req.method !== 'POST') {
-    return jsonResponse(405, { error: 'Method not allowed' });
+    await result(405, { error: 'Method not allowed' });
+    return;
   }
 
-  const token = req.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
+  const authorization = (req.headers['authorization'] as string | undefined) || '';
+  const token = authorization.replace(/^Bearer\s+/i, '');
   if (!verifySession(token)) {
-    return jsonResponse(401, { error: 'Session expired or invalid. Log in again.' });
+    await result(401, { error: 'Session expired or invalid. Log in again.' });
+    return;
   }
 
-  let body: { content?: unknown; message?: string } = {};
-  try {
-    body = (await req.json()) as { content?: unknown; message?: string };
-  } catch {
-    return jsonResponse(400, { error: 'Invalid JSON' });
-  }
-
-  if (!body.content || typeof body.content !== 'object') {
-    return jsonResponse(400, { error: 'content is required' });
+  const body = (req as Req).body;
+  if (!body || typeof body.content !== 'object' || body.content === null) {
+    await result(400, { error: 'content is required' });
+    return;
   }
 
   if (!process.env.GH_TOKEN) {
-    return jsonResponse(500, { error: 'GH_TOKEN not configured on server' });
+    await result(500, { error: 'GH_TOKEN not configured on server' });
+    return;
   }
 
   try {
@@ -41,15 +48,15 @@ export default async function handler(req: Request) {
       typeof body.message === 'string' && body.message.trim()
         ? body.message.trim()
         : 'Site update via admin panel';
-    const result = await writeFile(
+    const commit = await writeFile(
       `${raw}\n`,
       message,
       process.env.GIT_AUTHOR_NAME || 'Rokar Admin',
       process.env.GIT_AUTHOR_EMAIL || 'admin@rokarpos.pk',
     );
-    return jsonResponse(200, { ok: true, ...result });
+    await result(200, { ok: true, ...commit });
   } catch (err) {
     const msg = err instanceof Error ? err.message : 'publish failed';
-    return jsonResponse(500, { error: msg });
+    await result(500, { error: msg });
   }
 }

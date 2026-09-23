@@ -1,34 +1,34 @@
+import type { IncomingMessage, ServerResponse } from 'node:http';
 import { verifyPassword, signSession } from './_helpers';
 
 export const config = { runtime: 'nodejs' };
 
-export default async function handler(req: Request) {
+type Req = IncomingMessage & { body?: { password?: string } };
+
+export default async function handler(req: IncomingMessage, res: ServerResponse) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    res.statusCode = 405;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'Method not allowed' }));
+    return;
   }
 
-  let body: { password?: string } = {};
-  try {
-    body = (await req.json()) as { password?: string };
-  } catch {
-    return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
-      status: 400,
-      headers: { 'Content-Type': 'application/json' },
-    });
+  const body = (req as Req).body;
+  if (!body || typeof body.password !== 'string') {
+    res.statusCode = 400;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'password required' }));
+    return;
   }
 
   if (!verifyPassword(body.password)) {
-    return new Response(JSON.stringify({ error: 'Wrong password' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    res.statusCode = 401;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'Wrong password' }));
+    return;
   }
 
-  return new Response(
-    JSON.stringify({ ok: true, token: signSession() }),
-    { status: 200, headers: { 'Content-Type': 'application/json' } },
-  );
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify({ ok: true, token: signSession() }));
 }
