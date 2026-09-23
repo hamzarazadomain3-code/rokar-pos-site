@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { verifyPassword, signSession } from './_helpers';
+import { verifyPassword, signSession } from './_helpers.js';
 
 export const config = { runtime: 'nodejs' };
 

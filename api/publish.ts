@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { verifySession, writeFile, getFileSha } from './_helpers';
+import { verifySession, writeFile, getFileSha } from './_helpers.js';
 
 export const config = { runtime: 'nodejs' };
 
