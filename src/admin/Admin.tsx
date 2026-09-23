@@ -451,16 +451,33 @@ function Editor({ onLogout }: { onLogout: () => void }) {
 
   const publish = async () => {
     setBusy(true);
-    setMessage('Publishing… (GitHub commit → Vercel rebuild ~30s)');
+    setMessage('Publishing… (GitHub commit → Vercel deploy)');
     try {
       const res = await fetch('/api/publish', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ content, message: reqMsg }),
       });
-      const data = (await res.json()) as { ok?: boolean; commitUrl?: string; error?: string };
+      const data = (await res.json()) as {
+        ok?: boolean;
+        commitUrl?: string;
+        error?: string;
+        deploy?: {
+          ok?: boolean;
+          deployId?: string;
+          deployUrl?: string;
+          skipped?: boolean;
+          reason?: string;
+          error?: string;
+        };
+      };
       if (!res.ok || !data.ok) throw new Error(data.error || 'Publish failed');
-      setMessage(`Published ✓ — Commit: ${data.commitUrl || 'done'}`);
+      const deploy = data.deploy;
+      let deployNote = '';
+      if (deploy?.ok && deploy.skipped) deployNote = ' · Auto-build on (git connected)';
+      else if (deploy?.ok && deploy.deployId) deployNote = ` · Deploy: ${deploy.deployUrl || deploy.deployId}`;
+      else if (deploy && !deploy.ok) deployNote = ` · Deploy FAIL: ${deploy.error}`;
+      setMessage(`Published ✓ — Commit: ${data.commitUrl || 'done'}${deployNote}`);
     } catch (err) {
       setMessage(`Publish nahi hua: ${err instanceof Error ? err.message : 'error'}`);
     } finally {
@@ -522,7 +539,7 @@ function Editor({ onLogout }: { onLogout: () => void }) {
             <div className="af-publish-note">
               <span>
                 <b>Kaise chalta hai:</b> "Publish & Deploy" dabane par ye content GitHub par commit hota hai aur Vercel
-                site ko ~30 second me dobara banata hai. Har publish git history me saved rehta hai.
+                site foran dobara banata hai (site ~30 second me live ho jati hai). Har publish git history me saved rehta hai.
               </span>
               <textarea
                 className="af-input"

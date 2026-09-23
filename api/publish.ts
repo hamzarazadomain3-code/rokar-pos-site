@@ -1,7 +1,9 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { verifySession, writeFile, getFileSha } from './_helpers.js';
+import { triggerDeployment } from './_deploy.js';
 
 export const config = { runtime: 'nodejs' };
+export const maxDuration = 60;
 
 type Req = IncomingMessage & {
   body?: { content?: unknown; message?: string };
@@ -54,7 +56,12 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       process.env.GIT_AUTHOR_NAME || 'Rokar Admin',
       process.env.GIT_AUTHOR_EMAIL || 'admin@rokarpos.pk',
     );
-    await result(200, { ok: true, ...commit });
+    const deploy = await triggerDeployment({
+      message,
+      commitSha: commit.commitSha || '',
+      commitUrl: commit.commitUrl || '',
+    });
+    await result(200, { ok: true, ...commit, deploy });
   } catch (err) {
     const msg = err instanceof Error ? err.message : 'publish failed';
     await result(500, { error: msg });
