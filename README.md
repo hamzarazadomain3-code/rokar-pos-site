@@ -24,7 +24,7 @@ All site copy + links live in **`src/content.ts`**:
 
 | Constant | What to change |
 | --- | --- |
-| `DOWNLOAD_URL` | The installer link. Currently points at the live GitHub latest: `…/pos-releases/releases/latest/download/RokarPOS-Setup-2.8.0.exe`. Swap to your own host when ready. |
+| `DOWNLOAD_URL` | The installer link. Currently pinned per release: `…/pos-releases/releases/download/v2.9.0/RokarPOS-Setup-2.9.0.exe`. Update both this and `LATEST_VERSION` when you ship a new installer. |
 | `LATEST_VERSION` | Bump when you ship a new release. |
 | `FEATURES`, `STEPS`, `PRICING_INCLUDES`, `SYS_REQS`, `FAQ` | Section copy. |
 | Footer contact (in `src/components/Footer.tsx`) | Phone / email / support hours (currently placeholders). |
