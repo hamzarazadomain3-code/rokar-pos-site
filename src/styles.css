@@ -52,6 +52,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 16px);
+  overflow-x: hidden;
 }
 
 body {
@@ -270,6 +271,7 @@ a {
 .section--teal {
   background: radial-gradient(1000px 600px at 50% 0%, #0d4a3b 0%, var(--teal-deep) 100%);
   color: var(--cream);
+  overflow: hidden;
 }
 
 .section--teal h2,
