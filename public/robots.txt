@@ -1,0 +1,14 @@
+# Rokar POS — https://rokarpos.co.uk/
+#
+# The whole site is one page, so the crawler is told to sit on the homepage
+# rather than crawl a set of empty section URLs (#features, #pricing, ...).
+# Those fragments are the same document and only waste crawl budget.
+
+User-agent: *
+Allow: /
+
+# /#/admin is the private content editor. It is a client-side route, so no
+# crawler ever sees a real page here, but the exclusion documents the intent.
+Disallow: /admin
+
+Sitemap: https://rokarpos.co.uk/sitemap.xml

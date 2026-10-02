@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { INDUSTRIES } from '../content';
+import { INDUSTRIES, DOWNLOAD_URL, HAS_WHATSAPP, WHATSAPP_NUMBER } from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
@@ -76,16 +76,22 @@ export default function IndustrySolutions() {
                   </ul>
 
                   <div className="ind-cta-row">
-                    <a
-                      className="btn btn-primary btn-sm"
-                      href={`https://wa.me/923001234567?text=Assalam%20o%20Alaikum,%20meri%20${encodeURIComponent(
-                        activeIndustry.name,
-                      )}%20ki%20shop%20hai,%20mujhe%20Rokar%20POS%20demo%20chahiye.`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="whatsapp" size={16} /> Is Category Ka Demo Mangein
-                    </a>
+                    {HAS_WHATSAPP ? (
+                      <a
+                        className="btn btn-primary btn-sm"
+                        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                          `Assalam o Alaikum, meri ${activeIndustry.name} ki shop hai, mujhe Rokar POS demo chahiye.`,
+                        )}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon name="whatsapp" size={16} /> Is Category Ka Demo Mangein
+                      </a>
+                    ) : (
+                      <a className="btn btn-primary btn-sm" href={DOWNLOAD_URL}>
+                        <Icon name="download" size={16} /> Free Trial Se Dekhein
+                      </a>
+                    )}
                   </div>
                 </div>
 

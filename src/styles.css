@@ -49,6 +49,36 @@
   box-sizing: border-box;
 }
 
+/* Visible keyboard focus. The site previously had no :focus styling at all,
+   so a keyboard user tabbing through the page could not tell where they were
+   (WCAG 2.4.7 Focus Visible). :focus-visible keeps the ring off mouse clicks. */
+:focus-visible {
+  outline: 3px solid var(--gold-hi);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -140%);
+  z-index: 200;
+  padding: 12px 22px;
+  background: var(--teal-deep);
+  color: var(--cream-hi);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 0 0 12px 12px;
+  transition: transform 0.18s ease;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 16px);

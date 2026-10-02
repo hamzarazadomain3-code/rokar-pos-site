@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from './Icon';
 
@@ -32,11 +33,25 @@ export default function ThermalReceiptModal({
   const dateStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
   const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
+  // Escape closes the preview -- a modal you can only dismiss by hitting a tiny X
+  // is unusable from the keyboard.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       <div className="receipt-overlay" onClick={onClose}>
         <motion.div
           className="receipt-modal-wrapper"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Sample thermal receipt preview"
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -66,7 +81,7 @@ export default function ThermalReceiptModal({
                 <h3 className="receipt-shop-name">AL-MADINA CASH & CARRY</h3>
                 <p className="receipt-shop-urdu urdu">المدینہ کیش اینڈ کیری</p>
                 <p className="receipt-shop-address">Main Market, Gulberg III, Lahore</p>
-                <p className="receipt-shop-phone">Tel: 0300-1234567 / 042-3578912</p>
+                <p className="receipt-shop-phone">Sample Shop &mdash; Tel: 0300-0000000</p>
                 <div className="receipt-divider-dashed" />
               </div>
 

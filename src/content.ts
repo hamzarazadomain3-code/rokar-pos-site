@@ -17,8 +17,25 @@ export type { ChangelogEntry, FAQItem, Feature, Industry, PricingPackage, SiteCo
 
 /* ---- site-level ---- */
 export const DOWNLOAD_URL = CONTENT.site.downloadUrl;
+export const RELEASES_PAGE = CONTENT.site.releasesPage || '';
 export const LATEST_VERSION = CONTENT.site.latestVersion;
 export const CONTACT = CONTENT.site.contact;
+
+/**
+ * Contact rows are optional. An empty string means the owner has not filled the
+ * real number in yet, so the UI hides the row entirely instead of publishing a
+ * placeholder that customers could actually dial or message.
+ */
+export const HAS_WHATSAPP = Boolean(CONTACT.whatsapp?.trim());
+export const HAS_PHONE = Boolean(CONTACT.phoneTel?.trim());
+export const HAS_EMAIL = Boolean(CONTACT.email?.trim());
+
+/**
+ * Bare WhatsApp number pulled out of the configured wa.me link, so per-plan and
+ * per-industry links can be built without repeating the digits (and without a
+ * stale number being hard-coded into a component).
+ */
+export const WHATSAPP_NUMBER = CONTACT.whatsapp?.match(/wa\.me\/(\d+)/)?.[1] ?? '';
 
 export const NAV_LINKS = CONTENT.nav.links;
 

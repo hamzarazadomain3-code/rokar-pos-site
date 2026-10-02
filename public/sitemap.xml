@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  One canonical URL: rokarpos.co.uk.
+  www.rokarpos.co.uk is the same document and is handled by <link rel="canonical">
+  in index.html plus the redirect, so listing it here would create a duplicate.
+  The /#/admin editor is a client-side route with no indexable document.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://rokarpos.co.uk/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

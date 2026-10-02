@@ -1,4 +1,4 @@
-import { NAV_LINKS, DOWNLOAD_URL, FOOTER, CONTACT } from '../content';
+import { NAV_LINKS, DOWNLOAD_URL, RELEASES_PAGE, FOOTER, CONTACT, HAS_WHATSAPP, HAS_PHONE, HAS_EMAIL } from '../content';
 import Icon from './Icon';
 import Logo from './Logo';
 
@@ -24,7 +24,9 @@ export default function Footer() {
         <div className="footer-brand">
           <Logo src="/logo.png" />
           <p>
-            <span className="urdu font-urdu-tagline">{FOOTER.taglineUrdu}</span>
+            <span className="urdu font-urdu-tagline" lang="ur">
+              {FOOTER.taglineUrdu}
+            </span>
             <br />
             {FOOTER.tagline}
           </p>
@@ -49,25 +51,51 @@ export default function Footer() {
             </a>
           ))}
           <a href={DOWNLOAD_URL}>Download Installer</a>
+          {RELEASES_PAGE && (
+            <a href={RELEASES_PAGE} target="_blank" rel="noreferrer">
+              All releases &amp; portable version
+            </a>
+          )}
         </div>
 
         <div className="footer-col">
           <h4>{FOOTER.supportTitle}</h4>
-          <a href={`tel:${CONTACT.phoneTel}`} className="footer-contact">
-            <Icon name="phone" size={16} /> {CONTACT.phone}
-          </a>
-          <a href={`mailto:${CONTACT.email}`} className="footer-contact">
-            <Icon name="mail" size={16} /> {CONTACT.email}
-          </a>
-          <a
-            href={CONTACT.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="footer-contact footer-wa-highlight"
-          >
-            <Icon name="whatsapp" size={16} /> WhatsApp Live Chat
-          </a>
-          <span className="footer-contact footer-muted">Mon&ndash;Sat &nbsp;|&nbsp; 9am &ndash; 9pm</span>
+          {HAS_PHONE && (
+            <a href={`tel:${CONTACT.phoneTel}`} className="footer-contact">
+              <Icon name="phone" size={16} /> {CONTACT.phone}
+            </a>
+          )}
+          {HAS_EMAIL && (
+            <a href={`mailto:${CONTACT.email}`} className="footer-contact">
+              <Icon name="mail" size={16} /> {CONTACT.email}
+            </a>
+          )}
+          {HAS_WHATSAPP && (
+            <a
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="footer-contact footer-wa-highlight"
+            >
+              <Icon name="whatsapp" size={16} /> WhatsApp Live Chat
+            </a>
+          )}
+          {/* With no contact row configured, the download button is the only
+              working action on the page -- point people at it instead of an
+              empty column. */}
+          {!HAS_PHONE && !HAS_EMAIL && !HAS_WHATSAPP && (
+            <>
+              <a href={DOWNLOAD_URL} className="footer-contact footer-wa-highlight">
+                <Icon name="download" size={16} /> Download Free Trial
+              </a>
+              <span className="footer-contact footer-muted">
+                Install kar ke khud try karein — koi signup nahi.
+              </span>
+            </>
+          )}
+          {CONTACT.supportHours && (
+            <span className="footer-contact footer-muted">{CONTACT.supportHours}</span>
+          )}
           <span className="footer-contact footer-muted">Remote Setup via AnyDesk / TeamViewer</span>
         </div>
       </div>

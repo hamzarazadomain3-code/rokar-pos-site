@@ -1,4 +1,11 @@
-import { PRICING, PRICING_PACKAGES, CONTACT } from '../content';
+import {
+  PRICING,
+  PRICING_PACKAGES,
+  CONTACT,
+  DOWNLOAD_URL,
+  HAS_WHATSAPP,
+  WHATSAPP_NUMBER,
+} from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
@@ -36,16 +43,25 @@ export default function Pricing() {
                 </div>
 
                 <div className="pkg-cta-wrap">
-                  <a
-                    className={`btn ${pkg.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}
-                    href={`https://wa.me/923001234567?text=Assalam%20o%20Alaikum,%20mujhe%20Rokar%20POS%20ke%20${encodeURIComponent(
-                      pkg.name,
-                    )}%20package%20ka%20price%20aur%20free%20trial%20chahiye.`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon name="whatsapp" size={17} /> 15 Din Free Trial Mangein
-                  </a>
+                  {HAS_WHATSAPP ? (
+                    <a
+                      className={`btn ${pkg.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}
+                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                        `Assalam o Alaikum, mujhe Rokar POS ke ${pkg.name} package ka price aur free trial chahiye.`,
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Icon name="whatsapp" size={17} /> 15 Din Free Trial Mangein
+                    </a>
+                  ) : (
+                    <a
+                      className={`btn ${pkg.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}
+                      href={DOWNLOAD_URL}
+                    >
+                      <Icon name="download" size={17} /> 15 Din Free Trial Start Karein
+                    </a>
+                  )}
                 </div>
 
                 <div className="pkg-features">
@@ -75,14 +91,22 @@ export default function Pricing() {
             <div className="roi-content">
               <h4>Dukaan Ka Nuqsaan Khatam, Munafa Mehfooz</h4>
               <p>
-                Hamare 500+ dukaandar har mahine kam az kam <strong>15-20 ghante hisaab kitab</strong> ke bachate hain aur{' '}
-                <strong>Rs 25,000+ ka bhoola hua udhaar</strong> recover karte hain.
+                Hisaab kaam app par chalne se dhanda <strong>15-20 ghante</strong> azaadi milti hai, aur jo
+                udhaar chipka hua tha wo <strong>bilkul hisaab ke andar</strong> nazar aata hai — koi bhi
+                customer pooche to turant jawab mil jata hai.
               </p>
             </div>
             <div className="roi-action">
-              <a className="btn btn-primary btn-sm" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">
-                Direct WhatsApp Quote
-              </a>
+              {HAS_WHATSAPP ? (
+                <a className="btn btn-primary btn-sm" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">
+                  Direct WhatsApp Quote
+                </a>
+              ) : (
+                <a className="btn btn-primary btn-sm" href={DOWNLOAD_URL}>
+                  <Icon name="download" size={16} />
+                  Free Trial Start Karein
+                </a>
+              )}
             </div>
           </div>
         </Reveal>

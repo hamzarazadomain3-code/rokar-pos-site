@@ -10,6 +10,7 @@ export type Step = {
   title: string;
   desc: string;
   urdu: string;
+  icon?: string;
 };
 
 export type Stat = {
@@ -17,6 +18,7 @@ export type Stat = {
   decimals?: number;
   suffix: string;
   label: string;
+  sub?: string;
 };
 
 export type Testimonial = {
@@ -71,8 +73,11 @@ export type SiteContent = {
   };
   site: {
     downloadUrl: string;
+    releasesPage: string;
     latestVersion: string;
     contact: {
+      /** Empty string means "not configured yet" — components hide the row rather
+       *  than printing a placeholder number at the customer. */
       phone: string;
       phoneTel: string;
       email: string;

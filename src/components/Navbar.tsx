@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState } from 'react';
-import { NAV_LINKS, DOWNLOAD_URL, CONTACT } from '../content';
+import { NAV_LINKS, DOWNLOAD_URL, CONTACT, HAS_WHATSAPP } from '../content';
 import Icon from './Icon';
 import Logo from './Logo';
 
@@ -35,16 +35,18 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
-          <a
-            className="btn btn-ghost nav-wa-btn"
-            href={CONTACT.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            title="Chat on WhatsApp"
-          >
-            <Icon name="whatsapp" size={17} />
-            <span>WhatsApp</span>
-          </a>
+          {HAS_WHATSAPP && (
+            <a
+              className="btn btn-ghost nav-wa-btn"
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              title="Chat on WhatsApp"
+            >
+              <Icon name="whatsapp" size={17} />
+              <span>WhatsApp</span>
+            </a>
+          )}
 
           <a className="btn btn-primary nav-cta" href={DOWNLOAD_URL}>
             <Icon name="download" size={17} />
@@ -72,16 +74,18 @@ export default function Navbar() {
             </a>
           ))}
           <div className="nav-mobile-btns">
-            <a
-              className="btn btn-accent"
-              href={CONTACT.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-            >
-              <Icon name="whatsapp" size={18} />
-              WhatsApp Help & Pricing
-            </a>
+            {HAS_WHATSAPP && (
+              <a
+                className="btn btn-accent"
+                href={CONTACT.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                <Icon name="whatsapp" size={18} />
+                WhatsApp Help &amp; Pricing
+              </a>
+            )}
             <a className="btn btn-primary" href={DOWNLOAD_URL} onClick={() => setOpen(false)}>
               <Icon name="download" size={18} />
               Download Free Trial

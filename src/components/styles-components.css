@@ -274,32 +274,6 @@
   background-clip: text;
 }
 
-.hero-rating-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 999px;
-  padding: 7px 16px;
-  margin-bottom: 12px;
-}
-
-.star-icons {
-  font-size: 0.9rem;
-  letter-spacing: -2px;
-}
-
-.rating-text {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.rating-text strong {
-  color: var(--gold-hi);
-}
-
 .hero-grid {
   position: relative;
   display: grid;
@@ -307,6 +281,83 @@
   gap: clamp(28px, 4vw, 56px);
   align-items: center;
   padding-block: calc(var(--nav-h) + 28px) 40px;
+}
+
+/* ---- Hero poster (CSS-only stand-in for the WebGL scene) ----
+   Used on devices that skip three.js: touch screens, narrow viewports,
+   low-memory machines, "save data" mode and reduced-motion users. */
+.hero-poster {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: clamp(18px, 3vw, 34px);
+}
+
+.hero-poster-slip {
+  width: min(340px, 100%);
+  background: var(--cream-hi);
+  color: var(--charcoal);
+  border-radius: 14px;
+  padding: 20px 20px 16px;
+  box-shadow:
+    0 30px 60px -25px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(16, 185, 129, 0.18);
+  transform: rotate(-1.2deg);
+}
+
+.hero-poster-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed rgba(8, 58, 45, 0.16);
+}
+
+.hero-poster-head b {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+}
+
+.hero-poster-head span {
+  font-size: 0.72rem;
+  color: var(--muted-light);
+}
+
+.hero-poster-items {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.hero-poster-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.82rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(8, 58, 45, 0.07);
+}
+
+.hero-poster-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid var(--teal-deep);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--teal-deep);
+}
+
+.hero-poster-foot {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-accent);
 }
 
 .hero h1 {
@@ -1117,6 +1168,17 @@
   font-weight: 600;
 }
 
+/* Explanatory second line under each figure. Kept dimmer than the label so the
+   number stays the thing the eye lands on. */
+.stat-sub {
+  display: block;
+  max-width: 22ch;
+  margin: 6px auto 0;
+  color: rgba(247, 243, 233, 0.5);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 860px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1718,32 +1780,6 @@
   width: 480px;
   height: 480px;
   background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, transparent 65%);
-}
-
-.hero-rating-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(4, 28, 21, 0.6);
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  backdrop-filter: blur(12px);
-  padding: 6px 16px;
-  border-radius: 999px;
-  margin-bottom: 16px;
-}
-
-.star-icons {
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-
-.rating-text {
-  font-size: 0.84rem;
-  color: var(--cream);
-}
-
-.rating-text strong {
-  color: var(--gold-hi);
 }
 
 .gradient-gold-text {

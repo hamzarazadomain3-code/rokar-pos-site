@@ -1,4 +1,4 @@
-import { DOWNLOAD, DOWNLOAD_URL, FAQ, LATEST_VERSION, SYS_REQS } from '../content';
+import { DOWNLOAD, DOWNLOAD_URL, FAQ, SYS_REQS } from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
@@ -21,9 +21,7 @@ export default function DownloadSection() {
                   <Icon name="download" size={22} />
                   {DOWNLOAD.buttonLabel}
                 </a>
-                <span className="dl-facts">
-                  <b>v{LATEST_VERSION}</b> · {DOWNLOAD.facts}
-                </span>
+                <span className="dl-facts">{DOWNLOAD.facts}</span>
               </div>
             </div>
           </Reveal>

@@ -6,14 +6,15 @@
     "ogDescription": "Offline-first POS with billing, udhaar khata, inventory, reports and thermal receipt printing. Built for small retail shops."
   },
   "site": {
-    "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/download/v2.10.0/RokarPOS-Setup-2.10.0.exe",
+    "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest/download/RokarPOS-Setup.exe",
+    "releasesPage": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest",
     "latestVersion": "2.10.0",
     "contact": {
-      "phone": "+92 300 1234567",
-      "phoneTel": "+923001234567",
-      "email": "support@rokarpos.pk",
+      "phone": "",
+      "phoneTel": "",
+      "email": "",
       "supportHours": "Mon-Sat, 9am - 9pm",
-      "whatsapp": "https://wa.me/923001234567?text=Assalam%20o%20Alaikum%20Rokar%20POS%20team,%20mujhe%20Rokar%20POS%20software%20ke%20baray%20mein%20maloomat%20aur%20free%20trial%20chahiye."
+      "whatsapp": ""
     }
   },
   "nav": {
@@ -48,7 +49,7 @@
     "eyebrow": "Offline-First POS - Made for Pakistani Shops",
     "titleA": "Billing, stock aur udhaar",
     "titleB": "sab ek hi app mein.",
-    "lead": "Rokar is Pakistan's fastest offline billing & inventory software built specifically for retail dukaan owners. Scan barcodes, bill in 3 seconds, track udhaar (khata), and see daily net profit -- no internet needed.",
+    "lead": "Rokar is an offline-first billing & inventory app built specifically for retail dukaan owners. Scan barcodes, bill in seconds, track udhaar (khata), and see daily net profit -- bina internet ke.",
     "ctaDownload": "Download Free Trial (Windows)",
     "ctaHow": "Interactive Live Demo",
     "trust": [
@@ -58,7 +59,7 @@
       "Auto Cloud Backup",
       "Windows 10 / 11 Ready"
     ],
-    "versionNote": "15 days free full trial with instant setup"
+    "versionNote": "15 din ka free full trial — koi card nahi, koi signup nahi"
   },
   "features": {
     "eyebrow": "Sab Kuch Ek Hi App Mein",
@@ -205,24 +206,32 @@
     "lead": "Aaj hi shuru kijiye -- no training course, no IT team needed. Sirf 1 Windows PC.",
     "items": [
       {
+        "num": "01",
         "icon": "download",
         "title": "Download & Install",
-        "desc": "Download the free Windows installer (about 114MB). One-click setup. No technical skills needed."
+        "desc": "Download the free Windows installer (about 120MB). One-click setup. No technical skills needed.",
+        "urdu": "ڈاؤن لوڈ کریں اور انسٹال کریں"
       },
       {
+        "num": "02",
         "icon": "box",
         "title": "Add Your Products",
-        "desc": "Import from Excel or add manually. Scan your existing barcodes. Takes 30 minutes for a full store setup."
+        "desc": "Import from Excel or add manually. Scan your existing barcodes. Takes 30 minutes for a full store setup.",
+        "urdu": "اپنا ساماں شامل کریں"
       },
       {
+        "num": "03",
         "icon": "zap",
         "title": "Start Billing",
-        "desc": "Scan or search items, generate bill, print receipt or send to WhatsApp. Your staff learns in under 1 hour."
+        "desc": "Scan or search items, generate bill, print receipt or send to WhatsApp. Your staff learns in under 1 hour.",
+        "urdu": "بلنگ شروع کر دیں"
       },
       {
+        "num": "04",
         "icon": "chart",
         "title": "See Your Profit",
-        "desc": "Check today's net sales and profit. Review udhaar balances. Export monthly report to Excel in 1 click."
+        "desc": "Check today's net sales and profit. Review udhaar balances. Export monthly report to Excel in 1 click.",
+        "urdu": "اپنا منافع دیکھیں"
       }
     ]
   },
@@ -300,7 +309,7 @@
     "eyebrow": "Abhi Shuru Karein",
     "titleA": "Download Rokar POS",
     "titleB": "Free for 15 Days",
-    "lead": "Windows 10 & 11 ready. About 114MB. One-click install. No internet needed after setup.",
+    "lead": "Windows 10 & 11 ready. About 120 MB. One-click install. No internet needed after setup.",
     "buttonLabel": "Download Free Trial",
     "facts": "15 Days Free Full Trial - Windows 10 & 11",
     "requirementsTitle": "Minimum Requirements",
@@ -343,69 +352,64 @@
       {
         "q": "Setup mein kitna waqt lagta hai?",
         "a": "15 minute install, 30 minute product entry. Hum AnyDesk par free remote setup bhi dete hain."
+      },
+      {
+        "q": "Mera data kahan rehta hai? Agar computer kharab ho jaye to?",
+        "a": "Poora data aap ke PC ke andar hi rehta hai. Saath hi rozana encrypted backup Google Drive ya OneDrive par banta hai, jise aap kisi bhi doosre PC par wapas le sakte hain."
+      },
+      {
+        "q": "Kya yeh mobile ya tablet par bhi chalega?",
+        "a": "Rokar Windows PC ke liye hai (Windows 10/11). Mobile ka istemaal receipt bhejne ke liye hota hai -- har bill 1-click mein customer ke WhatsApp par chala jaata hai."
+      },
+      {
+        "q": "Invoice mein Urdu ya English dono aa sakte hain?",
+        "a": "Haan. Receipt aap Urdu ya English mein chun sakte hain, aur alag se A4 tax invoice bhi banta hai jo wholesale aur udhaar ke billon ke liye use hota hai."
+      },
+      {
+        "q": "Agar owner ka password bhool jaye to?",
+        "a": "Aap ek baar security question set kar lein, phir login screen par 'Forgot password?' se khud naya password rakh lein. Saath hi aik recovery code bhi milta hai jo note kar ke rakhein. Koi aur option ho to hum support code se madad kar dete hain."
+      },
+      {
+        "q": "Update ke liye baar baar download karna padega?",
+        "a": "Nahi. App khud update check karta hai. Naya version aate hi andar se notification aa jaati hai aur ek click mein update ho jata hai."
       }
     ]
   },
   "footer": {
-    "taglineUrdu": "پاکستانی دکانداروں کی پہلی پسند",
-    "tagline": "Pakistan's #1 Offline Retail POS",
+    "taglineUrdu": "پاکستانی دکانوں کے لیے بلنگ اور اسٹاک سافٹ ویئر",
+    "tagline": "Offline billing & inventory software for Pakistani shops.",
     "siteTitle": "Site",
     "supportTitle": "Support",
     "rights": "All rights reserved.",
-    "tiny": "Made for the shopkeepers of Pakistan. 100% local data, always private."
+    "tiny": "Made for the shopkeepers of Pakistan. Aap ka data aap ke PC par rehta hai."
   },
   "stats": [
     {
-      "value": "500+",
-      "label": "Active Shops",
-      "sub": "Across Pakistan"
+      "value": 100,
+      "suffix": "%",
+      "label": "Bilkul Offline",
+      "sub": "Internet sirf cloud backup ke liye chahiye"
     },
     {
-      "value": "3s",
-      "label": "Bill Speed",
-      "sub": "Average checkout time"
+      "value": 3,
+      "suffix": "s",
+      "label": "Average Bill Time",
+      "sub": "Barcode scan ya 2-letter search se"
     },
     {
-      "value": "Rs 25k",
-      "label": "Udhaar Saved",
-      "sub": "Avg per shop monthly"
+      "value": 15,
+      "suffix": " din",
+      "label": "Free Full Trial",
+      "sub": "Koi card ya payment ki zarurat nahi"
     },
     {
-      "value": "99.9%",
-      "label": "Uptime",
-      "sub": "Offline, always works"
+      "value": 58,
+      "suffix": " / 80mm",
+      "label": "Thermal Printer Support",
+      "sub": "A4 tax invoice aur barcode labels bhi"
     }
   ],
-  "testimonials": [
-    {
-      "name": "Asif Bhai",
-      "role": "Kirana Store Owner, Lahore",
-      "avatar": "AB",
-      "text": "Pehle hisaab kitab mein 2 ghante lagte the. Ab 10 minute. Staff bhi sirf ek din mein seekh gaya.",
-      "stars": 5
-    },
-    {
-      "name": "Dr. Naveed",
-      "role": "Medical Store, Faisalabad",
-      "avatar": "DN",
-      "text": "Expiry date alerts ne bahut nuqsaan bachaya. Udhaar khata bhi perfectly track hota hai ab.",
-      "stars": 5
-    },
-    {
-      "name": "Tariq Sahab",
-      "role": "Wholesale Distributor, Karachi",
-      "avatar": "TS",
-      "text": "3 branches ka data ek jagah, profit reports daily email par. Bohot shandar system hai.",
-      "stars": 5
-    },
-    {
-      "name": "Sana Bibi",
-      "role": "Bakery Owner, Islamabad",
-      "avatar": "SB",
-      "text": "Weighing scale se connect ho gaya aur per-kg billing automatic. Bohot time bachata hai.",
-      "stars": 5
-    }
-  ],
+  "testimonials": [],
   "changelog": [
     {
       "version": "2.10.0",

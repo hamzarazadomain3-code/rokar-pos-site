@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from './Icon';
-import { CONTACT } from '../content';
+import { CONTACT, HAS_WHATSAPP } from '../content';
 
 export default function WhatsAppFloat() {
   const [hovered, setHovered] = useState(false);
+
+  // Hidden until a real WhatsApp number is configured, otherwise this would be a
+  // button that messages a stranger.
+  if (!HAS_WHATSAPP) return null;
 
   return (
     <div className="wa-float-container">

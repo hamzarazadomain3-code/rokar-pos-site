@@ -1,4 +1,4 @@
-import { CHANGELOG, DOWNLOAD_URL, LATEST_VERSION } from '../content';
+import { CHANGELOG, DOWNLOAD_URL } from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
@@ -20,7 +20,7 @@ export default function Changelog() {
           {CHANGELOG.map((c, i) => (
             <Reveal key={c.version} delay={i * 0.06}>
               <article className={`ch-card ${i === 0 ? 'ch-card--latest' : ''}`}>
-                {i === 0 && <span className="ch-latest">v{LATEST_VERSION}</span>}
+                {i === 0 && <span className="ch-latest">Latest</span>}
                 <div className="ch-meta">
                   <b>v{c.version}</b>
                   <span>{c.date}</span>

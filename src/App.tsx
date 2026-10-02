@@ -1,4 +1,4 @@
-import { Suspense, lazy, useMemo } from 'react';
+import { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Ticker from './components/Ticker';
@@ -13,37 +13,14 @@ import Changelog from './components/Changelog';
 import Download from './components/Download';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import { useCanRender3D } from './hooks/useCanRender3D';
 
 const Hero3D = lazy(() => import('./components/Hero3D'));
 const Admin = lazy(() => import('./admin/Admin'));
 const AdminGate = lazy(() => import('./admin/AdminGate'));
 
 export default function App() {
-  const scene = useMemo(
-    () => (
-      <Suspense
-        fallback={
-          <div
-            style={{
-              width: '100%',
-              aspectRatio: '4/3',
-              display: 'grid',
-              placeItems: 'center',
-              color: 'rgba(251,250,247,0.6)',
-              font: '700 13px Plus Jakarta Sans, sans-serif',
-              letterSpacing: '0.14em',
-            }}
-          >
-            ⚡ LOADING TERMINAL
-          </div>
-        }
-      >
-        <Hero3D />
-      </Suspense>
-    ),
-    [],
-  );
-
+  const canRender3D = useCanRender3D();
   const hash = typeof window !== 'undefined' ? window.location.hash : '';
 
   return (
@@ -55,8 +32,10 @@ export default function App() {
       ) : (
         <>
           <Navbar />
-          <main>
-            <Hero scene={scene} />
+          <main id="main">
+            {/* three.js is ~1 MB, so it is only pulled in on devices that can
+                actually run it. Everywhere else the hero falls back to a poster. */}
+            <Hero scene={canRender3D ? <Hero3D /> : null} />
             <Ticker />
             <Features />
             <ProductTour />

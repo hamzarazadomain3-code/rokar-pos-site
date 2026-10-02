@@ -2,36 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rokar POS — Retail Billing & Inventory Software for Pakistani Shops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Rokar POS — Billing, Udhaar Khata &amp; Stock Software for Shops in Pakistan</title>
     <meta
       name="description"
-      content="Rokar POS is Pakistan's premier offline-first billing & inventory software for retail stores, superstores, pharmacies, bakeries & garments. Fast billing, udhaar khata, thermal printing & daily cloud backup on Windows."
+      content="Offline billing, udhaar khata, stock audit aur daily profit reports — Windows 10/11 ke liye. 15 din ka free trial, koi signup nahi, aur internet sirf backup ke liye chahiye."
     />
-    <meta name="keywords" content="Rokar POS, POS software Pakistan, retail billing software, udhaar khata app, grocery POS, pharmacy POS, thermal receipt printer, Windows billing app" />
+    <!-- Long-tail terms the page actually covers. Kept short: a stuffed keyword
+         list reads as spam and modern Google ignores the meta keywords tag. -->
+    <meta
+      name="keywords"
+      content="billing software Pakistan, udhaar khata software, grocery POS, pharmacy billing software, retail POS Lahore, offline billing app, thermal receipt software"
+    />
+    <meta name="author" content="Rokar POS" />
     <meta name="theme-color" content="#041c15" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- max-image-preview:large lets Google show the receipt screenshots from the
+         product tour in search results instead of a thumbnail. -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Local SEO: tells Google this is a Pakistan-facing product. -->
+    <meta name="geo.region" content="PK" />
+    <meta name="geo.placename" content="Pakistan" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rokar POS" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:url" content="https://rokarpos.co.uk/" />
     <meta property="og:title" content="Rokar POS — Apni Dukaan Ka Poora Hisaab, Ek Screen Par" />
-    <meta property="og:description" content="100% Offline-first POS software with 3-second billing, udhaar khata, stock audit, thermal receipts & WhatsApp billing. Try 15 days free." />
+    <meta
+      property="og:description"
+      content="100% Offline POS software with fast billing, udhaar khata, stock audit, thermal receipts &amp; WhatsApp billing. 15 din ka free trial."
+    />
     <meta property="og:image" content="https://rokarpos.co.uk/og-cover.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rokar POS billing screen showing a live receipt and stock report" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rokar POS — Pakistani Retail Billing & Inventory Software" />
-    <meta name="twitter:description" content="Fast offline billing, udhaar khata, and stock audit for retail stores in Pakistan." />
+    <meta name="twitter:title" content="Rokar POS — Billing &amp; Inventory Software for Pakistani Shops" />
+    <meta
+      name="twitter:description"
+      content="Fast offline billing, udhaar khata and stock audit for retail stores in Pakistan."
+    />
     <meta name="twitter:image" content="https://rokarpos.co.uk/og-cover.png" />
+    <meta name="twitter:image:alt" content="Rokar POS billing screen showing a live receipt and stock report" />
 
     <!-- Canonical: both rokarpos.co.uk and www.rokarpos.co.uk are served,
          this tells search engines which one is the primary. -->
     <link rel="canonical" href="https://rokarpos.co.uk/" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,31 +67,17 @@
       rel="stylesheet"
     />
 
-    <!-- Structured Data for Google Search -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Rokar POS",
-      "operatingSystem": "Windows 10, Windows 11",
-      "applicationCategory": "BusinessApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "PKR",
-        "description": "15 Days Free Trial"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "540"
-      },
-      "description": "Offline-first retail POS billing and inventory management software for Pakistani shopkeepers."
-    }
-    </script>
+    <!--
+      Structured data is generated at build time from src/content.json by the
+      rokar-seo plugin in vite.config.ts, so the FAQ schema can never drift away
+      from the questions the page actually shows. Edit content.json, not this.
+    -->
+    <!--@seo:jsonld-->
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div id="root"></div>
+    <!--@seo:noscript-->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
