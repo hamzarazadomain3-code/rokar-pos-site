@@ -6,8 +6,8 @@
     "ogDescription": "Offline-first POS with billing, udhaar khata, inventory, reports and thermal receipt printing. Built for small retail shops."
   },
   "site": {
-    "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/download/v2.9.0/RokarPOS-Setup-2.9.0.exe",
-    "latestVersion": "2.9.0",
+    "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/download/v2.10.0/RokarPOS-Setup-2.10.0.exe",
+    "latestVersion": "2.10.0",
     "contact": {
       "phone": "+92 300 1234567",
       "phoneTel": "+923001234567",
@@ -408,12 +408,25 @@
   ],
   "changelog": [
     {
+      "version": "2.10.0",
+      "date": "2026-10-02",
+      "title": "Password Recovery — koi bhi khud password reset kar le",
+      "notes": [
+        "Security question set karein, phir 'Forgot password?' se khud naya password rakhein",
+        "Ek recovery code bhi milta hai — wo note kar lein, agar security question bhool jayein",
+        "Support ke liye: Ctrl+Shift+Alt+R se Device ID dikhata hai, support code se unlock",
+        "5 galat koshishon ke baad 10 minute ka lock — koi guess nahi kar sakta"
+      ]
+    },
+    {
       "version": "2.9.0",
       "date": "2026-09-29",
-      "title": "TODO - 2.9.0 release title yahan likhein",
+      "title": "Reliable Printing — 58mm/80mm receipts, invoices aur labels",
       "notes": [
-        "TODO - naye features aur fixes ki list yahan likhein",
-        "TODO - admin panel se edit kar sakte hain"
+        "58mm aur 80mm dono paper par sahi receipts, A4/A5 invoices",
+        "Roll aur sheet barcode label printing, har slot ka apna printer",
+        "Narrow paper par receipt ka table do line mein toot-ta hai — ab sahi chalta hai",
+        "A4 par koi column kat nahi hota (automatic layout audit)"
       ]
     },
     {
