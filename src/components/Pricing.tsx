@@ -89,11 +89,12 @@ export default function Pricing() {
               <Icon name="chart" size={32} />
             </div>
             <div className="roi-content">
-              <h4>Dukaan Ka Nuqsaan Khatam, Munafa Mehfooz</h4>
+              <h4>Hisaab Hamesha Aap Ke Paas</h4>
               <p>
-                Hisaab kaam app par chalne se dhanda <strong>15-20 ghante</strong> azaadi milti hai, aur jo
-                udhaar chipka hua tha wo <strong>bilkul hisaab ke andar</strong> nazar aata hai — koi bhi
-                customer pooche to turant jawab mil jata hai.
+                Jo udhaar chipka hua tha wo <strong>bilkul hisaab ke andar</strong> nazar aata hai
+                — koi bhi customer pooche to turant jawab mil jata hai. Har raat 2 baje{' '}
+                <strong>aap ke folder mein backup</strong> banta hai, aur PC badalne par wahi
+                backup wapas restore ho jaata hai.
               </p>
             </div>
             <div className="roi-action">

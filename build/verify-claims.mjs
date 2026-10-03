@@ -88,14 +88,6 @@ const BANNED = [
     why: 'no such implementation; this is the kind of claim that invites a breach-of-contract letter',
   },
   {
-    re: /\bno annual lock-?in\b/i,
-    why: 'license-server/server.js:75-81 stamps every key with expires = now + 365 days. The site was claiming the exact opposite of what the server does.',
-  },
-  {
-    re: /\blifetime\s+licen[cs]e\b/i,
-    why: 'same 365-day expiry. Blocked until the licensing model is actually changed in code.',
-  },
-  {
     re: /\bIMEI\b/i,
     why: 'no serial-number, IMEI or warranty tracking exists anywhere in the source',
   },
@@ -108,8 +100,16 @@ const BANNED = [
     why: 'nothing records bill timings, so any number here is invented',
   },
   {
-    re: /\bsubscription\b[^.]{0,30}\b(?:month|year)\b/i,
-    why: 'the site does not publish prices or a billing period, so this hints at terms that were never decided',
+    re: /\bunlimited\s+(?:pc|pc\s+|device|computer|device)s?\s*licen[cs]e/i,
+    why: 'server.js always enforces max_devices (default 5). The device block was dead code until the client started sending device_id, so "unlimited" was never true and is now demonstrably false.',
+  },
+  {
+    re: /\b\d+\s*[-–]\s*\d+\s*(?:ghant[ae]|hours?|hrs?)\b/i,
+    why: 'nothing measures how many hours a shop saves. The ROI banner in Pricing.tsx claimed "15-20 ghante" with no source at all.',
+  },
+  {
+    re: /\bnuqsaan\s+khatam\b|\bdata\s+loss\b[^.]{0,24}\b(?:khatam|zero|never)\b/i,
+    why: 'an absolute outcome claim. Accounts get mis-entered; the software cannot promise a loss never happens',
   },
 ];
 
@@ -226,7 +226,75 @@ for (let i = 1; i < content.changelog.length; i++) {
     problems.push(`changelog dates must ascend: ${versions[i]} (${cur}) is dated after ${versions[i - 1]} (${prev})`);
 }
 
+// --- licensing cross-check: the one claim that depends on code ------------
+// "Lifetime licence" and "No annual lock-in" are not on the ban list any more,
+// because as of 2026-10-03 they are true: license-server has a `lifetime` flag and
+// the client honours it. A ban list can only prove a claim is FALSE, so these two
+// are checked against the real source instead, which is the only thing that can
+// tell us they became true.
+//
+// This needs the app repo, which lives outside the site repo, so it is skipped
+// when ROKAR_APP_DIR is unset (Vercel's build image has no checkout of the app).
+// Skipping is reported loudly rather than silently, because a claim that was true
+// when the rule was written can quietly become false again on the next release.
+const PERSISTENT_CLAIM = /\b(?:lifetime\s+licen[cs]e|no annual lock-?in|one-?time\s+(?:payment|purchase)|koi renewal nahi|renewal nahi)\b/i;
+
+function crossCheckLicensing() {
+  const appDir = process.env.ROKAR_APP_DIR;
+  const copyMentionsIt = [...sentences(JSON.stringify(content))].some((s) =>
+    PERSISTENT_CLAIM.test(s),
+  );
+  if (!copyMentionsIt) {
+    console.log('licensing cross-check: copy makes no perpetual claim, nothing to verify.');
+    return;
+  }
+  if (!appDir) {
+    problems.push(
+      'the site claims a perpetual licence but ROKAR_APP_DIR is not set, so the claim ' +
+        'cannot be checked against the code. Locally run:\n' +
+        '      $env:ROKAR_APP_DIR="E:\\antigravty\\billing softwere\\pos-app"; npm run verify:claims',
+    );
+    return;
+  }
+  const files = {
+    'license-server/server.js': [
+      [/lifetime\s+INTEGER/, 'a lifetime column'],
+      [/const LIFETIME_SENTINEL/, 'a lifetime sentinel date'],
+      [/lifetime\s*=\s*true/, 'new keys default to perpetual'],
+    ],
+    'src/main/services/licensing.ts': [
+      // Matched on the setting, not on the helper name: an earlier version of this
+      // rule tested for /isLifetime/ and a negative test that only renamed the
+      // function slipped straight through, because the rename left the capital I.
+      // `license_lifetime` is the load-bearing string -- if the client stops
+      // reading or writing it, the perpetual claim is false again.
+      [/license_lifetime/, 'the client reads and writes license_lifetime'],
+      [/device_id:\s*getDeviceId\(\)/, 'device_id is actually sent'],
+    ],
+  };
+  for (const [rel, rules] of Object.entries(files)) {
+    let src;
+    try {
+      src = readFileSync(join(appDir, rel), 'utf8');
+    } catch {
+      problems.push(`ROKAR_APP_DIR is set but ${rel} could not be read from it`);
+      continue;
+    }
+    for (const [re, what] of rules) {
+      if (!re.test(src))
+        problems.push(
+          `the site promises a perpetual licence, but ${rel} no longer contains ${what}.\n` +
+            '      Either the licensing was reverted, or the site copy is now a lie.',
+        );
+    }
+  }
+  if (!problems.some((p) => p.includes('perpetual licence')))
+    console.log('licensing cross-check: perpetual claims verified against pos-app source.');
+}
+
 // --- report ---------------------------------------------------------------
+crossCheckLicensing();
+
 if (allowlisted.length) {
   console.log(`allowlisted ${allowlisted.length} phrase(s):`);
   for (const a of allowlisted) console.log(`  - ${a.why}`);

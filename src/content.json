@@ -235,9 +235,9 @@
     "eyebrow": "Transparent Pricing",
     "titleA": "Aapki Dukaan Ka Size,",
     "titleB": "Wohi Pricing.",
-    "lead": "No hidden fees. Start with a 15-day free full trial. Pay only when you're 100% satisfied.",
+    "lead": "One-time payment. Lifetime licence — expiry ki koi date nahi, renewal bhi nahi. Pehle 15 din free trial chala lein, phir khareed lein.",
     "noteHeading": "Free Trial Included",
-    "note": "Every plan starts with a 15-day completely free full trial. No credit card required. Instant WhatsApp setup support included.",
+    "note": "Har package 15-din ka poora free trial deta hai. Koi card ya signup nahi. Licence ek baar khareedne ke baad lifetime chalta hai — har saal koi renewal fee nahi.",
     "packages": [
       {
         "id": "starter",
@@ -247,7 +247,7 @@
         "popular": false,
         "badge": "",
         "features": [
-          "1 PC license",
+          "1 PC tak license",
           "Unlimited billing & products",
           "Udhaar / Khata management",
           "Thermal receipt printing",
@@ -265,14 +265,12 @@
         "popular": true,
         "badge": "Most Popular",
         "features": [
-          "Up to 3 PC licenses",
+          "3 PC tak license",
           "Everything in Starter",
           "Multi-cashier shift management",
           "Wholesale & retail dual pricing",
           "Barcode label printing",
-          "A4 invoice printing",
-          "Priority WhatsApp support",
-          "Remote setup via AnyDesk"
+          "A4 invoice printing"
         ]
       },
       {
@@ -283,7 +281,7 @@
         "popular": false,
         "badge": "",
         "features": [
-          "Unlimited PC licenses",
+          "5 PC tak license (zarurat par barhaya jata hai)",
           "Everything in Pro",
           "Branch-wise profit reports",
           "Custom receipt branding"
@@ -291,7 +289,7 @@
       }
     ],
     "includes": [
-      "Free installation & setup",
+      "Lifetime licence — koi renewal nahi",
       "Barcode scanning & label printing",
       "Thermal printer support",
       "WhatsApp support"
@@ -356,6 +354,10 @@
       {
         "q": "Invoice aur receipt kis tarah banti hai?",
         "a": "Receipt English mein aati hai. Alag se A4 tax invoice bhi banta hai jo wholesale aur udhaar ke billon ke liye use hota hai."
+      },
+      {
+        "q": "Licence ka masla hai? Kya har saal paisa dena parta hai?",
+        "a": "Nahi. Aik baar payment ke baad licence lifetime chalta hai — koi expiry date nahi, koi renewal nahi. Bas wohi PC chalayein jis par pehli baar activate kiya gaya tha; har package ki apni PC limit hoti hai."
       },
       {
         "q": "Agar owner ka password bhool jaye to?",
