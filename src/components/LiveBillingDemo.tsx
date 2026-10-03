@@ -142,7 +142,7 @@ export default function LiveBillingDemo() {
         <div className="demo-terminal">
           <div className="terminal-header">
             <div className="terminal-store">
-              <b>ROKAR POS · v2.8</b>
+              <b>ROKAR POS</b>
               <span>Bill #1048 · Walk-in Counter</span>
             </div>
             <button className="terminal-clear" onClick={clearCart} title="Clear cart">

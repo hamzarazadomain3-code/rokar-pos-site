@@ -1,0 +1,53 @@
+{
+  "generatedFrom": "Rokar POS v2.10.0",
+  "shop": "Al-Madina General Store",
+  "sampleData": true,
+  "viewport": {
+    "width": 1299,
+    "height": 680
+  },
+  "shots": [
+    {
+      "screen": "dashboard",
+      "file": "dashboard.webp",
+      "kb": 81,
+      "width": 1949,
+      "height": 1020
+    },
+    {
+      "screen": "billing",
+      "file": "billing.webp",
+      "kb": 71,
+      "width": 1949,
+      "height": 1020
+    },
+    {
+      "screen": "inventory",
+      "file": "inventory.webp",
+      "kb": 73,
+      "width": 1949,
+      "height": 1020
+    },
+    {
+      "screen": "udhaar",
+      "file": "udhaar.webp",
+      "kb": 64,
+      "width": 1949,
+      "height": 1020
+    },
+    {
+      "screen": "purchases",
+      "file": "purchases.webp",
+      "kb": 47,
+      "width": 1949,
+      "height": 1020
+    },
+    {
+      "screen": "reports",
+      "file": "reports.webp",
+      "kb": 55,
+      "width": 1949,
+      "height": 1020
+    }
+  ]
+}

@@ -121,6 +121,13 @@ const PATHS: Record<string, React.ReactNode> = {
     </>
   ),
   chevron: <path d="M9 5l7 7-7 7" />,
+  zoom: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20l-3.5-3.5M11 8v6M8 11h6" />
+    </>
+  ),
+  close: <path d="M6 6l12 12M18 6L6 18" />,
 };
 
 export default function Icon({ name, size = 24, strokeWidth = 1.8, style }: IconProps) {

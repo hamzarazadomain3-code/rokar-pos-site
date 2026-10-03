@@ -72,7 +72,7 @@ function salesTexture() {
     ctx.fillStyle = '#34d399';
     ctx.font = '600 17px Arial, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('v2.9.0', 270, 43);
+    ctx.fillText('OFFLINE', 270, 43);
     ctx.textAlign = 'left';
 
     // Bill number + time on right
@@ -379,10 +379,10 @@ function salesTexture() {
     ctx.fillRect(0, 718, 1200, 32);
     ctx.fillStyle = '#10b981';
     ctx.font = '600 15px Arial, sans-serif';
-    ctx.fillText('ROKAR POS v2.9.0', 20, 740);
+    ctx.fillText('ROKAR POS', 20, 740);
     ctx.textAlign = 'right';
     ctx.fillStyle = 'rgba(255,255,255,0.4)';
-    ctx.fillText('Cloud backup: synced 2 min ago   |   Offline mode active', 1180, 740);
+    ctx.fillText('Windows desktop app   |   No internet required', 1180, 740);
     ctx.textAlign = 'left';
   });
 }
