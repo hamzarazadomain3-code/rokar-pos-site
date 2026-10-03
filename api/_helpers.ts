@@ -4,7 +4,51 @@ export const REPO = 'hamzarazadomain3-code/rokar-pos-site';
 export const BRANCH = 'main';
 export const FILE_PATH = 'src/content.json';
 
-const SECRET = process.env.SESSION_SECRET || process.env.ADMIN_PASSWORD || 'rokar-change-me';
+/**
+ * The secret that signs admin session tokens.
+ *
+ * This used to end in `|| 'rokar-change-me'`. That fallback is a loaded gun: the
+ * moment both env vars were missing from Vercel, every session token on the site
+ * became forgeable by anyone who had read the source, and `/api/publish` would have
+ * rewritten the whole site's content and triggered a deploy on their say-so. The
+ * probe in build/probe-publish-auth.mjs confirms today's deployment is not signing
+ * with that literal -- it is masked because ADMIN_PASSWORD is set -- but "it
+ * happens to be configured today" is not the same as "it cannot get worse".
+ *
+ * So there is no fallback. If neither variable is present the module refuses to
+ * load, which turns a silent catastrophic state into an immediate loud one.
+ *
+ * This cannot break a working deployment, and that is the point worth noting:
+ * `verifyPassword` already returns false without ADMIN_PASSWORD, so an
+ * installation missing both could never have logged in anyway. Failing closed here
+ * costs nothing that was previously possible.
+ *
+ * SESSION_SECRET is listed first on purpose. Falling back to ADMIN_PASSWORD means
+ * the password doubles as the signing key, so anything that leaks the password --
+ * a log line, a screenshot, a shoulder-surf -- also grants the ability to mint
+ * admin sessions. Setting a separate SESSION_SECRET breaks that coupling, and the
+ * warning below is there until it is done.
+ */
+function resolveSecret(): string {
+  const secret = process.env.SESSION_SECRET || process.env.ADMIN_PASSWORD;
+  if (!secret) {
+    throw new Error(
+      'Refusing to start: neither SESSION_SECRET nor ADMIN_PASSWORD is set. ' +
+        'Without one of them every admin session token would be signed with a value ' +
+        'an attacker can read in this file. Set SESSION_SECRET to a long random string.',
+    );
+  }
+  if (!process.env.SESSION_SECRET && process.env.ADMIN_PASSWORD) {
+    console.warn(
+      '[rokar] SESSION_SECRET is not set, so ADMIN_PASSWORD is being used to sign ' +
+        'session tokens. Anyone who learns the password can mint an admin session. ' +
+        'Set a separate SESSION_SECRET.',
+    );
+  }
+  return secret;
+}
+
+const SECRET = resolveSecret();
 
 export function signSession(expiresInMs = 1000 * 60 * 60 * 12): string {
   const payload = Buffer.from(

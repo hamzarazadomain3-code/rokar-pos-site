@@ -13,3 +13,11 @@ tsconfig.tsbuildinfo
 .gfonts.css
 __pycache__/
 *.pyc
+
+# Secrets. The sibling pos-app keeps GH_TOKEN in a .env, and this repo has no
+# .env of its own yet -- which is exactly why the rule was missing. Nothing in
+# here should ever be committed, so any .env shape is ignored rather than just
+# the one name someone happened to use. .env.example stays tracked on purpose.
+.env
+.env.*
+!.env.example
