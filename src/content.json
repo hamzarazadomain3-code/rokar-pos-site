@@ -406,6 +406,16 @@
   "testimonials": [],
   "changelog": [
     {
+      "version": "2.11.0",
+      "title": "One-time licence — ab koi renewal nahi",
+      "notes": [
+        "Ek baar payment ke baad licence lifetime chalta hai: koi expiry date nahi, har saal renewal fee nahi.",
+        "Licence us PC par activate hoti hai jis par shuru ki thi. Har package ki apni PC limit hai (1, 3 ya 5) — pehle ye limit kaam nahi karti thi, ab server par hamesha enforce hoti hai.",
+        "Server se licence revoke karne par agli sale se app band ho jata hai. Licence dobara activate karne se shuru ho jaati hai."
+      ],
+      "date": "2026-10-03"
+    },
+    {
       "version": "2.10.0",
       "date": "2026-10-02",
       "title": "Password Recovery — koi bhi khud password reset kar le",

@@ -3,8 +3,17 @@
 .admin {
   min-height: 100vh;
   background: #0d221c;
-  color: #16302b;
   font-family: var(--font-body);
+}
+
+/* The ink is declared with the surface it belongs to rather than on .admin.
+   .admin's own surface is dark, so an ink set here was #16302b on #0d221c -- 1.18:1,
+   unreadable. But .admin-main (#f4f2ec) and .admin-topbar (#fff) are light and need
+   exactly that dark ink, so moving it up to .admin would have made the main panel
+   invisible instead. .admin-side and .admin-loading already set their own light ink. */
+.admin-main,
+.admin-topbar {
+  color: #16302b;
 }
 
 .admin * {

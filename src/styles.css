@@ -19,6 +19,12 @@
   --gold: #f59e0b;
   --gold-hi: #fbbf24;
   --gold-deep: #d97706;
+  /* Gold that has to survive as TEXT on a light surface.
+     --gold-deep cannot do both jobs: it is already only 4.0:1 on the dark nav, so
+     darkening it enough to clear 4.5:1 on cream would drop it to 1.8:1 there. One
+     token cannot be the right gold for a light card and for a dark sidebar at the
+     same time, so the light-surface role gets its own value. */
+  --gold-ink: #92400e;
   --gold-glow: rgba(245, 158, 11, 0.25);
 
   /* Typography & Neutral Shades */
@@ -184,13 +190,18 @@ a {
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--teal-accent) 0%, var(--teal-bright) 100%);
-  color: #ffffff;
+  /* Dark ink on a light emerald fill, not the other way round.
+     The old fill ran var(--teal-accent) -> var(--teal-bright), which spans enough
+     luminance that neither colour of text clears 4.5:1 across the whole gradient:
+     white scored 2.54:1 on the bright end, and dark ink scored 3.90:1 on the dim
+     end. Starting at var(--teal-accent-hi) keeps both stops light enough for the
+     deep ink, which is the accessible treatment for an accent fill this bright. */
+  background: linear-gradient(135deg, var(--teal-accent-hi) 0%, var(--teal-accent) 100%);
+  color: var(--teal-deep);
   box-shadow: 0 12px 28px -8px rgba(16, 185, 129, 0.45);
 }
 
 .btn-accent:hover {
-  background: linear-gradient(135deg, var(--teal-accent-hi) 0%, var(--teal-accent) 100%);
   transform: translateY(-2px);
   box-shadow: 0 16px 34px -6px rgba(16, 185, 129, 0.6);
 }

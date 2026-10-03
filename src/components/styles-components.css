@@ -562,7 +562,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--gold-ink);
   background: var(--cream);
   border: 1px solid rgba(199, 127, 31, 0.25);
   padding: 4px 9px;
@@ -1941,7 +1941,8 @@
 
 .btn-scan-sim:hover {
   background: var(--teal-accent);
-  color: #fff;
+  /* Deep ink, not white: white on var(--teal-accent) is 2.54:1. */
+  color: var(--teal-deep);
 }
 
 .catalog-grid {
@@ -2874,7 +2875,9 @@
   align-items: center;
   gap: 10px;
   background: #25d366;
-  color: #ffffff;
+  /* WhatsApp's green is fixed and bright, so white text on it is 1.98:1. The deep
+     ink reaches 9:1 and leaves the button recognisably WhatsApp. */
+  color: var(--teal-deep);
   padding: 14px 22px;
   border-radius: 999px;
   box-shadow: 0 14px 34px -6px rgba(37, 211, 102, 0.6);
