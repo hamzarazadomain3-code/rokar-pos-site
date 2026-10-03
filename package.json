@@ -13,7 +13,8 @@
     "verify:ssr": "node build/verify-ssr.mjs",
     "verify:bundle": "node build/verify-bundle.mjs",
     "verify:fonts": "node build/verify-fonts.mjs",
-    "verify": "npm run typecheck && npm run verify:content && npm run verify:ssr && npm run verify:fonts && npm run build && npm run verify:bundle",
+    "verify:claims": "node build/verify-claims.mjs",
+    "verify": "npm run typecheck && npm run verify:content && npm run verify:claims && npm run verify:ssr && npm run verify:fonts && npm run build && npm run verify:bundle",
     "fonts": "python build/build_fonts.py",
     "og:cover": "python build/build-og-cover.py"
   },

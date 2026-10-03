@@ -54,9 +54,9 @@
     "ctaHow": "Interactive Live Demo",
     "trust": [
       "100% Offline Active",
-      "Urdu + English Invoices",
+      "Daily Profit & Loss Report",
       "Thermal 58/80mm + A4",
-      "Auto Cloud Backup",
+      "Daily Automatic Backup",
       "Windows 10 / 11 Ready"
     ],
     "versionNote": "15 din ka free full trial — koi card nahi, koi signup nahi"
@@ -70,7 +70,7 @@
       {
         "icon": "zap",
         "title": "Fast Offline Billing",
-        "desc": "Bill a whole customer in under 3 seconds. Barcode scan or 2-letter search. Works fully offline without ever needing internet.",
+        "desc": "Barcode scan ya 2-letter search se bill — poori tarah offline, kabhi internet ki zarurat nahi.",
         "tag": "Core"
       },
       {
@@ -118,8 +118,8 @@
       },
       {
         "icon": "cloud",
-        "title": "Daily Cloud Backup",
-        "desc": "Automated daily encrypted backups to your Google Drive or OneDrive. If your PC ever crashes, your data is 100% safe."
+        "title": "Daily Automatic Backup",
+        "desc": "Har raat 2 baje aap ke folder mein backup banta hai. Agar woh folder OneDrive ya Google Drive ke andar ho to woh khud sync ho jaata hai. Backup encrypted nahi hota."
       },
       {
         "icon": "scale",
@@ -156,7 +156,6 @@
       "points": [
         "Expiry date warning alerts",
         "Batch number tracking on receipts",
-        "Generic salt / formula quick search",
         "Wholesale supplier payment tracker"
       ]
     },
@@ -168,7 +167,6 @@
       "desc": "Fast touch billing, kg & gram weight calculations, and multi-shift cash drawers.",
       "points": [
         "Digital weight scale direct sync",
-        "Per-piece & per-kg pricing",
         "Daily morning & night shift closure",
         "Fresh item fast key buttons"
       ]
@@ -191,10 +189,8 @@
       "name": "Wholesale & Electronics",
       "urdu": "تھوک و الیکٹرانکس مارکیٹ",
       "icon": "cpu",
-      "desc": "Carton & loose unit billing, serial/IMEI warranty tracking, and dual wholesale pricing.",
+      "desc": "Wholesale aur retail dono ke alag rate, aur customer ka udhaar ledger.",
       "points": [
-        "Serial number / IMEI tracking",
-        "Carton to loose pack breakdown",
         "Wholesale rate vs retail rate toggle",
         "Customer ledger statement export"
       ]
@@ -209,7 +205,7 @@
         "num": "01",
         "icon": "download",
         "title": "Download & Install",
-        "desc": "Download the free Windows installer (about 120MB). One-click setup. No technical skills needed.",
+        "desc": "Download the free Windows installer (114 MB). One-click setup. No technical skills needed.",
         "urdu": "ڈاؤن لوڈ کریں اور انسٹال کریں"
       },
       {
@@ -239,7 +235,7 @@
     "eyebrow": "Transparent Pricing",
     "titleA": "Aapki Dukaan Ka Size,",
     "titleB": "Wohi Pricing.",
-    "lead": "No hidden fees. No annual lock-in. Start with 15-day free full trial. Pay only when you're 100% satisfied.",
+    "lead": "No hidden fees. Start with a 15-day free full trial. Pay only when you're 100% satisfied.",
     "noteHeading": "Free Trial Included",
     "note": "Every plan starts with a 15-day completely free full trial. No credit card required. Instant WhatsApp setup support included.",
     "packages": [
@@ -256,7 +252,7 @@
           "Udhaar / Khata management",
           "Thermal receipt printing",
           "Daily profit reports",
-          "Cloud backup (Google Drive)",
+          "Daily automatic backup, folder aap choose karein",
           "WhatsApp receipt sharing",
           "15-day free trial"
         ]
@@ -274,7 +270,7 @@
           "Multi-cashier shift management",
           "Wholesale & retail dual pricing",
           "Barcode label printing",
-          "A4 tax invoice designer",
+          "A4 invoice printing",
           "Priority WhatsApp support",
           "Remote setup via AnyDesk"
         ]
@@ -289,18 +285,14 @@
         "features": [
           "Unlimited PC licenses",
           "Everything in Pro",
-          "Central inventory sync",
           "Branch-wise profit reports",
-          "Dedicated account manager",
-          "Custom receipt branding",
-          "On-site training session",
-          "SLA support guarantee"
+          "Custom receipt branding"
         ]
       }
     ],
     "includes": [
       "Free installation & setup",
-      "Urdu & English interface",
+      "Barcode scanning & label printing",
       "Thermal printer support",
       "WhatsApp support"
     ]
@@ -309,7 +301,7 @@
     "eyebrow": "Abhi Shuru Karein",
     "titleA": "Download Rokar POS",
     "titleB": "Free for 15 Days",
-    "lead": "Windows 10 & 11 ready. About 120 MB. One-click install. No internet needed after setup.",
+    "lead": "Windows 10 & 11 ready. About 114 MB. One-click install. Billing, stock aur udhaar hamesha offline chalte hain.",
     "buttonLabel": "Download Free Trial",
     "facts": "15 Days Free Full Trial - Windows 10 & 11",
     "requirementsTitle": "Minimum Requirements",
@@ -332,14 +324,14 @@
       },
       {
         "label": "Internet",
-        "value": "Only needed for cloud backup"
+        "value": "Optional — licence check, updates, WhatsApp receipts"
       }
     ],
     "faqTitle": "Common Questions",
     "faq": [
       {
         "q": "Kya software completely offline kaam karta hai?",
-        "a": "Haan, 100%. Billing, stock, reports -- sab offline kaam karta hai. Internet sirf cloud backup ke liye chahiye."
+        "a": "Haan, 100%. Billing, stock, reports -- sab offline kaam karta hai. Internet sirf licence check, update aur WhatsApp receipt ke liye chahiye. Backup aur reporting hamesha offline chalti hai."
       },
       {
         "q": "Kya ek se zyada cashier use kar sakte hain?",
@@ -355,15 +347,15 @@
       },
       {
         "q": "Mera data kahan rehta hai? Agar computer kharab ho jaye to?",
-        "a": "Poora data aap ke PC ke andar hi rehta hai. Saath hi rozana encrypted backup Google Drive ya OneDrive par banta hai, jise aap kisi bhi doosre PC par wapas le sakte hain."
+        "a": "Poora data aap ke PC ke andar hi rehta hai. Har raat 2 baje app khud aap ke folder mein backup bana deti hai. Agar woh folder OneDrive ya Google Drive ke  andar ho, to woh khud sync ho jaata hai — iske liye app ko internet nahi chahiye."
       },
       {
         "q": "Kya yeh mobile ya tablet par bhi chalega?",
         "a": "Rokar Windows PC ke liye hai (Windows 10/11). Mobile ka istemaal receipt bhejne ke liye hota hai -- har bill 1-click mein customer ke WhatsApp par chala jaata hai."
       },
       {
-        "q": "Invoice mein Urdu ya English dono aa sakte hain?",
-        "a": "Haan. Receipt aap Urdu ya English mein chun sakte hain, aur alag se A4 tax invoice bhi banta hai jo wholesale aur udhaar ke billon ke liye use hota hai."
+        "q": "Invoice aur receipt kis tarah banti hai?",
+        "a": "Receipt English mein aati hai. Alag se A4 tax invoice bhi banta hai jo wholesale aur udhaar ke billon ke liye use hota hai."
       },
       {
         "q": "Agar owner ka password bhool jaye to?",
@@ -388,13 +380,13 @@
       "value": 100,
       "suffix": "%",
       "label": "Bilkul Offline",
-      "sub": "Internet sirf cloud backup ke liye chahiye"
+      "sub": "Internet sirf licence check, updates aur WhatsApp receipts ke liye chahiye"
     },
     {
-      "value": 3,
-      "suffix": "s",
-      "label": "Average Bill Time",
-      "sub": "Barcode scan ya 2-letter search se"
+      "value": 114,
+      "suffix": " MB",
+      "label": "Installer Size",
+      "sub": "Windows 10/11 setup, measured on the actual file"
     },
     {
       "value": 15,
@@ -435,7 +427,7 @@
     },
     {
       "version": "2.8.0",
-      "date": "2026-06-12",
+      "date": "2026-09-22",
       "title": "Ultra-fast Stock Audit & Margin Engine",
       "notes": [
         "New Stock Audit engine with 3x faster barcode scanning",
@@ -446,7 +438,7 @@
     },
     {
       "version": "2.7.0",
-      "date": "2026-03-20",
+      "date": "2026-09-20",
       "title": "Multi-shift Cash Drawer & Promotions",
       "notes": [
         "Independent morning & evening cash drawer balances",
@@ -456,20 +448,20 @@
     },
     {
       "version": "2.6.0",
-      "date": "2025-11-15",
-      "title": "Cloud Backup & A4 Invoice Studio",
+      "date": "2026-09-19",
+      "title": "Daily Backup & A4 Invoice Printing",
       "notes": [
-        "Automated encrypted daily backup to Google Drive / OneDrive",
-        "A4 Tax Invoice designer for wholesale & credit supply bills"
+        "Backup har raat 2 baje khud banta hai. Aap folder chun kar OneDrive ya Google Drive wala folder bhi de sakte hain, phir woh apne aap sync hota hai.",
+        "A4 tax invoice printing for wholesale & credit supply bills"
       ]
     }
   ],
   "ticker": [
-    "3-Second Fast Offline Billing",
+    "Fast Offline Billing",
     "Udhaar / Khata with WhatsApp Reminders",
     "Real-time Stock Audit & Low-Stock Alerts",
     "Thermal 58mm & 80mm + A4 Printing",
-    "Daily Google Drive & OneDrive Backup",
+    "Daily Automatic Backup (folder of your choice)",
     "Daily Sales & Net Profit Reports",
     "Custom Barcode Label Printing",
     "Multi-Shift Cashier Management"
