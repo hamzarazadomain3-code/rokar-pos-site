@@ -39,9 +39,13 @@
   --shadow-glow: 0 0 40px -10px var(--teal-glow);
   --shadow-gold: 0 12px 30px -8px rgba(245, 158, 11, 0.45);
 
-  --font-head: 'Fraunces', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-urdu: 'Noto Nastaliq Urdu', serif;
+  --font-head: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, -apple-system, sans-serif;
+  /* Noto Nastaliq Urdu is declared with an Arabic-only unicode-range, so the
+     Roman Urdu inside .urdu skips it and falls through to the body face. That
+     is deliberate and saves 60 KB: Noto's Latin subset existed only to render
+     Latin text, and the body face is the right one to render it with. */
+  --font-urdu: 'Noto Nastaliq Urdu', 'Noto Nastaliq Urdu Fallback', var(--font-body), serif;
   --nav-h: 76px;
 }
 

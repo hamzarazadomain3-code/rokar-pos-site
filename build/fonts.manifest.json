@@ -1,0 +1,65 @@
+{
+  "chars": 302,
+  "families": {
+    "plus-jakarta-sans": {
+      "family": "Plus Jakarta Sans",
+      "file": "plus-jakarta-sans-40ffb41ae3.woff2",
+      "kind": "latin",
+      "kb": 16.4,
+      "glyphs": 242,
+      "weightRange": [
+        400,
+        800
+      ],
+      "metrics": {
+        "ascentOverride": 103.8,
+        "descentOverride": 22.2,
+        "lineGapOverride": 0.0,
+        "xHeight": 53.6,
+        "capHeight": 74.5,
+        "usedTypoMetrics": true
+      },
+      "unicodeRange": "U+0020-007E, U+00A0, U+00A3, U+00A5, U+00A9, U+00AE, U+00B0-00B3, U+00B5, U+00B7, U+00BC-00BE, U+00C0-00FF, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2032-2033, U+2039-203A, U+2044, U+20AC, U+2191, U+2193, U+2212, U+2215"
+    },
+    "fraunces": {
+      "family": "Fraunces",
+      "file": "fraunces-b280364b6b.woff2",
+      "kind": "latin",
+      "kb": 29.1,
+      "glyphs": 220,
+      "weightRange": [
+        500,
+        800
+      ],
+      "metrics": {
+        "ascentOverride": 97.8,
+        "descentOverride": 25.5,
+        "lineGapOverride": 0.0,
+        "xHeight": 48.2,
+        "capHeight": 70.0,
+        "usedTypoMetrics": true
+      },
+      "unicodeRange": "U+0020-007E, U+00A0, U+00A3, U+00A5, U+00A9, U+00AE, U+00B0-00B3, U+00B5, U+00B7, U+00BC-00BE, U+00C0-00FF, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2032-2033, U+2039-203A, U+2044, U+20AC, U+2212, U+2215"
+    },
+    "noto-nastaliq-urdu": {
+      "family": "Noto Nastaliq Urdu",
+      "file": "noto-nastaliq-urdu-dd42d23696.woff2",
+      "kind": "arabic",
+      "kb": 147.8,
+      "glyphs": 773,
+      "weightRange": [
+        400,
+        700
+      ],
+      "metrics": {
+        "ascentOverride": 190.4,
+        "descentOverride": 59.6,
+        "lineGapOverride": 0.0,
+        "xHeight": 53.6,
+        "capHeight": 71.4,
+        "usedTypoMetrics": true
+      },
+      "unicodeRange": "U+0020, U+00A0, U+060C, U+061B-061C, U+061F, U+0622, U+0624, U+0626-0628, U+062A-063A, U+0640-0646, U+0648, U+0660-0669, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A9, U+06AF, U+06BA, U+06BE, U+06C1, U+06CC, U+06D2, U+06D4-06D5, U+06F0-06F9, U+200C-200E, U+2010-2011"
+    }
+  }
+}

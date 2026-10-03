@@ -12,7 +12,9 @@
     "verify:content": "node build/verify-content.mjs",
     "verify:ssr": "node build/verify-ssr.mjs",
     "verify:bundle": "node build/verify-bundle.mjs",
-    "verify": "npm run typecheck && npm run verify:content && npm run verify:ssr && npm run build && npm run verify:bundle",
+    "verify:fonts": "node build/verify-fonts.mjs",
+    "verify": "npm run typecheck && npm run verify:content && npm run verify:ssr && npm run verify:fonts && npm run build && npm run verify:bundle",
+    "fonts": "python build/build_fonts.py",
     "og:cover": "python build/build-og-cover.py"
   },
   "dependencies": {

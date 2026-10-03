@@ -5,3 +5,11 @@ dist/
 tsconfig.tsbuildinfo
 .DS_Store
 .vercel
+
+# Upstream font downloads for build/build_fonts.py. The subset in
+# public/fonts/ is what ships and is committed; the ~1.2 MB of original
+# Google woff2 files it is cut from is re-downloaded on demand.
+.gfonts-cache/
+.gfonts.css
+__pycache__/
+*.pyc
