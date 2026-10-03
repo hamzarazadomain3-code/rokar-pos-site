@@ -47,6 +47,15 @@ export type Industry = {
   icon: string;
   desc: string;
   points: string[];
+  /**
+   * Short label/value tiles rendered in the per-industry "POS mode" mockup.
+   * These used to be hard-coded JSX containing fabricated numbers (a fake
+   * checkout time and a fake uptime figure) that never changed between
+   * industries. They now live in content.json so every industry shows its own
+   * verified capabilities, and every string is checked against the app source
+   * by `verify:industries`.
+   */
+  preview?: { k: string; v: string }[];
 };
 
 export type PricingPackage = {

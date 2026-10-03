@@ -14,8 +14,9 @@
     "verify:bundle": "node build/verify-bundle.mjs",
     "verify:fonts": "node build/verify-fonts.mjs",
     "verify:claims": "node build/verify-claims.mjs",
+    "verify:industries": "node build/verify-industries.mjs",
     "verify:contrast": "node build/verify-contrast.mjs",
-    "verify": "npm run typecheck && npm run verify:content && npm run verify:claims && npm run verify:contrast && npm run verify:ssr && npm run verify:fonts && npm run build && npm run verify:bundle",
+    "verify": "npm run typecheck && npm run verify:content && npm run verify:claims && npm run verify:industries && npm run verify:contrast && npm run verify:ssr && npm run verify:fonts && npm run build && npm run verify:bundle",
     "fonts": "python build/build_fonts.py",
     "og:cover": "python build/build-og-cover.py"
   },

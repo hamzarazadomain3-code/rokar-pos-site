@@ -573,7 +573,7 @@ function Editor({ onLogout }: { onLogout: () => void }) {
             <div className="af-publish-note">
               <span>
                 <b>Kaise chalta hai:</b> "Publish & Deploy" dabane par ye content GitHub par commit hota hai aur Vercel
-                site foran dobara banata hai (site ~30 second me live ho jati hai). Har publish git history me saved rehta hai.
+                site foran dobara banata hai (build complete hoti hi live ho jati hai). Har publish git history me saved rehta hai.
               </span>
               <textarea
                 className="af-input"

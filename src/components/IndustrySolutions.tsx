@@ -107,18 +107,12 @@ export default function IndustrySolutions() {
                     </div>
 
                     <div className="ind-mockup-body">
-                      <div className="mockup-stat-tile">
-                        <span>Offline Reliability</span>
-                        <b>100% Active</b>
-                      </div>
-                      <div className="mockup-stat-tile">
-                        <span>Checkout Time</span>
-                        <b style={{ color: 'var(--teal-accent)' }}>~3 Seconds</b>
-                      </div>
-                      <div className="mockup-stat-tile">
-                        <span>Hardware Compatibility</span>
-                        <b>All Thermal & Barcode Scanners</b>
-                      </div>
+                      {(activeIndustry.preview || []).map((tile) => (
+                        <div className="mockup-stat-tile" key={tile.k}>
+                          <span>{tile.k}</span>
+                          <b>{tile.v}</b>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

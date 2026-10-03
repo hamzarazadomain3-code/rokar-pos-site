@@ -139,12 +139,17 @@
       "name": "Kirana & Superstores",
       "urdu": "کریانہ و سپر سٹورز",
       "icon": "shopping-cart",
-      "desc": "High-speed barcode checkout, bulk stock management, and customer udhaar khata.",
+      "desc": "Barcode checkout, har customer ka apna udhaar limit, aur stock khatam hone se pehle ki khabar.",
       "points": [
-        "Fast barcode scanner support",
-        "Customer credit khata with limits",
-        "Weighing scale integration (BayLan)",
-        "Low-stock refill alerts"
+        "Billing screen par hi barcode scan: scanner ka code aate hi product line me chala jata hai",
+        "Har customer ka apna udhaar limit — limit cross karne wala bill save nahi hota",
+        "Limit ka poora record: purani limit, nayi limit, kaun badla aur kyun",
+        "Low-stock threshold set karein — app alert de, dashboard par list banaye aur email bhi bheje"
+      ],
+      "preview": [
+        { "k": "Udhaar Limit", "v": "Har customer ka apna" },
+        { "k": "Stock Alert", "v": "Threshold par khud alert" },
+        { "k": "Barcode", "v": "Billing screen par scan" }
       ]
     },
     {
@@ -152,11 +157,17 @@
       "name": "Pharmacy & Medical",
       "urdu": "میڈیکل سٹور و فارمیسی",
       "icon": "activity",
-      "desc": "Batch numbers, expiry date alerts, formula search, and supplier invoice records.",
+      "desc": "Batch number ke sath stock, expiry se pehle ki warning, aur supplier ka poora hisaab.",
       "points": [
-        "Expiry date warning alerts",
-        "Batch number tracking on receipts",
-        "Wholesale supplier payment tracker"
+        "Expiry alert default 30 din pehle — jab 7 din ya kam bache to alert critical ho jata hai",
+        "Stock batch number ke sath: bill lagte waqt wahi batch pehle jaata hai jaldi expire hone wala",
+        "Supplier ledger: khareed, payment aur chal balance ek jagah",
+        "Supplier par bhi credit limit set kar sakte hain"
+      ],
+      "preview": [
+        { "k": "Expiry Alert", "v": "Default 30 din pehle" },
+        { "k": "Batch Stock", "v": "Jaldi expiring pehle" },
+        { "k": "Supplier Ledger", "v": "Kharid + payment + balance" }
       ]
     },
     {
@@ -164,11 +175,17 @@
       "name": "Bakery & Sweets",
       "urdu": "بیکری و مٹھائی شاپ",
       "icon": "coffee",
-      "desc": "Fast touch billing, kg & gram weight calculations, and multi-shift cash drawers.",
+      "desc": "Toulay wale items, gram se box tak har unit ka apna rate, aur har shift ka alag closing.",
       "points": [
-        "Digital weight scale direct sync",
-        "Daily morning & night shift closure",
-        "Fresh item fast key buttons"
+        "Toulay wale item: weight daalein, rate per kg khud calculate ho jata hai",
+        "Weight screen par + ya - se 50 gram ka step, ya type karke seedha",
+        "Har unit ka apna price aur apna barcode: 500 Gram, 1 kg, aur poora box",
+        "Har cashier ka shift alag: opening cash, closing cash aur farq (variance) bhi"
+      ],
+      "preview": [
+        { "k": "Weight Entry", "v": "50 gram step" },
+        { "k": "Units", "v": "500g / 1kg / box" },
+        { "k": "Shift Closing", "v": "Variance bhi" }
       ]
     },
     {
@@ -176,12 +193,18 @@
       "name": "Garments & Footwear",
       "urdu": "گارمنٹس و بوٹ ہاؤس",
       "icon": "tag",
-      "desc": "Color, size, and brand variants with custom barcode sticker printing.",
+      "desc": "Size aur colour ke combination, apne barcode ki sticker, aur chal rahi promotion.",
       "points": [
-        "Size & color matrix stock",
-        "Custom barcode label printing",
-        "Discount and promotional bundles",
-        "Fast exchange / return handling"
+        "Size aur colour ki list daalein — app har combination khud bana deta hai (jaise 2 colour x 3 size = 6 variants)",
+        "Har variant ka apna barcode, apna MRP, apna rate aur apna stock",
+        "Barcode sticker printing: template chunein aur roll ka pitch (mm) bhi set karein",
+        "Promotion chala sakte hain: percent kam, fixed raam ya 2 kharido 1 free — product ya category aur date range ke sath",
+        "Return par maal wapas stock me chala jata hai, refund cash ya udhaar credit dono ho sakta hai"
+      ],
+      "preview": [
+        { "k": "Variants", "v": "Size x colour, khud ban jate hain" },
+        { "k": "Sticker", "v": "Apna pitch (mm)" },
+        { "k": "Promotion", "v": "% kam, fixed, ya 2 kharido 1 free" }
       ]
     },
     {
@@ -189,10 +212,17 @@
       "name": "Wholesale & Electronics",
       "urdu": "تھوک و الیکٹرانکس مارکیٹ",
       "icon": "cpu",
-      "desc": "Wholesale aur retail dono ke alag rate, aur customer ka udhaar ledger.",
+      "desc": "Wholesale aur retail ke alag rate, quotation se seedha bill, aur customer ka poora ledger.",
       "points": [
-        "Wholesale rate vs retail rate toggle",
-        "Customer ledger statement export"
+        "Har product ka apna wholesale rate; bill par retail ya wholesale mode chun lein",
+        "Quotation bana kar bhej dein, customer ke manzil par baad me usi quotation se bill ban jata hai",
+        "Customer ledger: har bill, payment aur udhaar ka hisaab — paid ya pending ke hisaab se Excel export",
+        "Purchase order, supplier payment aur supplier ledger bhi isi app me"
+      ],
+      "preview": [
+        { "k": "Rate", "v": "Retail ya wholesale" },
+        { "k": "Quotation", "v": "Quote se seedha bill" },
+        { "k": "Ledger", "v": "Excel export" }
       ]
     }
   ],
@@ -440,12 +470,12 @@
     {
       "version": "2.8.0",
       "date": "2026-09-22",
-      "title": "Ultra-fast Stock Audit & Margin Engine",
+      "title": "Stock Audit & Margin Engine",
       "notes": [
-        "New Stock Audit engine with 3x faster barcode scanning",
-        "Live margin & net profit percentage columns on billing screen",
-        "Direct WhatsApp receipt template with custom store logo",
-        "BayLan digital weighing scale fast-sync support"
+        "Naya Stock Audit engine — physical dukan aur system ledger ka foran milaan",
+        "Margin aur net profit percent P&L report me, aur kam-margin products ki alert",
+        "Bill print ho ya WhatsApp dono par — customer ke number par foran",
+        "Printed receipt, invoice aur label par shop ka logo"
       ]
     },
     {

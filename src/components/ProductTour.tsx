@@ -37,13 +37,13 @@ interface Shot {
 const SHOTS: Shot[] = [
   {
     id: 'billing',
-    label: 'Fast Billing',
+    label: 'Billing',
     icon: 'zap',
     file: 'billing.webp',
     alt: 'Rokar POS billing screen with three products added to the cart — Tapal Danedar Tea, Shakoor Sugar and Coca-Cola — showing prices, wholesale prices and remaining stock.',
-    tag: '3-Sec Billing',
-    title: 'Scan karo, bill banao — 3 seconds mein',
-    desc: 'Barcode scanner ya 2-letter search. Auto-discount, cash ya credit — receipt foran print ya WhatsApp par bhejein.',
+    tag: 'Scan or Search',
+    title: 'Scan karo ya search karo — bill banao',
+    desc: 'Barcode scanner ya search. Promotion khud lag jati hai, cash ya udhaar — receipt foran print ya WhatsApp par bhejein.',
   },
   {
     id: 'dashboard',

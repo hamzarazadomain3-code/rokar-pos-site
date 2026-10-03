@@ -131,6 +131,26 @@ const BANNED = [
     re: /\bnuqsaan\s+khatam\b|\bdata\s+loss\b[^.]{0,24}\b(?:khatam|zero|never)\b/i,
     why: 'an absolute outcome claim. Accounts get mis-entered; the software cannot promise a loss never happens',
   },
+  {
+    re: /\b100\s*%/,
+    why: 'a bare percentage guarantee is unfalsifiable, and nothing in the app is 100% of anything: a cashier can mistype a price, backups are a plain unencrypted file copy, and a licence still has to be activated online. This is broader than the older local/accurate rule on purpose -- it replaced a hardcoded "100% Active" uptime tile in the per-industry mockup, which the narrow rule did not match because the word after the number was not on its list. A percentage is only allowed with the metric named (see the four honest stat tiles: "0 tracking scripts", "114 MB", "58 / 80mm", "5 PCs").',
+  },
+  {
+    re: /\b\d+\s*[-–]?\s*(?:sec|secs|second|seconds)\b/i,
+    why: 'nothing in the app records a duration, so any seconds figure is invented. The banned wording was "~3 Seconds" as a checkout time and "3-Sec Billing" as a whole ProductTour step title, neither of which any measurement supported. Note this deliberately does NOT ban minutes: the recovery lockout really is 10 (recovery.ts LOCKOUT_MINUTES = 10) and setup-time estimates are the owner\'s own service promise rather than a product performance claim.',
+  },
+  {
+    re: /\b(?:scale|scales|weighing|scanner|scanners|printer|printers)\b[^.]{0,40}\b(?:sync|integrat\w*|connect\w*|pair\w*|auto-?detect\w*)\b/i,
+    why: 'the app has no hardware integration of any kind. There is no serialport, no device manager and no scale driver anywhere in src/ -- searching for serialport, ScaleManager and scale_connected returns nothing. What exists is manual weight entry: a PLU mode in Billing.tsx where the operator types a weight or nudges it by 0.05, and the per-kg price is computed from it. The copy said "Weighing scale integration (BayLan)" and "Digital weight scale direct sync" as if the app read a taring scale over a serial port. The suffixes use \\w* rather than \\w+ because the negative test caught that "se direct connect ho jata hai" -- the ordinary phrasing -- slipped through on \\w+ when "connect" was not followed by a word character.',
+  },
+  {
+    re: /\b(?:direct|auto|seamless|one-?click)\s+sync\b|\bBayLan\b/i,
+    why: 'same absent hardware path, named directly. "BayLan" is a specific brand of weighing scale that appears nowhere in the app, yet it was published twice: once in the industries section and once as a shipped feature in the 2.8.0 changelog. Naming a vendor we have never spoken to is the kind of claim that cannot be defended.',
+  },
+  {
+    re: /\ball\s+(?:thermal|barcode|printers?|scanners?|scales?|hardware|devices?)\b/i,
+    why: 'an unverifiable universality claim. "All Thermal & Barcode Scanners" cannot be true of a USB barcode reader the app has never seen -- it has no device enumeration at all. The app does support ESC/POS thermal output and generic keyboard-wedge scanners, which is what the copy should name. Does not match "all on one Windows app" or "All rights reserved" because the following word has to be a device class.',
+  },
 ];
 
 /**
