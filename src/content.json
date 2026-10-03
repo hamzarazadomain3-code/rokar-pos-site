@@ -50,22 +50,22 @@
     "titleA": "Billing, stock aur udhaar",
     "titleB": "sab ek hi app mein.",
     "lead": "Rokar is an offline-first billing & inventory app built specifically for retail dukaan owners. Scan barcodes, bill in seconds, track udhaar (khata), and see daily net profit -- bina internet ke.",
-    "ctaDownload": "Download Free Trial (Windows)",
+    "ctaDownload": "Download for Windows (Free)",
     "ctaHow": "Interactive Live Demo",
     "trust": [
-      "100% Offline Active",
+      "Billing Works Offline",
       "Daily Profit & Loss Report",
       "Thermal 58/80mm + A4",
       "Daily Automatic Backup",
       "Windows 10 / 11 Ready"
     ],
-    "versionNote": "15 din ka free full trial — koi card nahi, koi signup nahi"
+    "versionNote": "Download free hai — koi card nahi, koi signup nahi. Ek baar licence khareedein, phir hamesha chalega."
   },
   "features": {
     "eyebrow": "Sab Kuch Ek Hi App Mein",
     "titleA": "One app.",
     "titleB": "Full dukaan control.",
-    "lead": "Rokar brings billing, stock, customer credit, and profit reports together -- replacing registers, lost udhaar pages, and mental math with 100% accurate computer records.",
+    "lead": "Rokar brings billing, stock, customer credit, and profit reports together -- replacing registers, lost udhaar pages, and mental math with records you can open and check yourself.",
     "items": [
       {
         "icon": "zap",
@@ -235,9 +235,9 @@
     "eyebrow": "Transparent Pricing",
     "titleA": "Aapki Dukaan Ka Size,",
     "titleB": "Wohi Pricing.",
-    "lead": "One-time payment. Lifetime licence — expiry ki koi date nahi, renewal bhi nahi. Pehle 15 din free trial chala lein, phir khareed lein.",
-    "noteHeading": "Free Trial Included",
-    "note": "Har package 15-din ka poora free trial deta hai. Koi card ya signup nahi. Licence ek baar khareedne ke baad lifetime chalta hai — har saal koi renewal fee nahi.",
+    "lead": "One-time payment. Lifetime licence — expiry ki koi date nahi, renewal bhi nahi.",
+    "noteHeading": "Kya Milta Hai",
+    "note": "Har package ka licence ek baar khareedein aur hamesha chale. Koi card, koi signup, aur har saal koi renewal fee nahi. Software download karna free hai; use karne ke liye licence key chahiye.",
     "packages": [
       {
         "id": "starter",
@@ -254,7 +254,7 @@
           "Daily profit reports",
           "Daily automatic backup, folder aap choose karein",
           "WhatsApp receipt sharing",
-          "15-day free trial"
+          "Lifetime licence - no renewal fee"
         ]
       },
       {
@@ -298,10 +298,10 @@
   "download": {
     "eyebrow": "Abhi Shuru Karein",
     "titleA": "Download Rokar POS",
-    "titleB": "Free for 15 Days",
+    "titleB": "Free Download, One-Time Licence",
     "lead": "Windows 10 & 11 ready. About 114 MB. One-click install. Billing, stock aur udhaar hamesha offline chalte hain.",
-    "buttonLabel": "Download Free Trial",
-    "facts": "15 Days Free Full Trial - Windows 10 & 11",
+    "buttonLabel": "Download Rokar POS",
+    "facts": "Free Download - Windows 10 & 11 - Licence Key Chahiye",
     "requirementsTitle": "Minimum Requirements",
     "requirements": [
       {
@@ -328,16 +328,16 @@
     "faqTitle": "Common Questions",
     "faq": [
       {
-        "q": "Kya software completely offline kaam karta hai?",
-        "a": "Haan, 100%. Billing, stock, reports -- sab offline kaam karta hai. Internet sirf licence check, update aur WhatsApp receipt ke liye chahiye. Backup aur reporting hamesha offline chalti hai."
+        "q": "Internet nahi ho to billing ruk jati hai?",
+        "a": "Nahi. Billing, stock, reports aur backup -- sab aap ke PC par hote hain aur internet ke bina bhi chalte hain. Internet sirf pehli baar licence activate karne, licence verify karne aur naya update lene ke liye chahiye."
       },
       {
         "q": "Kya ek se zyada cashier use kar sakte hain?",
         "a": "Pro aur Multi-Branch plans mein multiple cashier accounts hain with separate shift reports."
       },
       {
-        "q": "Trial ke baad data save rehta hai?",
-        "a": "Haan, aapka pura data (products, customers, bills) safe rehta hai jab aap paid version activate karein."
+        "q": "Licence key daalne se mera data delete to nahi hoga?",
+        "a": "Nahi. Aap ka saara data (products, customers, bills) aap ke PC par ki pos.db file mein rehta hai. Licence key sirf app ki setting hai — wo aap ka koi product, bill ya customer record nahi chhooti."
       },
       {
         "q": "Setup mein kitna waqt lagta hai?",
@@ -375,14 +375,14 @@
     "siteTitle": "Site",
     "supportTitle": "Support",
     "rights": "All rights reserved.",
-    "tiny": "Made for the shopkeepers of Pakistan. Aap ka data aap ke PC par rehta hai."
+    "tiny": "Made for the shopkeepers of Pakistan. Aap ki billing data aap ke PC par rehti hai — sirf licence ke liye shop ka naam, phone aur payment details server par jaate hain."
   },
   "stats": [
     {
-      "value": 100,
-      "suffix": "%",
-      "label": "Bilkul Offline",
-      "sub": "Internet sirf licence check, updates aur WhatsApp receipts ke liye chahiye"
+      "value": 0,
+      "suffix": " tracking scripts",
+      "label": "Analytics & Telemetry",
+      "sub": "Koi bideai tracking ya telemetry nahi. Sirf licence ke liye shop ka naam, phone aur payment details server par jaate hain."
     },
     {
       "value": 114,
@@ -391,16 +391,16 @@
       "sub": "Windows 10/11 setup, measured on the actual file"
     },
     {
-      "value": 15,
-      "suffix": " din",
-      "label": "Free Full Trial",
-      "sub": "Koi card ya payment ki zarurat nahi"
-    },
-    {
       "value": 58,
       "suffix": " / 80mm",
       "label": "Thermal Printer Support",
       "sub": "A4 tax invoice aur barcode labels bhi"
+    },
+    {
+      "value": 5,
+      "suffix": " PCs",
+      "label": "Max Licence Limit",
+      "sub": "Starter 1, Pro 3, Multi-Branch 5 — har package me PC ki limit alag hoti hai"
     }
   ],
   "testimonials": [],

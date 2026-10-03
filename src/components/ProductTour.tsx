@@ -245,7 +245,7 @@ export default function ProductTour() {
                 </div>
                 <div className="tour-stand" aria-hidden="true" />
               </div>
-              <span className="tour-chip tour-chip--a">⚡ Poori tarah offline chalta hai</span>
+              <span className="tour-chip tour-chip--a">⚡ Billing offline chalta hai</span>
               <span className="tour-chip tour-chip--b">🧾 58mm · 80mm · A4 receipts</span>
             </div>
           </Reveal>

@@ -2809,13 +2809,13 @@
   color: var(--gold-hi);
 }
 
-.pricing-trial-note {
+.pricing-note {
   text-align: center;
   font-size: 0.92rem;
   color: rgba(251, 250, 247, 0.7);
 }
 
-.pricing-trial-note strong {
+.pricing-note strong {
   color: var(--gold-hi);
 }
 

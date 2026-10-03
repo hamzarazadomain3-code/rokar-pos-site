@@ -25,7 +25,7 @@ export default function WhatsAppFloat() {
               <span className="wa-status-dot" />
               <span>Rokar Support · Online</span>
             </div>
-            <p>15-min free trial setup ya software demo ke liye rabta karein!</p>
+            <p>15-minute free setup ya software demo ke liye rabta karein!</p>
           </motion.div>
         )}
       </AnimatePresence>

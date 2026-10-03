@@ -89,7 +89,7 @@ export default function IndustrySolutions() {
                       </a>
                     ) : (
                       <a className="btn btn-primary btn-sm" href={DOWNLOAD_URL}>
-                        <Icon name="download" size={16} /> Free Trial Se Dekhein
+                        <Icon name="download" size={16} /> Download Karein
                       </a>
                     )}
                   </div>

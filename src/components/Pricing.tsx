@@ -47,19 +47,19 @@ export default function Pricing() {
                     <a
                       className={`btn ${pkg.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}
                       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                        `Assalam o Alaikum, mujhe Rokar POS ke ${pkg.name} package ka price aur free trial chahiye.`,
+                        `Assalam o Alaikum, mujhe Rokar POS ke ${pkg.name} package ki price chahiye.`,
                       )}`}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Icon name="whatsapp" size={17} /> 15 Din Free Trial Mangein
+                      <Icon name="whatsapp" size={17} /> Is Package Ki Price Poochein
                     </a>
                   ) : (
                     <a
                       className={`btn ${pkg.popular ? 'btn-primary' : 'btn-ghost'} btn-block`}
                       href={DOWNLOAD_URL}
                     >
-                      <Icon name="download" size={17} /> 15 Din Free Trial Start Karein
+                      <Icon name="download" size={17} /> Download Karein
                     </a>
                   )}
                 </div>
@@ -105,16 +105,16 @@ export default function Pricing() {
               ) : (
                 <a className="btn btn-primary btn-sm" href={DOWNLOAD_URL}>
                   <Icon name="download" size={16} />
-                  Free Trial Start Karein
+                  Download Rokar POS
                 </a>
               )}
             </div>
           </div>
         </Reveal>
 
-        {/* Trial Note */}
+        {/* Licence note */}
         <Reveal delay={0.28}>
-          <div className="pricing-trial-note">
+          <div className="pricing-note">
             <p>
               <strong>{PRICING.noteHeading}:</strong> {PRICING.note}
             </p>

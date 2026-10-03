@@ -86,10 +86,10 @@ export default function Footer() {
           {!HAS_PHONE && !HAS_EMAIL && !HAS_WHATSAPP && (
             <>
               <a href={DOWNLOAD_URL} className="footer-contact footer-wa-highlight">
-                <Icon name="download" size={16} /> Download Free Trial
+                <Icon name="download" size={16} /> Download Rokar POS
               </a>
               <span className="footer-contact footer-muted">
-                Install kar ke khud try karein — koi signup nahi.
+                Download aur install free hai — koi card, koi signup nahi.
               </span>
             </>
           )}
@@ -104,7 +104,7 @@ export default function Footer() {
         <span>
           © {YEAR} {FOOTER.rights}
         </span>
-        <span className="footer-tiny">Made for the shopkeepers of Pakistan &mdash; 100% local data, always private.</span>
+        <span className="footer-tiny">{FOOTER.tiny}</span>
       </div>
     </footer>
   );

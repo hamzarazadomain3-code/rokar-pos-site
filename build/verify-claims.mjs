@@ -84,6 +84,26 @@ const BANNED = [
     why: 'an absolute guarantee. Backups are not encrypted and not off-site unless the user arranges it, so "100% safe" is not true.',
   },
   {
+    re: /\b100\s*%\s*(?:local|accurate|private|offline)\b|\b(?:100|100\s*%)\s*(?:percent)?\s*(?:local\s+data|accurate)\b/i,
+    why: 'an unfalsifiable absolute. The app does keep sales data in a local SQLite file and billing really does survive a dropped connection, but shop name, phone, address and payment details are sent to the licence server, no computer record is "100% accurate" -- an operator can mistype a price -- and activation and updates still need the network. Name the specific thing that is true instead of asserting a total.',
+  },
+  {
+    re: /\btrial\b/i,
+    why: 'there is no trial anywhere in the product. Checked all three layers: no `trial` identifier in pos-app src/, no trial logic or plan type in license-server/server.js, and no separate trial build in any GitHub release -- the only asset is the one RokarPOS-Setup.exe every customer gets. The app throws "No license key set" until a key is entered, so "Download Free Trial" hands the shopkeeper an app they cannot use. The 15 in the source is GRACE_DAYS, the grace period AFTER a licence expires, which is not a trial. If a real trial is ever implemented, delete this rule deliberately rather than quietly.',
+  },
+  {
+    re: /\b(?:bilkul|puri|tarah|fully|completely|entirely)\s+(?:offline|local|accurate|private|secure)\b|\b(?:offline|local)\s+(?:ho\s+)?(?:jayega|rehta)\b[^.]{0,20}\bnahin\b/i,
+    why: 'an absolute that needs no number attached. "Bilkul Offline" is the same overclaim as "100% Offline" -- billing survives a dropped connection, but a licence still has to be activated and checked online and updates are fetched from GitHub, so the software is not offline in the unqualified sense.',
+  },
+  {
+    re: /\bcompletely\s+offline\b[^.]{0,60}\b(?:haan|yes)\b|\b(?:haan|yes)\b[^.]{0,20}\b100\s*%[^.]{0,40}\boffline\b/i,
+    why: 'billing, stock and reports really do work with no internet -- verified in licensing.ts, where a network failure is caught and the shop keeps trading. But the app still needs the network to activate a licence, verify it, and fetch updates, so an unqualified "completely offline, yes 100%" contradicts the rest of the same answer.',
+  },
+  {
+    re: /\balways\s+private\b|\bkisi\s+ko\s+nahi\b[^.]{0,30}\b(?:data|private)/i,
+    why: 'a privacy claim on a site that takes payments, while the licence server holds shop name, phone, address and payment amount. Scope the claim to the data that is actually local.',
+  },
+  {
     re: /\b(?:military[- ]grade|bank[- ]level|enterprise[- ]grade)\s+(?:security|encryption)/i,
     why: 'no such implementation; this is the kind of claim that invites a breach-of-contract letter',
   },
@@ -172,8 +192,23 @@ function checkText(text, where) {
 function walk(value, path, visit) {
   if (typeof value === 'string') visit(value, path);
   else if (Array.isArray(value)) value.forEach((v, i) => walk(v, `${path}[${i}]`, visit));
-  else if (value && typeof value === 'object')
+  else if (value && typeof value === 'object') {
     for (const [k, v] of Object.entries(value)) walk(v, `${path}.${k}`, visit);
+
+    // Also scan each object's scalar fields joined into one line.
+    //
+    // A stat tile is stored as separate fields -- {"value": 100, "suffix": "%",
+    // "label": "Bilkul Offline"} -- and every rule in this file keys off a number
+    // sitting next to the word it modifies. Walked field by field, the number and
+    // the word are never in the same string, so "100% Bilkul Offline" passed
+    // cleanly while its own subtitle admitted the app needs the internet. Joining
+    // the scalars reconstructs the text the page actually renders.
+    const scalars = Object.entries(value)
+      .filter(([, v]) => ['string', 'number', 'boolean'].includes(typeof v))
+      .map(([, v]) => String(v))
+      .filter(Boolean);
+    if (scalars.length >= 2) visit(scalars.join(' '), `${path} (fields joined)`);
+  }
 }
 
 // --- content.json ----------------------------------------------------------

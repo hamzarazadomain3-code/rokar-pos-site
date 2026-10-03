@@ -88,7 +88,7 @@ export default function Navbar() {
             )}
             <a className="btn btn-primary" href={DOWNLOAD_URL} onClick={() => setOpen(false)}>
               <Icon name="download" size={18} />
-              Download Free Trial
+              Download Rokar POS
             </a>
           </div>
         </div>

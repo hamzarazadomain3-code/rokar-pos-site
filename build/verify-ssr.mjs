@@ -98,7 +98,17 @@ try {
     ['download requirements', content.download.requirements[0].label],
   ];
   for (const [what, needle] of mustHave) {
-    check(`present: ${what}`, html.includes(needle));
+    // Compare against both the raw string and its HTML-escaped form. React escapes
+    // `&`, `<` and `>` when it renders text, so a perfectly valid label like
+    // "Analytics & Telemetry" reaches the page as "Analytics &amp; Telemetry" and a
+    // plain substring test fails on content that is actually present. Rather than
+    // forbid punctuation in the copy -- which is a workaround that hides the bug --
+    // accept the escaped spelling too, so the check stays about presence.
+    check(
+      `present: ${what}`,
+      html.includes(needle) ||
+        html.includes(needle.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')),
+    );
   }
 
   // --- The empty-testimonials fix ---------------------------------------
