@@ -12,7 +12,8 @@
     "verify:content": "node build/verify-content.mjs",
     "verify:ssr": "node build/verify-ssr.mjs",
     "verify:bundle": "node build/verify-bundle.mjs",
-    "verify": "npm run typecheck && npm run verify:content && npm run verify:ssr && npm run build && npm run verify:bundle"
+    "verify": "npm run typecheck && npm run verify:content && npm run verify:ssr && npm run build && npm run verify:bundle",
+    "og:cover": "python build/build-og-cover.py"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",
