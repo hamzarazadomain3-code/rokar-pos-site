@@ -1,0 +1,27 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static assets - long cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML - no cache (SPA needs fresh index)
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Favicon & manifest - long cache
+/favicon.ico
+/favicon-*.png
+/favicon.svg
+/manifest.json
+/og-cover.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# Robots & sitemap - daily revalidation
+/robots.txt
+/sitemap.xml
+  Cache-Control: public, max-age=86400, must-revalidate
