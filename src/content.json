@@ -8,7 +8,7 @@
   "site": {
     "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest/download/RokarPOS-Setup.exe",
     "releasesPage": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest",
-    "latestVersion": "2.10.0",
+    "latestVersion": "2.16.0",
     "contact": {
       "phone": "",
       "phoneTel": "",
@@ -435,6 +435,18 @@
   ],
   "testimonials": [],
   "changelog": [
+    {
+      "version": "2.16.0",
+      "date": "2026-10-13",
+      "title": "PC se image upload, behtar billing aur window-style dialogs",
+      "notes": [
+        "Ab PC se seedha image upload karein — product photo, shop logo, wallpaper aur Label Studio ke images.",
+        "Label templates asli image print karte hain; {image} khud product ki photo utha leta hai.",
+        "Har dialog par minimize / maximize / close — minimize karne par neeche wala page chalta rehta hai, likha hua zaya nahi hota.",
+        "Held bills ki list mein customer aur total nazar aata hai, aur cart ke +/- buttons touch screen ke liye bade kar diye.",
+        "Barcode Labels aur Label Studio ab ek hi jagah — Quick aur Designer mode mein switch karein."
+      ]
+    },
     {
       "version": "2.11.0",
       "title": "One-time licence — ab koi renewal nahi",
