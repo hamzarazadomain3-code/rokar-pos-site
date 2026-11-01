@@ -8,7 +8,7 @@
   "site": {
     "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest/download/RokarPOS-Setup.exe",
     "releasesPage": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest",
-    "latestVersion": "2.21.0",
+    "latestVersion": "2.22.0",
     "contact": {
       "phone": "",
       "phoneTel": "",
@@ -435,6 +435,18 @@
   ],
   "testimonials": [],
   "changelog": [
+    {
+      "version": "2.22.0",
+      "date": "2026-11-01",
+      "title": "Stock khatam ho jaye to bhi bill, aur Excel se purchase import",
+      "notes": [
+        "Stock 0 ya minus hone par bhi bill save hota hai -- bill par saaf warning aati hai aur Inventory mein woh item red dikhta hai. Owner chahe to isay band bhi kar sakta hai.",
+        "Reports mein naya 'Oversold Items' tab: kis item ka kitna stock minus gaya aur uski value kitni hai, Dashboard par bhi counter.",
+        "Purchases ab Excel ya CSV file se import ho sakti hain -- preview dekhein, columns match karein, phir confirm. Ghalat file chali jaye to 'Undo last import' se ek click mein wapas.",
+        "Purchase order ka poora maal na aaye to partial receive karein -- baqi quantity pending rehti hai.",
+        "Receipt aur A4 invoice ab ek hi designer se print hote hain, aur address har jagah Shop Profile se aata hai -- purana branch address kabhi nahi chhapta."
+      ]
+    },
     {
       "version": "2.21.0",
       "date": "2026-10-24",
