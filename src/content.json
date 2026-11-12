@@ -8,7 +8,8 @@
   "site": {
     "downloadUrl": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest/download/RokarPOS-Setup.exe",
     "releasesPage": "https://github.com/hamzarazadomain3-code/pos-releases/releases/latest",
-    "latestVersion": "2.22.0",
+    "webAppUrl": "https://rokar-pos.bakery-saas.workers.dev/",
+    "latestVersion": "2.23.0",
     "contact": {
       "phone": "",
       "phoneTel": "",
@@ -435,6 +436,19 @@
   ],
   "testimonials": [],
   "changelog": [
+    {
+      "version": "2.23.0",
+      "date": "2026-11-12",
+      "title": "Customer discount model, F6 customer search aur keyboard se bill editing",
+      "notes": [
+        "Customer ka discount ab percent ya fixed rupees dono ho sakta hai, aur optional minimum bill lagaya ja sakta hai (jaise Rs 500 se upar Rs 50 off). Discount bill ke saath live re-evaluate hota hai — chhoti bill par discount nahi lagta, badi bill par foran lag jata hai.",
+        "Stacking order fix hai: price level → promotion → manual line discount → customer discount (baki amount par). Fixed discount lines mein hisaab se bat jata hai, is liye cost aur profit sahi rehte hain; return bhi wahi amount wapas deta hai jo customer ne diya tha.",
+        "Billing par F6 customer search kholta hai (naam, phone ya customer code par), aur customer list mein Discount column aur 'Has discount' filter aa gaya hai.",
+        "Pause (ya F4) dabane par current bill keyboard se edit hota hai — row chunein, qty badlein, unit badlein, price / discount / note likhein, ya row delete karke Undo karein.",
+        "Ab Esc page refresh karta hai (cart bilkul mehfooz rehta hai) aur do Esc dabane par seedha Billing par chala jata hai. Settings > Keyboard se ye behaviour on/off aur uski timing bhi badli ja sakti hai.",
+        "Billing, Dashboard, Returns aur Sales History ab ek hi 'aaj' use karte hain — raat 4 baje tak ki bill pichle din ki hai, aur shop ka timezone bhi Settings se set hota hai."
+      ]
+    },
     {
       "version": "2.22.0",
       "date": "2026-11-01",

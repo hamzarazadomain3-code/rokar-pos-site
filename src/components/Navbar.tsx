@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState } from 'react';
-import { NAV_LINKS, DOWNLOAD_URL, CONTACT, HAS_WHATSAPP } from '../content';
+import { NAV_LINKS, DOWNLOAD_URL, WEB_APP_URL, CONTACT, HAS_WHATSAPP } from '../content';
 import Icon from './Icon';
 import Logo from './Logo';
 
@@ -48,6 +48,11 @@ export default function Navbar() {
             </a>
           )}
 
+          <a className="btn btn-ghost nav-web-btn" href={WEB_APP_URL}>
+            <Icon name="window" size={17} />
+            <span>Web App</span>
+          </a>
+
           <a className="btn btn-primary nav-cta" href={DOWNLOAD_URL}>
             <Icon name="download" size={17} />
             <span>Download</span>
@@ -86,6 +91,10 @@ export default function Navbar() {
                 WhatsApp Help &amp; Pricing
               </a>
             )}
+            <a className="btn btn-ghost" href={WEB_APP_URL} onClick={() => setOpen(false)}>
+              <Icon name="window" size={18} />
+              Web App (Browser)
+            </a>
             <a className="btn btn-primary" href={DOWNLOAD_URL} onClick={() => setOpen(false)}>
               <Icon name="download" size={18} />
               Download Rokar POS

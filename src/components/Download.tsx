@@ -1,4 +1,4 @@
-import { DOWNLOAD, DOWNLOAD_URL, FAQ, SYS_REQS } from '../content';
+import { DOWNLOAD, DOWNLOAD_URL, WEB_APP_URL, FAQ, SYS_REQS } from '../content';
 import Icon from './Icon';
 import Reveal from './Reveal';
 
@@ -22,6 +22,20 @@ export default function DownloadSection() {
                   {DOWNLOAD.buttonLabel}
                 </a>
                 <span className="dl-facts">{DOWNLOAD.facts}</span>
+              </div>
+
+              {/* Browser version: same product, no install. The 7-day figure and
+                  the "no card" promise describe the web Worker (accounts.ts
+                  TRIAL_DAYS = 7; signup takes shop name + username + password
+                  only). The desktop app ships no such offer, so this block is
+                  worded as web-only. */}
+              <div className="dl-web">
+                <p className="dl-web-title">{DOWNLOAD.webTitle}</p>
+                <p className="dl-web-note">{DOWNLOAD.webNote}</p>
+                <a className="btn btn-ghost-dark" href={WEB_APP_URL}>
+                  <Icon name="window" size={18} />
+                  {DOWNLOAD.webButtonLabel}
+                </a>
               </div>
             </div>
           </Reveal>

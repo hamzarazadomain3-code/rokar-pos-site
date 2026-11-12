@@ -89,7 +89,7 @@ const BANNED = [
   },
   {
     re: /\btrial\b/i,
-    why: 'there is no trial anywhere in the product. Checked all three layers: no `trial` identifier in pos-app src/, no trial logic or plan type in license-server/server.js, and no separate trial build in any GitHub release -- the only asset is the one RokarPOS-Setup.exe every customer gets. The app throws "No license key set" until a key is entered, so "Download Free Trial" hands the shopkeeper an app they cannot use. The 15 in the source is GRACE_DAYS, the grace period AFTER a licence expires, which is not a trial. If a real trial is ever implemented, delete this rule deliberately rather than quietly.',
+    why: 'the DESKTOP app has no trial. An audit of all three layers found no `trial` identifier in pos-app src/, no trial logic or plan type in license-server/server.js, and no separate trial build in any GitHub release -- the only asset is the one RokarPOS-Setup.exe every customer gets. The app throws "No license key set" until a key is entered, so "Download Free Trial" hands the shopkeeper an app they cannot use. The 15 in the source is GRACE_DAYS, the grace period AFTER a licence expires, which is not a trial. As of 2026-10-14 the WEB version (pos-app/cloud/accounts.ts, TRIAL_DAYS = 7) really does grant a trial, so a trial claim is allowed only when the sentence names the web/browser version -- see the trial entry in ALLOWLIST. Every other "trial" wording stays banned.',
   },
   {
     re: /\b(?:bilkul|puri|tarah|fully|completely|entirely)\s+(?:offline|local|accurate|private|secure)\b|\b(?:offline|local)\s+(?:ho\s+)?(?:jayega|rehta)\b[^.]{0,20}\bnahin\b/i,
@@ -165,6 +165,13 @@ const ALLOWLIST = [
   // encrypted, which the negation check handles but which is worth pinning here so
   // a future refactor cannot quietly delete the disclosure.
   { re: /Backup encrypted nahi hota/i, why: 'the security disclosure itself' },
+  // The WEB version really does grant a trial, so the copy may say so -- but only
+  // when the sentence names the browser/web version. That is what keeps a desktop
+  // trial claim (still false) banned while letting the new web offer be honest.
+  {
+    re: /\b(?:web|browser)\b[^.]{0,90}\btrial\b|\btrial\b[^.]{0,90}\b(?:web|browser)\b/i,
+    why: "the browser version genuinely grants a 7-day trial: pos-app/cloud/src/accounts.ts sets TRIAL_DAYS = 7, /api/signup inserts the shop with plan='trial' and trial_ends_at = now + 7d, and signup asks for shop name + username + password only (no card). The DESKTOP app still ships no trial, so 'trial' is only allowed in a sentence that names the web/browser version.",
+  },
 ];
 
 /** Split content into sentences, keeping the offset so failures point at a string. */

@@ -18,6 +18,7 @@ export type { ChangelogEntry, FAQItem, Feature, Industry, PricingPackage, SiteCo
 /* ---- site-level ---- */
 export const DOWNLOAD_URL = CONTENT.site.downloadUrl;
 export const RELEASES_PAGE = CONTENT.site.releasesPage || '';
+export const WEB_APP_URL = CONTENT.site.webAppUrl;
 export const LATEST_VERSION = CONTENT.site.latestVersion;
 export const CONTACT = CONTENT.site.contact;
 

@@ -84,7 +84,8 @@
   margin-left: 8px;
 }
 
-.nav-wa-btn {
+.nav-wa-btn,
+.nav-web-btn {
   display: none;
 }
 
@@ -94,7 +95,8 @@
 }
 
 @media (min-width: 1000px) {
-  .nav-wa-btn {
+  .nav-wa-btn,
+  .nav-web-btn {
     display: inline-flex;
   }
 }
@@ -157,7 +159,8 @@
 
 @media (max-width: 860px) {
   .nav-links,
-  .nav-wa-btn {
+  .nav-wa-btn,
+  .nav-web-btn {
     display: none;
   }
   .nav-burger {
@@ -792,6 +795,25 @@
 
 .dl-facts b {
   color: var(--teal);
+}
+
+/* Browser-version offer, shown under the desktop download button. */
+.dl-web {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(22, 48, 43, 0.1);
+}
+
+.dl-web-title {
+  font-weight: 700;
+  color: var(--teal);
+  margin: 0 0 4px;
+}
+
+.dl-web-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 14px;
 }
 
 .dl-safe {
@@ -1763,14 +1785,16 @@
   gap: 12px;
 }
 
-.nav-wa-btn {
+.nav-wa-btn,
+.nav-web-btn {
   padding: 9px 16px;
   font-size: 0.88rem;
   border-color: rgba(16, 185, 129, 0.35);
   color: var(--cream-hi);
 }
 
-.nav-wa-btn:hover {
+.nav-wa-btn:hover,
+.nav-web-btn:hover {
   border-color: var(--teal-accent);
   background: rgba(16, 185, 129, 0.15);
 }

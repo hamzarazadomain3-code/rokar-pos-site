@@ -83,6 +83,9 @@ export type SiteContent = {
   site: {
     downloadUrl: string;
     releasesPage: string;
+    /** Entry point for the browser (web) version. Points at the live Worker root
+     *  — the signup/login page — until the custom domain is attached. */
+    webAppUrl: string;
     latestVersion: string;
     contact: {
       /** Empty string means "not configured yet" — components hide the row rather
@@ -138,6 +141,10 @@ export type SiteContent = {
     lead: string;
     buttonLabel: string;
     facts: string;
+    /** Secondary CTA offering the browser version next to the desktop download. */
+    webTitle: string;
+    webNote: string;
+    webButtonLabel: string;
     requirementsTitle: string;
     requirements: SystemRequirement[];
     faqTitle: string;
