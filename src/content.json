@@ -131,6 +131,24 @@
         "icon": "tag",
         "title": "Barcode Label Generator",
         "desc": "Design and print your own custom barcode stickers for unbranded items directly from Rokar POS to any label printer."
+      },
+      {
+        "icon": "percent",
+        "title": "Customer Discount Engine",
+        "desc": "Har customer ka discount percent ya fixed rupees mein — optional minimum bill ke saath. Chhoti bill par discount nahi lagta, badi bill par foran lag jata hai, aur har sale par discount ki source (customer, manual ya promotion) save hoti hai.",
+        "tag": "New in 2.23"
+      },
+      {
+        "icon": "keyboard",
+        "title": "Keyboard se Bill Editing",
+        "desc": "F6 customer search kholta hai, Pause (ya F4) se current bill ki row, qty, unit, price, discount aur note keyboard se badal jate hain, aur Esc page refresh karta hai — cart bilkul mehfooz rehta hai.",
+        "tag": "New in 2.23"
+      },
+      {
+        "icon": "window",
+        "title": "Browser Version",
+        "desc": "Bina install kiye browser mein Rokar POS chal jata hai — wahi billing, udhaar aur stock screens, kisi bhi PC se. Shop ka data usi ke account mein rehta hai, is liye internet chahiye hota hai.",
+        "tag": "Web"
       }
     ]
   },
@@ -397,6 +415,18 @@
       {
         "q": "Update ke liye baar baar download karna padega?",
         "a": "Nahi. App khud update check karta hai. Naya version aate hi andar se notification aa jaati hai aur ek click mein update ho jata hai."
+      },
+      {
+        "q": "Browser mein bhi Rokar POS chal sakta hai?",
+        "a": "Haan — browser version wahi desktop screens dikhata hai (billing, udhaar, stock, reports), sirf install nahi karna parta. Shop ka naam, username aur password se signup kar sakte hain, aur pehle 7 din ka free trial milta hai browser version par. Har shop ka apna alag database hota hai, is liye ek shop ka data doosre shop se mix nahi hota."
+      },
+      {
+        "q": "Browser version aur PC (Windows) version mein kya farq hai?",
+        "a": "PC version aap ke PC par chalta hai: billing aur stock ka kaam bina internet ke bhi chal jata hai (sirf licence check aur update ke waqt internet chahiye), aur data aap ke machine par rehta hai. Browser version ke liye hamesha internet chahiye, woh kisi bhi PC ya tablet ke browser se khulta hai aur data us shop ke account mein rehta hai, is liye do jagah se ek hi bill dekh sakte hain. Dono ka billing, udhaar aur stock ka tareeqa ek jaisa hai."
+      },
+      {
+        "q": "Browser version par receipt print aur WhatsApp receipt chalta hai?",
+        "a": "Haan. Browser version receipt aur invoice browser ke print window se nikalte hain — PDF save kar sakte hain ya usi PC se koi bhi printer chala sakte hain jahan browser khula hai. WhatsApp receipt bhi isi tarah chalta hai, number khud set karte hain."
       }
     ]
   },
