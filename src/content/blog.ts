@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Business Management',
     readTime: '8 min',
     publishedAt: '2026-09-15',
-    updatedAt: '2026-09-15',
+    updatedAt: '2026-11-12',
     author: 'Rokar POS Team',
     tags: ['udhaar', 'khata', 'credit management', 'collections', 'small business'],
     content: `
@@ -86,7 +86,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>Ready to Digitize Your Udhaar?</h2>
-<p>Rokar POS gives you a <strong>15-day free trial</strong> with full udhaar features. No credit card. Setup takes 30 minutes. <a href="#download" style="color:var(--teal); font-weight:600">Download now ???</a></p>
+<p>Rokar POS ka Windows installer free hai — koi card nahi, koi signup nahi. Use karne ke liye ek baar lifetime licence khareedein, phir koi renewal fee nahi. Setup 30 minute. Browser version par pehle 7 din ka free trial milta hai. <a href="#download" style="color:var(--teal); font-weight:600">Download karein ???</a></p>
 
 <p><strong>Need help?</strong> WhatsApp us for free remote setup: <a href="https://wa.me/923001234567?text=Assalam%20o%20Alaikum%20Rokar%20POS%20team,%20mujhe%20udhaar%20khata%20setup%20chahiye" style="color:var(--teal); font-weight:600">Click to chat ???</a></p>
 `
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Buying Guide',
     readTime: '10 min',
     publishedAt: '2026-09-20',
-    updatedAt: '2026-09-20',
+    updatedAt: '2026-11-12',
     author: 'Rokar POS Team',
     tags: ['pos software', 'kirana', 'billing software', 'comparison', 'pakistan'],
     content: `
@@ -111,13 +111,13 @@ export const blogPosts: BlogPost[] = [
     <tr><th>Factor</th><th>Rokar POS</th><th>Cloud POS</th><th>Excel</th><th>Manual Register</th></tr>
   </thead>
   <tbody>
-    <tr><td>Internet Required</td><td>No (100% offline)</td><td>Yes (always)</td><td>No</td><td>No</td></tr>
+    <tr><td>Internet Required</td><td>No (billing chalti rehti hai)</td><td>Yes (always)</td><td>No</td><td>No</td></tr>
     <tr><td>Udhaar/Khata</td><td>Built-in + limits + WhatsApp</td><td>Basic</td><td>Manual formulas</td><td>Paper</td></tr>
     <tr><td>Stock Audit</td><td>Real-time + barcode</td><td>Yes</td><td>Manual</td><td>Physical count</td></tr>
     <tr><td>Thermal Printing</td><td>58/80mm + A4</td><td>Yes (often extra)</td><td>???</td><td>???</td></tr>
     <tr><td>Monthly Cost</td><td>PKR 0 (one-time)</td><td>PKR 2,000-5,000/mo</td><td>Free</td><td>Free</td></tr>
     <tr><td>Data Privacy</td><td>Local only</td><td>Cloud server</td><td>Local file</td><td>Paper</td></tr>
-    <tr><td>Load-shedding Proof</td><td>??? Full offline</td><td>??? Stops working</td><td>???</td><td>???</td></tr>
+    <tr><td>Load-shedding Proof</td><td>??? Billing continues</td><td>??? Stops working</td><td>???</td><td>???</td></tr>
     <tr><td>Setup Time</td><td>30 min</td><td>Hours + training</td><td>Hours</td><td>Minutes</td></tr>
   </tbody>
 </table>
@@ -125,15 +125,15 @@ export const blogPosts: BlogPost[] = [
 <h2>Deep Dive: Why Rokar POS Wins for Pakistani Shops</h2>
 
 <h3>1. True Offline-First Architecture</h3>
-<p>Unlike cloud POS that becomes a "brick" during load-shedding or internet outages, Rokar POS runs entirely on your Windows PC. <strong>Billing, stock, reports, udhaar ??? everything works without a single byte of internet.</strong> Internet is only needed for cloud backup (optional) and licence verification.</p>
+<p>Cloud POS load-shedding ya internet outage mein ruk jaata hai. Rokar POS aap ke Windows PC par chalta hai: <strong>billing, stock, reports aur udhaar bina internet ke chalte hain.</strong> Internet sirf licence activate/verify karne, naya update lene aur (agar aap chahein to) backup folder ke sync karne ke liye chahiye.</p>
 
 <h3>2. Built for Pakistan, Not Ported from Abroad</h3>
 <ul>
-  <li>Urdu + English interface (24 sidebar labels, 9 login strings in Urdu)</li>
+  <li>Urdu labels sidebar aur login screen par (baqi screens English hain)</li>
   <li>Rupee formatting (lakhs/crores), Pakistani date formats</li>
   <li>Local thermal printer drivers (58mm/80mm) pre-configured</li>
   <li>WhatsApp integration with Pakistani number format</li>
-  <li>BayLan weighing scale support</li>
+  <li>Weighed items ke liye manual weight entry (PLU mode) — weight type karein, per-kg price apne aap</li>
 </ul>
 
 <h3>3. One-Time Payment, Not Rent</h3>
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Choose Cloud POS if:</h3>
 <ul>
-  <li>You have multiple branches needing real-time central sync</li>
+  <li>Aapko shaklon ke darmiyan stock live sync karwana hai (Rokar POS ye nahi karta)</li>
   <li>You have reliable 24/7 internet and backup power</li>
   <li>You're okay with monthly subscription forever</li>
 </ul>
@@ -176,22 +176,18 @@ export const blogPosts: BlogPost[] = [
   <li>You're not ready to invest in a PC + printer yet</li>
 </ul>
 
-<h2>Real Numbers from Pakistani Shopkeepers</h2>
-<table>
-  <thead><tr><th>Metric</th><th>Before Rokar</th><th>After Rokar</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Avg billing time</td><td>45-60 seconds</td><td>3 seconds</td></tr>
-    <tr><td>Udhaar recovery rate</td><td>~40%</td><td>~85%</td></tr>
-    <tr><td>Monthly profit visibility</td><td>Guesswork</td><td>Daily net profit</td></tr>
-    <tr><td>Stock audit time</td><td>4-6 hours</td><td>30 minutes</td></tr>
-  </tbody>
-</table>
+<h2>What Actually Changes Day to Day</h2>
+<ul>
+  <li>Udhaar ka balance, ageing aur credit limit ek jagah — aur bill ke waqt credit check</li>
+  <li>Stock, sale aur udhaar ledger ek hi database mein, is liye raat ko hisaab khud check hota hai</li>
+  <li>Daily net profit report — andhera guesswork ki jagah figures</li>
+  <li>Excel export accountant ke liye, aur backup aap ke chune hue folder mein</li>
+</ul>
 
 <h2>Final Recommendation</h2>
-<p>For 90% of Pakistani kirana, medical, and bakery shops: <strong>Rokar POS is the clear winner.</strong> One-time payment, true offline, built for Pakistan, free setup support.</p>
+<p>Zyadatar Pakistani kirana, medical aur bakery shops ke liye <strong>Rokar POS behtar fit baithta hai:</strong> ek baar payment, internet se azaad billing, Pakistan ke liye banaya gaya, aur free remote setup.</p>
 
-<p><strong>Try it free for 15 days:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Download Rokar POS ???</a></p>
+<p><strong>Pehle chala kar dekhein:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Windows installer lein ???</a></p>
 `
   },
   {
@@ -201,7 +197,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Technology',
     readTime: '7 min',
     publishedAt: '2026-09-25',
-    updatedAt: '2026-09-25',
+    updatedAt: '2026-11-12',
     author: 'Rokar POS Team',
     tags: ['offline pos', 'cloud pos', 'internet', 'load shedding', 'data privacy'],
     content: `
@@ -210,7 +206,7 @@ export const blogPosts: BlogPost[] = [
 <p>For Pakistani businesses, this isn't theoretical ??? it's about <strong>whether you can bill customers during load-shedding</strong>.</p>
 
 <h2>What "Offline" Actually Means</h2>
-<p><strong>True offline POS (Rokar POS):</strong> The database, billing engine, reports, udhaar, inventory ??? everything runs on your PC's SQLite database. Zero internet required for daily operations.</p>
+<p><strong>Offline POS (Rokar POS):</strong> The database, billing engine, reports, udhaar, inventory ??? sab aap ke PC ke SQLite database par chalta hai. Daily kaam ke liye internet ki zarurat nahi parti.</p>
 <p><strong>Cloud POS with "offline mode":</strong> Usually means you can bill for a few hours, but data syncs later. If internet is down for hours (common in Pakistan), you hit limits: can't verify stock, can't process payments, can't access reports.</p>
 
 <h2>Load-Shedding Reality in Pakistan</h2>
@@ -218,15 +214,15 @@ export const blogPosts: BlogPost[] = [
   <thead><tr><th>Scenario</th><th>Rokar POS (Offline)</th><th>Cloud POS</th></tr>
   </thead>
   <tbody>
-    <tr><td>2-4 hour load-shedding</td><td>??? Full billing</td><td>?????? Limited/Offline mode</td></tr>
-    <tr><td>8+ hour outage (storms/floods)</td><td>??? Full billing</td><td>??? Cannot bill</td></tr>
+    <tr><td>Load-shedding / internet outage</td><td>??? Billing continues</td><td>?????? Limited/Offline mode</td></tr>
+    <tr><td>Long outage (storms/floods)</td><td>??? Billing continues</td><td>??? Cannot bill</td></tr>
     <tr><td>Internet fluctuations</td><td>??? Unaffected</td><td>?????? Sync issues, errors</td></tr>
     <tr><td>Mobile data backup</td><td>Not needed</td><td>Required (extra cost)</td></tr>
   </tbody>
 </table>
 
 <h2>Data Privacy: Who Owns Your Customer Data?</h2>
-<p><strong>Offline (Rokar POS):</strong> Your database file (<code>pos.db</code>) sits on your PC. Only you have it. No company, no cloud provider, no third party can access your customer names, phone numbers, udhaar amounts, or profit margins.</p>
+<p><strong>Offline (Rokar POS):</strong> Aap ka database file (<code>pos.db</code>) aap ke PC par hai. Sirf licence ke liye shop ka naam, phone aur payment details server par jaate hain — baaqi sab kuch aap ke machine par rehta hai.</p>
 <p><strong>Cloud POS:</strong> All data lives on their servers. You're trusting them with your entire business intelligence. If they get hacked, go bankrupt, or change terms ??? your data is at risk.</p>
 
 <h2>Cost Over 3 Years</h2>
@@ -242,10 +238,10 @@ export const blogPosts: BlogPost[] = [
 </table>
 
 <h2>When Cloud POS Makes Sense</h2>
-<p>Only if you have <strong>multiple branches needing real-time central inventory sync</strong> AND <strong>reliable 24/7 internet with UPS/generator backup</strong>. Even then, hybrid (offline + periodic sync) is safer.</p>
+<p>Jab aapko shaklon ke darmiyan stock live sync chahiye ya har data cloud par rakhna hai — tab cloud POS kaam aata hai. Rokar POS ye nahi karta: uska data aap ke PC par rehta hai.</p>
 
 <h2>Verdict for Pakistan</h2>
-<p><strong>For 95% of Pakistani shops: Offline POS (Rokar POS) is the right choice.</strong></p>
+<p><strong>Zyadatar Pakistani shops ke liye Offline POS (Rokar POS) behtar hai.</strong></p>
 <ul>
   <li>Load-shedding is a fact of life</li>
   <li>Internet reliability varies wildly</li>
@@ -253,17 +249,17 @@ export const blogPosts: BlogPost[] = [
   <li>Monthly rent (cloud) vs one-time ownership (offline)</li>
 </ul>
 
-<p><strong>Try Rokar POS free for 15 days ??? no internet needed after install:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Download ???</a></p>
+<p><strong>Windows installer lein — install ke baad billing bina internet ke chalti hai:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Download ???</a></p>
 `
   },
   {
     slug: 'barcode-scanner-setup-pos',
-    title: 'Barcode Scanner Kaise Connect Karein POS Software Se ??? Step by Step',
-    excerpt: 'Complete guide to connecting USB/Bluetooth barcode scanners to Rokar POS. Covers keyboard-wedge, serial, and wireless scanners.',
+    title: 'Barcode Scanner POS Software Mein Kaise Chalayein ??? Step by Step',
+    excerpt: 'USB/Bluetooth barcode scanner Rokar POS mein kaise chalate hain — keyboard-wedge, serial aur wireless setup ke saath.',
     category: 'Hardware',
     readTime: '6 min',
     publishedAt: '2026-10-01',
-    updatedAt: '2026-10-01',
+    updatedAt: '2026-11-12',
     author: 'Rokar POS Team',
     tags: ['barcode scanner', 'hardware', 'setup', 'usb', 'bluetooth'],
     content: `
@@ -276,7 +272,7 @@ export const blogPosts: BlogPost[] = [
   <tbody>
     <tr><td><strong>USB Keyboard-Wedge</strong> (Most common)</td><td>Acts like a keyboard ??? scans type into any text field</td><td>Plug in ??? Works instantly</td></tr>
     <tr><td><strong>Bluetooth Wireless</strong></td><td>Pairs with Windows ??? acts like keyboard</td><td>Pair in Windows Settings ??? Works</td></tr>
-    <tr><td><strong>Serial (RS-232)</strong></td><td>Needs COM port driver</td><td>Install driver ??? Set COM port in POS</td></tr>
+    <tr><td><strong>Serial (RS-232)</strong></td><td>Needs COM port driver</td><td>Rokar POS serial port nahi padhta — keyboard-wedge wala scanner lein</td></tr>
     <tr><td><strong>2D Imager / Camera</strong></td><td>Reads QR, DataMatrix, damaged codes</td><td>Usually keyboard-wedge USB</td></tr>
   </tbody>
 </table>
@@ -331,18 +327,17 @@ export const blogPosts: BlogPost[] = [
   </tbody>
 </table>
 
-<h2>BayLan Weighing Scale Integration</h2>
-<p>For kirana/bakery shops using BayLan digital scales:
+<h2>Weighed Items: Manual Weight Entry (PLU Mode)</h2>
+<p>Rokar POS kisi digital weighing scale se seedha wire nahi hota. Weighed items ke liye <strong>PLU mode</strong> hai: aap weight type karte hain (ya 0.05 ka step use karte hain) aur per-kg price apne aap calculate ho jati hai.</p>
 <ol>
-  <li>Connect scale via RS-232 serial cable to PC</li>
-  <li>In Rokar POS ??? Settings ??? Hardware ??? Enable "BayLan Scale"</li>
-  <li>Set COM port (usually COM1-COM4)</li>
-  <li>Test: Place weight on scale ??? PLU code auto-enters in billing</li>
+  <li>Billing screen par product ka barcode scan karein (PLU code)</li>
+  <li>PLU mode mein weight type karein, ya + / - se 0.05 step badhayein</li>
+  <li>Price per kg aur line total apne aap calculate ho jate hain</li>
+  <li>Bill print karein — receipt par weight bhi likha hota hai</li>
 </ol>
-</p>
 
 <h2>Need Help?</h2>
-<p>Our team does <strong>free remote setup</strong> via AnyDesk. We'll configure your scanner, printer, and scale together.</p>
+<p>Our team does <strong>free remote setup</strong> via AnyDesk. We'll configure your scanner and printer together.</p>
 <p><a href="https://wa.me/923001234567?text=Assalam%20o%20Alaikum%20Rokar%20POS%20team,%20mujhe%20barcode%20scanner%20setup%20chahiye" style="color:var(--teal); font-weight:600">WhatsApp for Free Setup ???</a></p>
 `
   },
@@ -353,7 +348,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Buying Guide',
     readTime: '8 min',
     publishedAt: '2026-10-05',
-    updatedAt: '2026-10-05',
+    updatedAt: '2026-11-12',
     author: 'Rokar POS Team',
     tags: ['free pos', 'small business', 'hidden costs', 'trials', 'pakistan'],
     content: `
@@ -377,11 +372,11 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Reality:</strong> You need a dedicated IT person. Not for small shops.</li>
 </ul>
 
-<h3>3. Genuine Free Trial (Rokar POS Model)</h3>
+<h3>3. Free Download, One-Time Licence (Rokar POS Model)</h3>
 <ul>
-  <li><strong>What's free:</strong> <strong>Everything</strong> ??? all features, unlimited products, udhaar, reports, printing</li>
-  <li><strong>Duration:</strong> 15 days full access</li>
-  <li><strong>After trial:</strong> One-time payment for lifetime licence</li>
+  <li><strong>What's free:</strong> <strong>The download</strong> ??? all features, unlimited products, udhaar, reports, printing</li>
+  <li><strong>Licence:</strong> One-time payment, lifetime — koi renewal fee nahi</li>
+  <li><strong>Browser version:</strong> Sign up kar ke 7 din ka free trial milta hai, phir wahi account</li>
   <li><strong>No lock-in:</strong> Your data stays in SQLite on your PC. Export to Excel anytime.</li>
 </ul>
 
@@ -415,16 +410,16 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>Rokar POS: The Honest "Free" Option</h2>
-<p><strong>15-day free trial with EVERYTHING unlocked.</strong> No feature gates. No credit card. After trial, one-time payment for lifetime licence. Your data stays on your PC forever.</p>
+<p><strong>Download free, koi feature gate nahi.</strong> Koi credit card nahi, koi signup nahi. Ek baar lifetime licence ki payment, phir koi renewal fee nahi. Aap ka data aap ke PC par rehta hai.</p>
 
 <p><strong>Compare yourself:</strong></p>
 <ul>
-  <li>Download Rokar POS free trial ??? Use all features for 15 days</li>
+  <li>Windows installer lein ??? saare features unlocked, koi feature gate nahi</li>
   <li>Try a cloud POS free tier ??? Hit feature walls in 30 minutes</li>
   <li>Decide based on reality, not marketing</li>
 </ul>
 
-<p><strong>Start your honest free trial:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Download Rokar POS ???</a></p>
+<p><strong>Install karein aur khud dekhein:</strong> <a href="#download" style="color:var(--teal); font-weight:600">Windows installer lein ???</a></p>
 `
   },
 ];

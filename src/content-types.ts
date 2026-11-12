@@ -145,6 +145,8 @@ export type SiteContent = {
     webTitle: string;
     webNote: string;
     webButtonLabel: string;
+    /** The three steps that get a shop from signup to its first bill. */
+    webSteps: string[];
     requirementsTitle: string;
     requirements: SystemRequirement[];
     faqTitle: string;

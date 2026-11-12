@@ -32,6 +32,13 @@ export default function DownloadSection() {
               <div className="dl-web">
                 <p className="dl-web-title">{DOWNLOAD.webTitle}</p>
                 <p className="dl-web-note">{DOWNLOAD.webNote}</p>
+                {DOWNLOAD.webSteps?.length ? (
+                  <ol className="dl-web-steps">
+                    {DOWNLOAD.webSteps.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ol>
+                ) : null}
                 <a className="btn btn-ghost-dark" href={WEB_APP_URL}>
                   <Icon name="window" size={18} />
                   {DOWNLOAD.webButtonLabel}

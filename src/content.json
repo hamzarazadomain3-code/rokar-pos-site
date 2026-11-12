@@ -58,7 +58,8 @@
       "Daily Profit & Loss Report",
       "Thermal 58/80mm + A4",
       "Daily Automatic Backup",
-      "Windows 10 / 11 Ready"
+      "Windows 10 / 11 Ready",
+      "Browser Version Available"
     ],
     "versionNote": "Download free hai — koi card nahi, koi signup nahi. Ek baar licence khareedein, phir hamesha chalega."
   },
@@ -248,13 +249,13 @@
   "steps": {
     "eyebrow": "Aasaani Se Shuru Karein",
     "title": "Live billing in 4 simple steps",
-    "lead": "Aaj hi shuru kijiye -- no training course, no IT team needed. Sirf 1 Windows PC.",
+    "lead": "Aaj hi shuru kijiye -- no training course, no IT team needed. Windows PC par install karein, ya browser mein try karke dekhein.",
     "items": [
       {
         "num": "01",
         "icon": "download",
         "title": "Download & Install",
-        "desc": "Download the free Windows installer (114 MB). One-click setup. No technical skills needed.",
+        "desc": "Download the free Windows installer (115 MB). One-click setup. No technical skills needed.",
         "urdu": "ڈاؤن لوڈ کریں اور انسٹال کریں"
       },
       {
@@ -348,9 +349,17 @@
     "eyebrow": "Abhi Shuru Karein",
     "titleA": "Download Rokar POS",
     "titleB": "Free Download, One-Time Licence",
-    "lead": "Windows 10 & 11 ready. About 114 MB. One-click install. Billing, stock aur udhaar hamesha offline chalte hain.",
+    "lead": "Windows 10 & 11 ready. About 115 MB. One-click install. Billing, stock aur udhaar hamesha offline chalte hain.",
     "buttonLabel": "Download Rokar POS",
     "facts": "Free Download - Windows 10 & 11 - Licence Key Chahiye",
+    "webTitle": "Browser Version — bina install",
+    "webNote": "Browser version pehle 7 din ka free trial deta hai - signup sirf shop ka naam, username aur password maangta hai, koi card nahi. Wahi billing, udhaar aur stock screens. Is shop ka data uske cloud account mein rehta hai, jo PC app ki local file se alag hai.",
+    "webButtonLabel": "Browser Version Try Karein",
+    "webSteps": [
+      "1. Shop ka naam, username aur password — bas, koi card nahi.",
+      "2. Browser mein kholo: wahi billing, udhaar, stock aur reports screens.",
+      "3. Pehle 7 din free; uske baad account activate karna hota hai."
+    ],
     "requirementsTitle": "Minimum Requirements",
     "requirements": [
       {
@@ -398,7 +407,7 @@
       },
       {
         "q": "Kya yeh mobile ya tablet par bhi chalega?",
-        "a": "Rokar Windows PC ke liye hai (Windows 10/11). Mobile ka istemaal receipt bhejne ke liye hota hai -- har bill 1-click mein customer ke WhatsApp par chala jaata hai."
+        "a": "Windows app Windows 10/11 PC ke liye hai, lekin browser version kisi bhi device ke browser se chal jata hai — PC, laptop ya tablet — bas us device par internet hona chahiye. Mobile par receipt bhejne ke liye har bill 1-click mein customer ke WhatsApp par chala jaata hai."
       },
       {
         "q": "Invoice aur receipt kis tarah banti hai?",
@@ -422,7 +431,7 @@
       },
       {
         "q": "Browser version aur PC (Windows) version mein kya farq hai?",
-        "a": "PC version aap ke PC par chalta hai: billing aur stock ka kaam bina internet ke bhi chal jata hai (sirf licence check aur update ke waqt internet chahiye), aur data aap ke machine par rehta hai. Browser version ke liye hamesha internet chahiye, woh kisi bhi PC ya tablet ke browser se khulta hai aur data us shop ke account mein rehta hai, is liye do jagah se ek hi bill dekh sakte hain. Dono ka billing, udhaar aur stock ka tareeqa ek jaisa hai."
+        "a": "PC version aap ke PC par chalta hai: billing aur stock ka kaam bina internet ke bhi chal jata hai (sirf licence check aur update ke waqt internet chahiye), aur data aap ke machine par rehta hai. Browser version ke liye hamesha internet chahiye, woh kisi bhi PC ya tablet ke browser se khulta hai aur us shop ka data uske cloud account mein rehta hai. Dono ki shop alag-alag hoti hai — ek hi bill dono jagah nahi hota. Billing, udhaar aur stock ka tareeqa dono ka ek jaisa hai."
       },
       {
         "q": "Browser version par receipt print aur WhatsApp receipt chalta hai?",
@@ -432,7 +441,7 @@
   },
   "footer": {
     "taglineUrdu": "پاکستانی دکانوں کے لیے بلنگ اور اسٹاک سافٹ ویئر",
-    "tagline": "Offline billing & inventory software for Pakistani shops.",
+    "tagline": "Billing & inventory software for Pakistani shops — Windows app ya browser version.",
     "siteTitle": "Site",
     "supportTitle": "Support",
     "rights": "All rights reserved.",
@@ -446,7 +455,7 @@
       "sub": "Koi bideai tracking ya telemetry nahi. Sirf licence ke liye shop ka naam, phone aur payment details server par jaate hain."
     },
     {
-      "value": 114,
+      "value": 115,
       "suffix": " MB",
       "label": "Installer Size",
       "sub": "Windows 10/11 setup, measured on the actual file"
@@ -586,6 +595,9 @@
     "Daily Automatic Backup (folder of your choice)",
     "Daily Sales & Net Profit Reports",
     "Custom Barcode Label Printing",
-    "Multi-Shift Cashier Management"
+    "Multi-Shift Cashier Management",
+    "Customer Discounts (percent ya fixed rupees)",
+    "Keyboard Bill Editing (F6 search, Pause edit, Esc refresh)",
+    "Browser Version — bina install"
   ]
 }
