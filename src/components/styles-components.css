@@ -84,18 +84,21 @@
   margin-left: 8px;
 }
 
-.nav-wa-btn,
-.nav-web-btn {
+.nav-wa-btn {
   display: none;
 }
 
-/* The browser-version button carries the full "Browser Version — bina install"
-   label on wide screens and the short "Browser" one when the header gets
-   tight, so the nav never wraps or pushes the Download button off-screen. */
+/* The browser-version CTA sits in the header on EVERY screen: the full
+   "Browser Version — bina install" label on wide screens, the short "Browser"
+   one when the header gets tight (tablets and phones), so the nav never wraps
+   and never pushes the Download button off-screen. */
 .nav-web-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   white-space: nowrap;
-  font-size: 0.84rem;
-  padding: 9px 14px;
+  font-size: 0.8rem;
+  padding: 8px 12px;
 }
 
 .nav-web-full {
@@ -112,8 +115,7 @@
 }
 
 @media (min-width: 1000px) {
-  .nav-wa-btn,
-  .nav-web-btn {
+  .nav-wa-btn {
     display: inline-flex;
   }
 }
@@ -124,6 +126,10 @@
   }
   .nav-web-short {
     display: none;
+  }
+  .nav-web-btn {
+    font-size: 0.84rem;
+    padding: 9px 14px;
   }
 }
 
@@ -185,8 +191,7 @@
 
 @media (max-width: 860px) {
   .nav-links,
-  .nav-wa-btn,
-  .nav-web-btn {
+  .nav-wa-btn {
     display: none;
   }
   .nav-burger {
@@ -195,6 +200,28 @@
   }
   .nav-mobile {
     display: flex;
+  }
+  /* The browser CTA stays in the header on tablets/phones — it is the cheapest
+     way for a shopkeeper to try Rokar without installing anything. */
+  .nav-web-btn {
+    font-size: 0.74rem;
+    padding: 7px 10px;
+    gap: 5px;
+  }
+  .nav-web-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  /* On a phone the header keeps the logo, the browser CTA and the Download
+     button; only the decorative badge moves away so nothing wraps. */
+  .nav-tag-badge {
+    display: none;
+  }
+  .nav-web-btn {
+    margin-left: auto;
   }
 }
 
